@@ -1,0 +1,54 @@
+@import "palette.less";
+@import "fonts.less";
+@import "headermenu.less";
+
+html, body{
+    height: 100%;
+}
+body{
+    background-color: @white-color !important;
+    font-family: 'RobotoCondensed-Regular', Arial, sans-serif !important;
+    font-size: @basic-font-size !important;
+    font-weight: 300;
+    line-height: 1.625em;
+}
+
+
+    .container.m-top{
+        border: 1px solid @box-border-color;
+        min-height: 100%;
+        height: auto;
+
+        .empty-row{
+            height: 70px !important;
+        }
+
+        .main {
+            float: left;
+            padding: 2%;
+            position: relative;
+
+            .mb-5{
+                color: @gray-color;
+                padding: 10px;
+            }
+        }
+        
+        aside {
+            border: 1px solid @box-border-color;
+            border-radius: 0px;
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            
+            .carousel {
+                height: 100%;
+
+            }
+
+            img{
+                border-radius: 0px;
+                width: 100% !important;
+            }
+        }
+}
