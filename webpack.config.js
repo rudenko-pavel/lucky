@@ -1,15 +1,22 @@
 var webpack = require('webpack');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-        'bundle.js': './src/main.js',
-        'main.css': './src/styles/styles.less'
+        'bundle.js'     : './src/main.js',
+        'main.css'      : './src/styles/styles.less'
     },
     output: {
-        path: __dirname + '/public/build/',
-        publicPath: "build/",
+        path: __dirname + '/public/dist/',
+        publicPath: "dist/",
         filename: "[name]"
-    },
+    },   
+     plugins: [
+      new CopyWebpackPlugin([
+          { from:'src/img',to:'img'},
+          { from: 'src/includes', to: 'includes' }
+      ])
+  ],
     module: {
         rules: [
             {
@@ -40,50 +47,6 @@ module.exports = {
                         loader: 'less-loader', // compiles Less to CSS
                       },
                 ]
-            },
-            {
-                test: /\.(scss)$/,
-                use: [{
-                  loader: 'style-loader', // inject CSS to page
-                }, {
-                  loader: 'css-loader', // translates CSS into CommonJS modules
-                }, {
-                  loader: 'postcss-loader', // Run post css actions
-                  options: {
-                    plugins: function () { // post css plugins, can be exported to postcss.config.js
-                      return [
-                        require('precss'),
-                        require('autoprefixer')
-                      ];
-                    }
-                  }
-                }, {
-                  loader: 'sass-loader' // compiles Sass to CSS
-                }]
-            },
-            {
-                test: /\.gif$/,
-                use: {
-                    loader: "url-loader?limit=10000&mimetype=image/gif"
-                }
-            },
-            {
-                test: /\.jpg$/,
-                use: {
-                    loader: "url-loader?limit=10000&mimetype=image/jpg"
-                }
-            },
-            {
-                test: /\.png$/,
-                use: {
-                    loader: "url-loader?limit=10000&mimetype=image/png"
-                }
-            },
-            {
-                test: /\.svg/,
-                use:{
-                    loader: "url-loader?limit=26000&mimetype=image/svg+xml"
-                }
             },
             {
                 test: /\.jsx$/,

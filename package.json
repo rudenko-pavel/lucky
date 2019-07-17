@@ -7,13 +7,14 @@
     "license": "ISC",
     "scripts": {
         "devserver": "webpack-dev-server --mode development --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public",
-        "build": "webpack -p"
+        "build": "webpack -p && cp src/index.html public/index.html && cp src/favicon.ico public/favicon.ico"
     },
     "devDependencies": {
         "@babel/core": "^7.5.4",
         "autoprefixer": "^9.6.1",
         "babel-loader": "^8.0.6",
         "bootstrap": "^4.3.1",
+        "copy-webpack-plugin": "^5.0.3",
         "css-loader": "^3.0.0",
         "exports-loader": "^0.7.0",
         "extract-text-webpack-plugin": "^3.0.2",
@@ -23,6 +24,7 @@
         "postcss-loader": "^3.0.0",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
+        "url-loader": "^2.0.1",
         "webpack": "^4.35.3",
         "webpack-cli": "^3.3.6"
     },

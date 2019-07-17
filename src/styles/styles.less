@@ -13,42 +13,87 @@ body{
     line-height: 1.625em;
 }
 
+.modal-open .modal {
+    background-color: @modal-background;
+}
 
-    .container.m-top{
+.modal-body {
+    padding: 2rem !important;
+}
+
+.modal-content, body{
+    background-image: url(/dist/img/nav-bg.png);
+}
+
+.modal-content{
+    background-repeat: repeat-y;
+    background-size: contain;
+}
+body{
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+.container.m-top{
+    border: 1px solid @box-border-color;
+    min-height: 100%;
+    height: auto;
+    background-color: @white-color;
+
+    .empty-row{
+        height: 70px !important;
+    }
+    
+    .main {
+        float: left;
+        padding: 2%;
+        position: relative;
+        .mb-5{
+            color: @gray-color;
+            padding: 10px;
+        }
+    }
+    
+    aside {
         border: 1px solid @box-border-color;
-        min-height: 100%;
-        height: auto;
-
-        .empty-row{
-            height: 70px !important;
-        }
-
-        .main {
-            float: left;
-            padding: 2%;
-            position: relative;
-
-            .mb-5{
-                color: @gray-color;
-                padding: 10px;
-            }
-        }
+        border-radius: 0px;
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
         
-        aside {
-            border: 1px solid @box-border-color;
-            border-radius: 0px;
-            position: relative;
-            width: 80%;
-            margin: 0 auto;
-            
-            .carousel {
-                height: 100%;
-
-            }
-
-            img{
-                border-radius: 0px;
-                width: 100% !important;
-            }
+        .carousel {
+            height: 100%;
         }
+    
+        img{
+            border-radius: 0px;
+                width: 100% !important;
+        }
+    }
+
+    .team-block{
+        text-align: center;
+
+        img{
+            width: 60%;
+        }
+
+        .modal-body img{
+            width: 100%;
+        }
+    }
+
+    .alert-team {
+        color: @team-color;
+        background-color: @team-background-color;
+        border-color: @team-border-color;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    .btn-link:hover, .btn-link:focus {
+        text-decoration: none !important;
+    }
+
 }

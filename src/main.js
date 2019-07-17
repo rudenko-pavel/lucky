@@ -6,6 +6,13 @@ window.$ = jQuery;
 import 'bootstrap';
 import './styles/styles.less';
 
+/*---- add top menu to page -------*/
 $(function(){ 
-    $("#includedTopMenu").load("../includes/headermenu.html");   
+    $("#includedTopMenu").load("dist/includes/headermenu.html");   
 });
+
+$(document).ready(function(){
+    $("#logoImg").click(function(){
+      $("#logoImgModal").modal();
+    });
+  });
