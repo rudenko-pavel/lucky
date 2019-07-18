@@ -16,7 +16,10 @@ module.exports = {
           { from:'src/img',to:'img'},
           { from: 'src/includes', to: 'includes' }
       ])
-  ],
+    ],
+    performance: {
+        hints: false
+    },
     module: {
         rules: [
             {
