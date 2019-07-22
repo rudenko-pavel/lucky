@@ -13,8 +13,12 @@ body{
     line-height: 1.625em;
 }
 
-.itemMenu{
+.itemMenu, .big-img{
     cursor: pointer;
+}
+
+.parse{
+    text-align: center;
 }
 
 .modal-open .modal {
@@ -25,7 +29,7 @@ body{
     padding: 2rem !important;
 }
 
-.modal-content, body{
+.modal-content, body, .timeline-item{
     background-image: url(/dist/img/nav-bg.png);
 }
 
@@ -64,6 +68,7 @@ body{
 
     .empty-row{
         height: 70px !important;
+        z-index: -1;
     }
     
     .main {
@@ -118,4 +123,33 @@ body{
         text-decoration: none !important;
     }
 
+}
+
+.main.hr{
+    border-top: 1px dotted @team-border-color;
+}
+/******* timeline *****************/
+
+.timeline-visual{
+    width: 60%;
+	height: 400px;
+	float: left;
+    border-right: 1px dotted @team-border-color;
+    text-align: center;
+    padding: 2%;
+    
+    img{
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+
+.timeline-detail{
+    width: 40%;
+	padding: 2%;
+	float: left;
+    h6{
+	    text-align: center;
+    }
 }

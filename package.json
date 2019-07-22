@@ -29,10 +29,11 @@
         "webpack-cli": "^3.3.6"
     },
     "dependencies": {
+        "bootstrap-lightbox": "^0.4.1",
         "jquery": "^3.4.1",
         "less": "^3.9.0",
         "popper.js": "^1.15.0",
-        "tooltip.js": "^1.3.2",
-        "bootstrap-lightbox": "^0.4.1"
+        "timelinejs-slider": "^0.1.0",
+        "tooltip.js": "^1.3.2"
     }
 }

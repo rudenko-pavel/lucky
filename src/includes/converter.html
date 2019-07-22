@@ -1,6 +1,70 @@
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/><h1>Converter</h1>
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main">
+    <div class="mb-5 ">
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header parse alert alert-info" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            parseInt(2,8,10,16)
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <form  role="form">
+                            <div class="form-row align-items-center">
+                                <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 my-1">
+                                    <select class="form-control form-control-sm converter-digit"  id="first-line" name="first-line">
+                                        <option  value="2">binary</option>
+                                        <option  value="8">octal</option>
+                                        <option  value="10" selected="selected">decimal</option>
+                                        <option  value="16">hex</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 my-1">
+                                    <input type="text" class="form-control converter-digit" id="first-digit" />
+                                </div>
+                            </div>
+                        </form>
+                        <form  role="form">
+                                <div class="form-row align-items-center">
+                                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 my-1">
+                                        <select class="form-control form-control-sm converter-digit" id="second-line"  name="second-line">
+                                            <option  value="2" selected="selected">binary</option>
+                                            <option  value="8">octal</option>
+                                            <option  value="10">decimal</option>
+                                            <option  value="16">hex</option>
+                                        </select>
+                                    </div>
+        
+                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 my-1">
+                                        <input type="text" class="form-control" id="second-digit" readonly />
+                                    </div>
+                                </div>
+                            </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header parse alert alert-info" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            timestamp <--> Date()
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Legion Run – это примерно пятикилометровый, ориентированный на команду забег с препятствиями из грязи, огня, льда и колючей проволоки, который проводиться в разных странах по всему миру.</p>
+                        <p>Наши мероприятия – это отличная возможность испытать ваши физические и психологические пределы, и поделиться эпическими моментами с вашими друзьями, сотрудниками или семьей. Это не гонка и это не соревнование против других. Это просто замечательное веселье для взрослых!</p>
+                    </div>
+                </div>
+            </div>
+        </div>                      
+    </div>
+</div>
+
+<script src="./dist/includes/js/converter.js"></script>

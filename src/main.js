@@ -6,6 +6,7 @@ window.$ = jQuery;
 import 'bootstrap';
 import './styles/styles.less';
 
+
 /*---- add top menu to page -------*/
 $(function(){ 
     $("#includedTopMenu").load("dist/includes/headermenu.html");   
@@ -13,21 +14,17 @@ $(function(){
 
 /*---- add body-Content to page -------*/
 $(function(){ 
-  $("#bodyContent").load("dist/includes/index.html");   
+  $("#bodyContent").load("dist/includes/home.html");   
 });
-
-
-
 
 
 $(document).ready(function(){
   console.log("start");
-  $(function () {
-    $("a.itemMenu").click(function(){
 
-      var newURL = "dist/includes/"+ this.dataset.item + ".html";
-      $("#bodyContent").load(newURL);   
-      
-    });
-  });
+  var str = window.location.search.substring(1)
+  if (str =="") str="home";
+  var newURL = "dist/includes/"+ str + ".html";
+  $("#bodyContent").load(newURL); 
+
+
 });
