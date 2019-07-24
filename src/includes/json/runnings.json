@@ -1,0 +1,39 @@
+{
+    "actions":[
+        {
+            "runDate":"2018-09-30",
+            "runId"    : "20180930",
+            "name"  : "CHISINAU INTERNATIONAL MARATHON",
+            "descriptions": "<p>Создание закрытого клуба людей с одинаковой целью - БЕЖАТЬ ))</p><p>Идея озвучена во время поездки из Киева в Кишинев. Реализована во время забега CHISINAU INTERNATIONAL MARATHON</p>",
+            "countImages": 6
+        },
+        {
+            "runDate":"2018-10-07",
+            "runId"    : "20181007",
+            "name"  : "Wizz Air Kyiv City Marathon",
+            "descriptions": "<p>Первая 'половинка' (21.095 м) участников клуба после создания движения )</p>",
+            "countImages": 6
+        },
+        {
+            "runDate":"2018-11-17",
+            "runId"    : "20181117",
+            "name"  : "Sumy Airport Autumn Run 2018",
+            "descriptions": "<p>Забег по взлетной полосе аэропорта города СУММЫ</p><h5>ПОЛЕТЕЛИ !!!!!!!</h5>",
+            "countImages": 9
+        },
+        {
+            "runDate":"2018-12-23",
+            "runId"    : "20181223",
+            "name"  : "Новогодний полумарафон 'Полтавская зима'",
+            "descriptions": "<p>забег на малой родине)</p><p>Новый шаг для 'слоников' - командная работа))))))</p>",
+            "countImages": 8
+        },
+        {
+            "runDate":"2019-02-18",
+            "runId"    : "20190218",
+            "name"  : "20190218",
+            "descriptions": "<p>DDDDDDDDDDDDdd</p>",
+            "countImages": 5
+        }
+    ]
+}
