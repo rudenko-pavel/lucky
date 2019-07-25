@@ -80,3 +80,19 @@ $.getJSON( "dist/includes/json/runnings.json", function( data ) {
 .always(function(){
     console.log("always ;)");
 });
+
+
+$.getScript("./dist/includes/js/tooltipster.bundle.min.js",function(){
+    $(document).ready(function() {
+        $('.mytooltip').tooltipster({
+            contentCloning: true,
+            functionPosition: function(instance, helper, position){
+                position.coord.top += 10;
+                position.coord.left += 10;
+                return position;
+            },
+            interactive: true
+        });
+        
+    });
+});
