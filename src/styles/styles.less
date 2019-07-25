@@ -13,8 +13,12 @@ body{
     line-height: 1.625em;
 }
 
-.itemMenu, .big-img{
-    cursor: pointer;
+.itemMenu{
+    cursor: pointer;    
+} 
+
+.big-img{
+    cursor: zoom-in;
 }
 
 .parse{
@@ -31,6 +35,12 @@ body{
 
 .modal-content, body, .timeline-item{
     background-image: url(/dist/img/nav-bg.png);
+
+    .niceDate{
+        text-align: center;
+        color: @red-color;
+        padding: 10px 0;
+    }
 }
 
 .card > div{
@@ -145,7 +155,7 @@ body{
     img{
         max-height: 100%;
         max-width: 100%;
-        cursor: pointer;
+        cursor: zoom-in;
     }
 }
 
