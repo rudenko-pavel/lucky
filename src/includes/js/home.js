@@ -103,16 +103,16 @@ console.log("load textwave");
 });
 
  // run the currently selected effect
+$.repeatCount = 0;
  function runEffect() {
    // Run the effect
-   $( "#logoImg" ).effect( "bounce", 1000 );
+   $.repeatCount<8 ? $( "#logoImg" ).effect( "bounce", 1000 ): "";
    $('#content2').textWave({
-
-    ratio: 2,
-    repeat: 2,
-    framerate: 60
-})
-   
+        ratio: 2,
+        repeat: 2,
+        framerate: 60
+    })
+    $.repeatCount++;
  };
  $(document).ready(function(){
      setInterval(runEffect,10000);

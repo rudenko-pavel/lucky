@@ -26,4 +26,11 @@ $(document).ready(function(){
   var newURL = "dist/includes/"+ str + ".html";
   $("#bodyContent").load(newURL); 
 
+
+
+
+
+
+
+
 });
