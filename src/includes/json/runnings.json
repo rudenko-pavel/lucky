@@ -1,60 +1,72 @@
 {
-    "actions":[
+    "typeEvent": [
+        {"typeId":1, "name": "run"},
+        {"typeId":2, "name": "athletic"}
+    ],
+    "events":[
         {
             "runDate":"2018-09-30",
             "runId"    : "20180930",
             "name"  : "CHISINAU INTERNATIONAL MARATHON",
             "descriptions": "<p>Создание  <span class='mytooltip' data-tooltip-content='#termsOfEntry'>клуба закрытого типа</span>  для людей с одинаковой целью - БЕЖАТЬ 8))</p><p>Идея озвучена во время поездки из Киева в Кишинев. Реализована во время забега CHISINAU INTERNATIONAL MARATHON 2018</p>",
-            "countImages": 6
+            "countImages": 6,
+            "typeEvent": 1
         },
         {
             "runDate":"2018-10-07",
             "runId"    : "20181007",
             "name"  : "Wizz Air Kyiv City Marathon",
             "descriptions": "<p>Первая 'половинка' (21.095 м) участников клуба после создания движения )</p>",
-            "countImages": 6
+            "countImages": 6,
+            "typeEvent": 1
         },
         {
             "runDate":"2018-11-17",
             "runId"    : "20181117",
             "name"  : "Sumy Airport Autumn Run 2018",
             "descriptions": "<p>Забег по взлетной полосе аэропорта города СУММЫ</p><h5>ПОЛЕТЕЛИ !!!!!!!</h5>",
-            "countImages": 9
+            "countImages": 9,
+            "typeEvent": 1
         },
         {
             "runDate":"2018-12-23",
             "runId"    : "20181223",
             "name"  : "Новогодний полумарафон 'Полтавская зима'",
             "descriptions": "<p>забег на малой родине)</p><p>Новый шаг для 'слоников' - командная работа))))))</p>",
-            "countImages": 8
+            "countImages": 8,
+            "typeEvent": 1
         },
         {
             "runDate":"2019-02-10",
             "runId"    : "20190210",
             "name"  : "Естафета «Кльова пара»",
             "descriptions": "<p>Что-то новенькое)) Забег к Дню влюбленных! Мы бежали!!!!</p>",
-            "countImages": 8
+            "countImages": 8,
+            "typeEvent": 1
         },
         {
             "runDate":"2019-04-07",
             "runId"    : "20190407",
             "name"  : "Nova Poshta Kyiv Half Marathon",
             "descriptions": "<p>Единственный в Украине забег из серии 'Road Race BRONZE' международной федерации легкой атлетики</p>",
-            "countImages": 6
+            "countImages": 6,
+            "typeEvent": 1
         },
         {
             "runDate":"2019-04-22",
             "runId"    : "20190422",
             "name"  : "The 8th London Easter 10k",
             "descriptions": "<p>Гонка на 10 км, проходящая в великолепных окрестностях лондонского Regents Park.</p><p>7 дней до VIRGIN MONEY LONDON MARATHON ...</p>",
-            "countImages": 5
+            "countImages": 5,
+            "typeEvent": 1
         },
         {
             "runDate":"2019-05-11",
             "runId"    : "20190511",
             "name"  : "RACE NATION (5+км 20+препятствий)",
             "descriptions": "<p>Грязи много не бывает</p><p>Боль временна. Слава вечна</p><p>Так и бегаем)))))</p>",
-            "countImages": 8
+            "countImages": 8,
+            "typeEvent": 2
         }
     ]
 }

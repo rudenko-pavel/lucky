@@ -4,7 +4,7 @@ $.storageImg = "dist/img/timeline/";
 $.modalImg = "";
 
 $.getJSON( "dist/includes/json/runnings.json", function( data ) {
-    $.runnings = data.actions;
+    $.runnings = data.events;
 })
 .done(function(){
     if ($.runItems.length==0){
@@ -71,7 +71,8 @@ $.getJSON( "dist/includes/json/runnings.json", function( data ) {
                     itemClass: 'box-item',
                     dotsPosition: 'bottom',
                     startItem: 'first',
-                    autoplay: false,
+                    autoplay: true,
+                    autoplaySpeed: 10000,
                 }
             );
         });
@@ -96,3 +97,24 @@ $.getScript("./dist/includes/js/tooltipster.bundle.min.js",function(){
         
     });
 });
+
+$.getScript("./dist/includes/js/jquery.textwave.js",function(){
+console.log("load textwave");
+});
+
+ // run the currently selected effect
+ function runEffect() {
+   // Run the effect
+   $( "#logoImg" ).effect( "bounce", 1000 );
+   $('#content2').textWave({
+
+    ratio: 2,
+    repeat: 2,
+    framerate: 60
+})
+   
+ };
+ $(document).ready(function(){
+     setInterval(runEffect,10000);
+ });
+

@@ -1,0 +1,46 @@
+{
+    "members": [
+        {
+            "memberId"  :   1,
+            "name"      :   "Vladimir",
+            "surname"   :   "Romanenko",
+            "nick"      :   "voffchik",
+            "dateJoin"  :   "2018-09-30"
+        },
+        {
+            "memberId"  :   2,
+            "name"      :   "Lena",
+            "surname"   :   "Rudenko",
+            "nick"      :   "lenusea",
+            "dateJoin"  :   "2018-09-30"
+        },
+        {
+            "memberId"  :   3,
+            "name"      :   "Pavlo",
+            "surname"   :   "Rudenko",
+            "nick"      :   "h0lland",
+            "dateJoin"  :   "2018-09-30"
+        },
+        {
+            "memberId"  :   4,
+            "name"      :   "Roman",
+            "surname"   :   "Novitskyy",
+            "nick"      :   "~",
+            "dateJoin"  :   "2018-12-23"
+        },
+        {
+            "memberId"  :   5,
+            "name"      :   "Vlad",
+            "surname"   :   "Novitskyy",
+            "nick"      :   "~",
+            "dateJoin"  :   "2019-05-11"
+        },
+        {
+            "memberId"  :   6,
+            "name"      :   "Vitaliy",
+            "surname"   :   "Rubaha",
+            "nick"      :   "~",
+            "dateJoin"  :   "2019-05-11"
+        }
+    ]
+}
