@@ -21,16 +21,9 @@ $(function(){
 $(document).ready(function(){
   console.log("start");
 
-  var str = window.location.search.substring(1)
+  var str = window.location.search.substring(1);
   if (str =="") str="home";
   var newURL = "dist/includes/"+ str + ".html";
   $("#bodyContent").load(newURL); 
-
-
-
-
-
-
-
 
 });
