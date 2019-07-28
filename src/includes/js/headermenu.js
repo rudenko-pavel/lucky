@@ -23,19 +23,36 @@ $.getJSON( "dist/includes/json/common.json", function( data ) {
 }).done(function(){
     if ($.topMenu.length==0){
         var newItem = "";
+        var endSubmenu = "";
+        $.parentId = ""
         $.each( $.itemsTopMenu, function(key) {
             var str = window.location.search.substring(0);
-            if (str == $.itemsTopMenu[key]["href"]){
-                newItem = "<li><span class='itemMenu butt current-b'>"+$.itemsTopMenu[key]["name"]+"</span></li>";
+            if ($.itemsTopMenu[key]["isDropdown"]==1){
+                newItem = "<li class='dropdown'>"+
+                            "<a class='itemMenu butt' id='parent_"+$.itemsTopMenu[key]["idButton"]+"'  href='#' data-toggle='dropdown'>"+ $.itemsTopMenu[key]["name"] +"&nbsp;&nbsp;<i class='fas fa-angle-down'></i></a>"+
+                            "<div class='dropdown-menu'>";
+            } else {
+                if($.itemsTopMenu[key]["subMenu"]!=0){
+                    if ( $.itemsTopMenu[key]["isLast"]==true) endSubmenu = "</div></li>";
+                    if (str == $.itemsTopMenu[key]["href"]){
+                        newItem = "<a class='itemMenu butt current-b' href='"+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key]["name"]+"</a>" + endSubmenu;
+                        $.parentId = "#parent_"+$.itemsTopMenu[key]["subMenu"];
+                    }else {
+                        newItem = "<a class='itemMenu butt' href='"+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key]["name"]+"</a>" + endSubmenu;
+                    }
+                }else{
+                    if (str == $.itemsTopMenu[key]["href"]){
+                        newItem = "<li><span class='itemMenu butt current-b'>"+$.itemsTopMenu[key]["name"]+"</span></li>";
+                    }
+                    else newItem = "<li><a  class='itemMenu butt' href='/"+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
+                }
             }
-            else newItem = "<li><a  class='itemMenu butt' href='/"+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
-            
             $.topMenu = $.topMenu +  newItem;
-console.log(str, $.itemsTopMenu[key]["href"]);
         })
 
     
     }
     
     $("#itemsMenu").prepend($.topMenu);
+    $($.parentId).addClass("current-b"); 
 });

@@ -13,9 +13,6 @@ $(function(){
 });
 
 /*---- add body-Content to page -------*/
-$(function(){ 
-  $("#bodyContent").load("dist/includes/home.html");   
-});
 
 
 $(document).ready(function(){
@@ -23,7 +20,17 @@ $(document).ready(function(){
 
   var str = window.location.search.substring(1);
   if (str =="") str="home";
-  var newURL = "dist/includes/"+ str + ".html";
-  $("#bodyContent").load(newURL); 
+  $.newURL = "dist/includes/"+ str + ".html";
 
+  var jqxhr = $.get( $.newURL, function() {
+  })
+    .done(function() {
+      $("#bodyContent").load($.newURL); 
+      console.log("DONE--------");
+    })
+    .fail(function() {
+      $.newURL = "dist/includes/404.html";
+      $("#bodyContent").load($.newURL); 
+    })
+  
 });
