@@ -12,3 +12,8 @@ https://jqueryui.com/effect/
 
 TEXT WAVE:
 https://www.jqueryscript.net/animation/Text-Wave-Effect-jQuery.html
+
+DATEPICKER:
+https://jqueryui.com/datepicker/
+
+

@@ -26,7 +26,6 @@ $(document).ready(function(){
   })
     .done(function() {
       $("#bodyContent").load($.newURL); 
-      console.log("DONE--------");
     })
     .fail(function() {
       $.newURL = "dist/includes/404.html";

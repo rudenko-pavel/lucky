@@ -1,4 +1,4 @@
-<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main">
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main converterPage">
     <div class="mb-5 ">
         <div id="accordion">
             <div class="card">
@@ -58,8 +58,36 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                     <div class="card-body">
-                        <p>Legion Run – это примерно пятикилометровый, ориентированный на команду забег с препятствиями из грязи, огня, льда и колючей проволоки, который проводиться в разных странах по всему миру.</p>
-                        <p>Наши мероприятия – это отличная возможность испытать ваши физические и психологические пределы, и поделиться эпическими моментами с вашими друзьями, сотрудниками или семьей. Это не гонка и это не соревнование против других. Это просто замечательное веселье для взрослых!</p>
+                        <div class="container timestampToDate">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 label-form">
+                                    <label for="datepicker">Дата: </label>
+                                </div>
+                                <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
+                                    <input type="text" id="datepicker" class="form-control" />
+                                </div>
+                                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2  label-form">
+                                    <label for="timestamp" class="">timestamp: </label>
+                                </div>
+                                <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
+                                    <input type="text" class="form-control" id="timestamp" readonly />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2  label-form">
+                                    <label for="timestamp2" class="">timestamp: </label>
+                                </div>
+                                <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
+                                    <input type="text" class="form-control" id="timestamp2" />
+                                </div>
+                                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 label-form">
+                                    <label for="humanDate">Дата: </label>
+                                </div>
+                                <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
+                                    <input type="text" id="humanDate" class="form-control"  readonly />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
