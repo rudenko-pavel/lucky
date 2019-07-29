@@ -41,7 +41,7 @@ $.getJSON( "dist/includes/json/common.json", function( data ) {
                         newItem = "<a class='itemMenu butt' href='"+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key]["name"]+"</a>" + endSubmenu;
                     }
                 }else{
-                    if (str == $.itemsTopMenu[key]["href"]){
+                    if (str == $.itemsTopMenu[key]["href"] || (str=="" && $.itemsTopMenu[key]["href"]=="?home")){
                         newItem = "<li><span class='itemMenu butt current-b'>"+$.itemsTopMenu[key]["name"]+"</span></li>";
                     }
                     else newItem = "<li><a  class='itemMenu butt' href='/"+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
