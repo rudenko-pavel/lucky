@@ -3,7 +3,7 @@ $.runnings="";
 $.storageImg = "dist/img/timeline/";
 $.modalImg = "";
 
-$.getJSON( "dist/includes/json/runnings.json", function( data ) {
+$.getJSON( "dist/includes/json/events.json", function( data ) {
     $.runnings = data.events;
 })
 .done(function(){
