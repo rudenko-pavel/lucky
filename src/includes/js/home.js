@@ -4,7 +4,7 @@ $.storageImg = "dist/img/timeline/";
 $.modalImg = "";
 
 $.getJSON( "dist/includes/json/events.json", function( data ) {
-    $.runnings = data.events;
+    $.runnings = data.data;
 })
 .done(function(){
     if ($.runItems.length==0){
@@ -79,10 +79,10 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
     }
 })
 .always(function(){
-    console.log("always ;)");
+
 });
 
-
+/****************** TOOLTIP **************/
 $.getScript("./dist/includes/js/tooltipster.bundle.min.js",function(){
     $(document).ready(function() {
         $('.mytooltip').tooltipster({
@@ -98,6 +98,8 @@ $.getScript("./dist/includes/js/tooltipster.bundle.min.js",function(){
     });
 });
 
+
+/****************** TEXTWAVE **************/
 $.getScript("./dist/includes/js/jquery.textwave.js",function(){
 console.log("load textwave");
 });
