@@ -1,14 +1,13 @@
 $(document).ready(function(){
-    $.getScript("dist/includes/js/jquery.dataTables.min.js",function(){
-        $.getScript("dist/includes/js/dataTables.bootstrap4.min.js",function(){
+    $.getScript("dist/includes/js/vendor/jquery.dataTables.min.js",function(){
+        $.getScript("dist/includes/js/vendor/dataTables.bootstrap4.min.js",function(){
 
             $('#listEvents').DataTable( {
                 "ajax": "dist/includes/json/events.json",
                 "columns": [
                     { "data": "runDate","width": "15%" },
                     { "data": "runId","width": "15%" },
-                    { "data": "name" },
-                    { "data": "runId" }
+                    { "data": "name" }
                 ],
                 "columnDefs": [
                     {
@@ -28,25 +27,13 @@ $(document).ready(function(){
                             '<div class="one-descr" data-toggle="modal" data-target="#description'+row.runId+'"><span class="btn btn-outline-info" data-target="#description'+row.runId+'">Описание</span></div>' :
                             data;
                         }
-                    },
-                    {
-                        "targets": 3,
-                        "orderable": false,
-                        "render":function ( data, type, row, meta ) {
-                            if (type === 'display') {
-                                return data + '&&&';
-                            }      
-                            else{
-                                return data + '***';
-                            }
-                        }
                     }
                 ]
             })
 
         })
         .done(function(){
-            $.getScript("./dist/includes/js/tooltipster.bundle.min.js",function(){
+            $.getScript("./dist/includes/js/vendor/tooltipster.bundle.min.js",function(){
             }).done(function(){
                     $('.mytooltip').tooltipster({
                         contentCloning: true,
@@ -101,8 +88,7 @@ $(document).ready(function(){
                         '</div>'+
                     '</div>';
 
-                    var newModalDescriptions =
-                    '<div class="modal fade" id="description'+$( this ).data('runId')+'" tabindex="-1" role="dialog" aria-hidden="true">'+
+                    var newModalDescriptions ='<div class="modal fade" id="description'+$( this ).data('runId')+'" tabindex="-1" role="dialog" aria-hidden="true">'+
                         '<div class="modal-dialog" role="document">'+
                             '<div class="modal-content description-event">'+
                                 '<div class="modal-body"><img src="dist/img/team.png" alt="" >'+$.listEvents[index]["descriptions"] +
@@ -122,9 +108,4 @@ $(document).ready(function(){
 
         })
     }); 
-
-    
-
-/**************MODAL CAROUSEL **************/
- 
 });

@@ -11,7 +11,7 @@ $( ".converter-digit" ).on('change', function() {
 });
 
 /************** datepicker  ******************/
-$.getScript("./dist/includes/js/datepicker-ru.js",function(){
+$.getScript("./dist/includes/js/vendor/datepicker-ru.js",function(){
   $( function() {
     $.selectDate = "";
     $( "#datepicker" ).datepicker({

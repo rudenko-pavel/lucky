@@ -1,5 +1,5 @@
 
-$.getScript("./dist/includes/js/jquery.textwave.js",function(){
+$.getScript("./dist/includes/js/vendor/jquery.textwave.js",function(){
     console.log("load head menu");
     });
   

@@ -64,7 +64,7 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
         $("#actionsContent").prepend($.runItems);
         $('#modalSegment').append($.modalImg);
 
-        $.getScript("./dist/includes/js/timeline.min.js",function(){
+        $.getScript("./dist/includes/js/vendor/timeline.min.js",function(){
             
             $('.js-timeline').Timeline(
                 {
@@ -83,7 +83,7 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
 });
 
 /****************** TOOLTIP **************/
-$.getScript("./dist/includes/js/tooltipster.bundle.min.js",function(){
+$.getScript("./dist/includes/js/vendor/tooltipster.bundle.min.js",function(){
     $(document).ready(function() {
         $('.mytooltip').tooltipster({
             contentCloning: true,
@@ -100,7 +100,7 @@ $.getScript("./dist/includes/js/tooltipster.bundle.min.js",function(){
 
 
 /****************** TEXTWAVE **************/
-$.getScript("./dist/includes/js/jquery.textwave.js",function(){
+$.getScript("./dist/includes/js/vendor/jquery.textwave.js",function(){
 console.log("load textwave");
 });
 

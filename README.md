@@ -1,6 +1,9 @@
 # lucky
 site with bootstrap, jQuery
 
+CAROUSEL:
+https://getbootstrap.com/docs/4.0/components/carousel/
+
 TOOLTIP:
 https://iamceege.github.io/tooltipster/
 

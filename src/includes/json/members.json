@@ -1,44 +1,44 @@
 {
-    "members": [
+    "data": [
         {
             "memberId"  :   1,
-            "name"      :   "Vladimir",
-            "surname"   :   "Romanenko",
+            "name"      :   "Владимир",
+            "surname"   :   "Романенко",
             "nick"      :   "voffchik",
             "dateJoin"  :   "2018-09-30"
         },
         {
             "memberId"  :   2,
-            "name"      :   "Lena",
-            "surname"   :   "Rudenko",
+            "name"      :   "Лена",
+            "surname"   :   "Руденко",
             "nick"      :   "lenusea",
             "dateJoin"  :   "2018-09-30"
         },
         {
             "memberId"  :   3,
-            "name"      :   "Pavlo",
-            "surname"   :   "Rudenko",
+            "name"      :   "Павел",
+            "surname"   :   "Руденко",
             "nick"      :   "h0lland",
             "dateJoin"  :   "2018-09-30"
         },
         {
             "memberId"  :   4,
-            "name"      :   "Roman",
-            "surname"   :   "Novitskyy",
+            "name"      :   "Роман",
+            "surname"   :   "Новицкий",
             "nick"      :   "~",
             "dateJoin"  :   "2018-12-23"
         },
         {
             "memberId"  :   5,
-            "name"      :   "Vlad",
-            "surname"   :   "Novitskyy",
+            "name"      :   "Влад",
+            "surname"   :   "Новицкий",
             "nick"      :   "~",
             "dateJoin"  :   "2019-05-11"
         },
         {
             "memberId"  :   6,
-            "name"      :   "Vitaliy",
-            "surname"   :   "Tyminskyy",
+            "name"      :   "Виталий",
+            "surname"   :   "Тыминский",
             "nick"      :   "~",
             "dateJoin"  :   "2019-05-11"
         }

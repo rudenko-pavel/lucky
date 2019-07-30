@@ -2,8 +2,8 @@
     "topNavigation":[
         {"idButton": 1 , "name": "home",        "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?home"},
         {"idButton": 2 , "name": "events",      "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?events"},
-        {"idButton": 3 , "name": "helper",      "isDropdown": 1, "subMenu": 0, "isLast": false,  "href": "#"},
-        {"idButton": 4 , "name": "converter",   "isDropdown": 0, "subMenu": 3, "isLast": false,  "href": "?converter"},
-        {"idButton": 5 , "name": "QWER",        "isDropdown": 0, "subMenu": 3, "isLast": true,   "href": "?QWER"}
+        {"idButton": 3 , "name": "athletes",    "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?athletes"},
+        {"idButton": 4 , "name": "helper",      "isDropdown": 1, "subMenu": 0, "isLast": false,  "href": "#"},
+        {"idButton": 5 , "name": "converter",   "isDropdown": 0, "subMenu": 4, "isLast": true,  "href": "?converter"}
     ]
 }
