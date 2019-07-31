@@ -60,6 +60,11 @@ $(document).ready(function(){
                     var newModalCollectionStart ='<div class="modal fade" id="carousel'+$( this ).data('runId')+'" tabindex="-1" role="dialog" aria-hidden="true">'+
                     '<div class="modal-dialog" role="document">'+
                         '<div class="modal-content">'+
+                            '<div class="modal-header">'+
+                                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+                                    '<span aria-hidden="true">&times;</span>'+
+                                '</button>'+
+                            '</div>'+
                             '<div class="modal-body">'+        
                                 '<div id="images_'+$( this ).data('runId')+'" class="carousel slide" data-ride="carousel">'+
                                     '<div class="carousel-inner">';

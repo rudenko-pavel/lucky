@@ -26,6 +26,11 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
         var newModalCollectionStart ='<div class="modal fade" id="carousel'+$.runnings[key]["runId"]+'" tabindex="-1" role="dialog" aria-hidden="true">'+
             '<div class="modal-dialog" role="document">'+
                 '<div class="modal-content">'+
+                    '<div class="modal-header">'+
+                        '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+                            '<span aria-hidden="true">&times;</span>'+
+                        '</button>'+
+                    '</div>'+
                     '<div class="modal-body">'+        
                         '<div id="images_'+$.runnings[key]["runId"]+'" class="carousel slide" data-ride="carousel">'+
                             '<div class="carousel-inner">';

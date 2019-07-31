@@ -14,6 +14,7 @@ body{
     line-height: 1.625em;
 }
 
+/*************TOOLTIP **********/
 .tooltip_templates { 
     display: none; 
 }
@@ -43,7 +44,7 @@ body{
     padding: 2rem !important;
 }
 
-.modal-content, body, .timeline-item{
+.modal-content, body, .timeline-item, .modal-header{
     background-image: url(/dist/img/nav-bg.png);
 
     .niceDate{
@@ -152,7 +153,53 @@ body{
 .main.hr{
     border-top: 1px dotted @team-border-color;
 }
+/******* top menu *************/
+
+@media only screen and (max-width: 991px){
+    .dws{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0, -0);
+
+        li{
+            margin-left: 20px;
+            a{
+                width:100%;
+                text-align: left;
+            }
+        }
+
+        .dropdown-menu{
+            background-color: transparent;
+            border: none;
+            margin-left: 50px;
+        }
+    }
+}
+
+
 /******* timeline *****************/
+
+@media only screen and (max-width: 991px){
+    .timeline-container{
+        width: 650px !important;
+        margin: unset;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .timeline-container{
+        width: 460px !important;
+    }
+}
+
+@media only screen and (max-width: 575px){
+    .timeline-container{
+        width: 260px !important;
+    }
+}
+
 
 .timeline-visual{
     width: 60%;
@@ -221,6 +268,14 @@ body{
     img{
         width: 70%;
     }    
+}
+
+@media only screen and (max-width: 991px){
+    .description-member{
+        img{
+            width: 100%;
+        }    
+    }
 }
 
 .description-event{
