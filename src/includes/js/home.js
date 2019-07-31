@@ -11,10 +11,10 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
         $.each( $.runnings, function(key) {
 
         var newItem ='<div data-time="'+$.runnings[key]["runDate"]+'" class="timeline-item">'+
-            '<div class="timeline-visual" data-toggle="modal" data-target="#carousel'+$.runnings[key]["runId"]+'">'+
+            '<div class="timeline-visual col-12 col-sm-12 col-md-6" data-toggle="modal" data-target="#carousel'+$.runnings[key]["runId"]+'">'+
                 '<img src="'+$.storageImg+$.runnings[key]["runId"]+'.jpg" alt="" data-target="#carousel'+$.runnings[key]["runId"]+'" data-slide-to="0">'+
             '</div>'+
-            '<div class="timeline-detail">'+
+            '<div class="timeline-detail col-12 col-sm-12 col-md-6">'+
                 '<h6>'+$.runnings[key]["name"]+'</h6>'+
                 '<div class="niceDate">'+$.runnings[key]["runDate"]+'</div>'+
                 '<div>'+$.runnings[key]["descriptions"]+'</div>'+

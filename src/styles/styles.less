@@ -181,23 +181,60 @@ body{
 
 /******* timeline *****************/
 
-@media only screen and (max-width: 991px){
-    .timeline-container{
-        width: 650px !important;
-        margin: unset;
-    }
+.timeline-container{width:800px;margin:0 auto}
+.timeline-list{width:800px}
+.timeline-item{width:800px;}
+
+
+
+/**************** different resolutions *****************/
+
+@media only screen and (max-width: 992px){
+
+    .container {max-width: 100% !important;}
+
+    .timeline-container, .timeline-list, .timeline-item { width: 650px !important;}
 }
 
-@media only screen and (max-width: 767px){
-    .timeline-container{
-        width: 460px !important;
-    }
+@media only screen and (max-width: 768px){
+    .timeline-container, .timeline-list, .timeline-item { width: 670px !important;}
+
+    .timeline-visual                        {height: 150px !important; }
+    .modal-body                             { padding: 10px !important; }
+    .timeline-horizontal .timeline-dots li  { width: 80px !important; }
 }
 
-@media only screen and (max-width: 575px){
-    .timeline-container{
-        width: 260px !important;
-    }
+@media only screen and (max-width: 738px){
+    .timeline-container, .timeline-list, .timeline-item { width: 680px !important; }
+}
+
+
+@media only screen and (max-width: 668px){
+    .timeline-container, .timeline-list, .timeline-item { width: 610px !important; }
+}
+
+@media only screen and (max-width: 617px){
+    .timeline-container, .timeline-list, .timeline-item { width: 530px !important; }
+}
+
+@media only screen and (max-width: 576px){
+    .timeline-container, .timeline-list, .timeline-item { width: 480px !important; }
+}
+
+@media only screen and (max-width: 515px){
+    .timeline-container, .timeline-list, .timeline-item { width: 420px !important; }
+}
+
+@media only screen and (max-width: 465px){
+    .timeline-container, .timeline-list, .timeline-item { width: 360px !important; }
+}
+
+@media only screen and (max-width: 415px){
+    .timeline-container, .timeline-list, .timeline-item { width: 330px !important; }
+}
+
+@media only screen and (max-width: 376px){
+    .timeline-container, .timeline-list, .timeline-item { width: 280px !important; }
 }
 
 
@@ -299,4 +336,12 @@ body{
     color: @team-color  !important;
     background-color: @team-background-color  !important;
     border-color: @team-background-color  !important;
+}
+
+/************ mobile ***************/
+
+@media only screen and (max-width: 992px){
+    .mb-5.custom, .my-5.custom {
+        margin-bottom: 10px !important;
+    }
 }
