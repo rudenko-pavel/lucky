@@ -42,7 +42,7 @@ $.getJSON( "dist/includes/json/common.json", function( data ) {
                     }
                 }else{
                     if (str == $.itemsTopMenu[key]["href"] || (str=="" && $.itemsTopMenu[key]["href"]=="?home")){
-                        newItem = "<li><span class='itemMenu butt current-b'>"+$.itemsTopMenu[key]["name"]+"</span></li>";
+                        newItem = "<li><a class='itemMenu butt current-b' href='/"+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
                     }
                     else newItem = "<li><a  class='itemMenu butt' href='/"+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
                 }

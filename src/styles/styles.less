@@ -155,7 +155,7 @@ body{
 }
 /******* top menu *************/
 
-@media only screen and (max-width: 991px){
+@media only screen and (max-width: 992px){
     .dws{
         position: relative;
         top: 0;
@@ -177,6 +177,16 @@ body{
         }
     }
 }
+@media only screen and (max-width: 991px){
+    .dws{
+        li{
+            a{
+                font-size: @font-size-18 !important;
+            }
+        }
+
+    }
+}
 
 
 /******* timeline *****************/
@@ -192,37 +202,42 @@ body{
 @media only screen and (max-width: 992px){
 
     .container {max-width: 100% !important;}
+    .timeline-container, .timeline-list, .timeline-item { width: 690px !important;}
+}
 
-    .timeline-container, .timeline-list, .timeline-item { width: 650px !important;}
+@media only screen and (max-width: 991px){
+    .container.m-top .team-block img{    width: 30% !important;}
 }
 
 @media only screen and (max-width: 768px){
-    .timeline-container, .timeline-list, .timeline-item { width: 670px !important;}
+    .timeline-container, .timeline-list, .timeline-item { width: 640px !important;}
 
     .timeline-visual                        {height: 150px !important; }
     .modal-body                             { padding: 10px !important; }
     .timeline-horizontal .timeline-dots li  { width: 80px !important; }
+
+
 }
 
-@media only screen and (max-width: 738px){
-    .timeline-container, .timeline-list, .timeline-item { width: 680px !important; }
+@media only screen and (max-width: 718px){
+    .timeline-container, .timeline-list, .timeline-item { width: 600px !important; }
 }
 
 
 @media only screen and (max-width: 668px){
-    .timeline-container, .timeline-list, .timeline-item { width: 610px !important; }
-}
-
-@media only screen and (max-width: 617px){
     .timeline-container, .timeline-list, .timeline-item { width: 530px !important; }
 }
 
+@media only screen and (max-width: 617px){
+    .timeline-container, .timeline-list, .timeline-item { width: 500px !important; }
+}
+
 @media only screen and (max-width: 576px){
-    .timeline-container, .timeline-list, .timeline-item { width: 480px !important; }
+    .timeline-container, .timeline-list, .timeline-item { width: 460px !important; }
 }
 
 @media only screen and (max-width: 515px){
-    .timeline-container, .timeline-list, .timeline-item { width: 420px !important; }
+    .timeline-container, .timeline-list, .timeline-item { width: 410px !important; }
 }
 
 @media only screen and (max-width: 465px){
