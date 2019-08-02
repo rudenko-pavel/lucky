@@ -16,6 +16,7 @@ $.getScript("./dist/includes/js/vendor/datepicker-ru.js",function(){
     $.selectDate = "";
     $( "#datepicker" ).datepicker({
       dateFormat: "yy-mm-dd",
+      changeMonth: true,
       changeYear: true,
       showAnim: "clip"
     });

@@ -206,7 +206,7 @@ body{
 }
 
 @media only screen and (max-width: 991px){
-    .container.m-top .team-block img{    width: 30% !important;}
+    .container.m-top .team-block .big-img{    width: 30% !important;}
 }
 
 @media only screen and (max-width: 768px){
@@ -216,7 +216,11 @@ body{
     .modal-body                             { padding: 10px !important; }
     .timeline-horizontal .timeline-dots li  { width: 80px !important; }
 
-
+    .table{
+        th, td{
+            padding: 10px !important;   
+        }
+    } 
 }
 
 @media only screen and (max-width: 718px){
@@ -236,8 +240,11 @@ body{
     .timeline-container, .timeline-list, .timeline-item { width: 460px !important; }
 }
 
+
 @media only screen and (max-width: 515px){
     .timeline-container, .timeline-list, .timeline-item { width: 410px !important; }
+    .less515{display:none !important;}
+    .more515{display: block !important;}
 }
 
 @media only screen and (max-width: 465px){
@@ -313,7 +320,56 @@ body{
             font-size: @basic-font-size;
         }
     }
+
+
+    .sorting_asc:before, .sorting_desc:after {
+        color: @red-color  !important;
+    }
+
+    .dtr-title{
+        display: inline-block;
+        min-width: 75px;
+        font-weight: 400;
+    }
+
+    td.details-control.control{
+        position: relative;
+        cursor: pointer;
+    }
+
+    
+    td.details-control.control:before {
+        top: 50%;
+        left: 50%;
+        height: @font-size-16;
+        width: @font-size-16;
+        margin-top: -10px;
+        margin-left: -10px;
+        display: block;
+        position: absolute;
+        color: white;
+        border: 2px solid @white-color  ;
+        border-radius: @basic-font-size ;
+        box-shadow: 0 0 3px @button-shadow-color;
+        box-sizing: content-box;
+        text-align: center;
+        text-indent: 0 !important;
+        font-family: 'Courier New', Courier, monospace;
+        line-height: @font-size-16;
+        content: '+';
+        background-color: @green-color;
+    }
+
+    .shown{
+        td.details-control.control:before {
+            content: '-';
+            background-color: @red-color;
+        }
+    }
+
+    .more515{display: none;}
 }
+
 .description-member{
     padding: 10px;
     text-align: center;
