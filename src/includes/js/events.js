@@ -183,11 +183,5 @@ $(document).ready(function(){
             });
         });
     })
-    .done(function(){
-        $.getJSON( "dist/includes/json/events.json", function( data ) {
-            $.listEvents = data.data;
-            $.modalImages = "";
-        })
 
-    }); 
 });
