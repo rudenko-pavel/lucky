@@ -238,13 +238,23 @@ body{
 
 @media only screen and (max-width: 576px){
     .timeline-container, .timeline-list, .timeline-item { width: 460px !important; }
+    .less576{display:none !important;}
+    .more576{display: table-cell !important;}
 }
 
+@media only screen and (min-width: 577px){
+    .addInfoShow577{display:none !important;}
+}
 
 @media only screen and (max-width: 515px){
     .timeline-container, .timeline-list, .timeline-item { width: 410px !important; }
     .less515{display:none !important;}
     .more515{display: table-cell !important;}
+    .w-20-percent{width:30% !important;}
+}
+
+@media only screen and (min-width: 516px){
+    .addInfoShow516{display:none !important;}
 }
 
 @media only screen and (max-width: 465px){
@@ -294,6 +304,14 @@ body{
 
 /*********** Data Tables ************/
 .dataTable{
+    
+
+    .w-20-percent{width:20%;}
+    .w-30-percent{width:30%;}
+    .w-40-percent{width:40%;}
+    .w-50-percent{width:50%;}
+    .w-60-percent{width:60%;}
+
     .eventLogo{
         border: 1px solid @box-shadow-color ;
         width: 100%;
@@ -368,6 +386,7 @@ body{
     }
 
     .more515{display: none;}
+    .more576{display: none;}
 }
 
 .description-member{

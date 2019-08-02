@@ -79,8 +79,10 @@ $(document).ready(function(){
                 else {
                     row.child( format(row.data()) ).show();
                     tr.addClass('shown');
+                    $( ".shown" ).next().addClass( "addInfoShow516");
                 }
             } );
+
             function format ( rowData ) {
                 var div = $('<div id="addinfo_'+rowData.memberId+'"/>')
                     .addClass( 'loading' )
@@ -100,44 +102,10 @@ $(document).ready(function(){
                 } );
                 return div;
             }
-
+            
 
         })
 
     })
-    .done(function(){
-        $.getJSON( "dist/includes/json/members.json", function( data ) {
-            $.listMembers = data.data;
-            console.log($.listMembers);
-            $.modalMembersPhoto = "";
-        })
-        .done(function(){
-         /*   $( ".memberPhoto" ).each(function( index ) {
 
-                $.storageImgMembers = "dist/img/members/";
-    
-                var newModalCollection =                   
-                '<div class="modal fade" id="photo'+$.listMembers[index]["memberId"]+'" tabindex="-1" role="dialog" aria-hidden="true">'+
-                    '<div class="modal-dialog" role="document">'+
-                        '<div class="modal-content description-member">'+
-                            '<div class="modal-header">'+
-                                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
-                                    '<span aria-hidden="true">&times;</span>'+
-                                '</button>'+
-                            '</div>'+
-                            '<div class="modal-body"><img src="dist/img/members/'+$.listMembers[index]["memberId"]+'.jpg" alt="" >'+
-                            '</div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>';
-
-             
-                    $.modalMembersPhoto +=newModalCollection;
-
-              });
-              $('#modalMembersPhoto').append($.modalMembersPhoto);
-*/
-
-        })
-    }); 
 });
