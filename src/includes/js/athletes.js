@@ -1,7 +1,8 @@
 $(document).ready(function(){
     $.getScript("dist/includes/js/vendor/jquery.dataTables.min.js",function(){
         $.getScript("dist/includes/js/vendor/dataTables.bootstrap4.min.js",function(){
-
+            
+            $.storageImgMembers = "dist/img/members/";
             var table = $('#listMembers').DataTable( {
                 "ajax": "dist/includes/json/members.json",
                 "oLanguage": {
@@ -23,7 +24,7 @@ $(document).ready(function(){
                         "className": "details-control control more515",
                         "render": function ( data, type, row, meta ) {
                           return type === 'display' ?
-                          '' :
+                          '&nbsp;' :
                             data;
                         }
                     },
@@ -35,9 +36,29 @@ $(document).ready(function(){
                         "targets": 4,
                         "orderable": false,
                         "render": function ( data, type, row, meta ) {
-                          return type === 'display' ?
-                          '<div class="one-event" data-toggle="modal" data-target="#photo'+data+'"><img id="showMemberPhoto'+data+'" data-run-id="'+data+'" src="dist/img/members/'+data+'.jpg" class="memberPhoto" alt="" data-target="#photo'+data+'" data-slide-to="0" /></div>' :
-                            data;
+                            var result;
+                          if (type === 'display'){
+                            result = '<div class="one-event" data-toggle="modal" data-target="#photo'+data+'"><img id="showMemberPhoto'+data+'" data-run-id="'+data+'" src="'+$.storageImgMembers+data+'.jpg" class="memberPhoto" alt="" data-target="#photo'+data+'" data-slide-to="0" /></div>'
+                           
+
+                            var newModalCollection ='<div class="modal fade" id="photo'+data+'" tabindex="-1" role="dialog" aria-hidden="true">'+
+                                '<div class="modal-dialog" role="document">'+
+                                    '<div class="modal-content description-member">'+
+                                        '<div class="modal-header">'+
+                                            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+                                                '<span aria-hidden="true">&times;</span>'+
+                                            '</button>'+
+                                        '</div>'+
+                                        '<div class="modal-body"><img src="'+$.storageImgMembers+data+'.jpg" alt="" >'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                            $('#modalMembersPhoto').append(newModalCollection);
+                        }else{
+                            result = data;   
+                           }
+                            return result;
                         }
                     },
                     {
@@ -91,7 +112,7 @@ $(document).ready(function(){
             $.modalMembersPhoto = "";
         })
         .done(function(){
-            $( ".memberPhoto" ).each(function( index ) {
+         /*   $( ".memberPhoto" ).each(function( index ) {
 
                 $.storageImgMembers = "dist/img/members/";
     
@@ -115,7 +136,7 @@ $(document).ready(function(){
 
               });
               $('#modalMembersPhoto').append($.modalMembersPhoto);
-
+*/
 
         })
     }); 

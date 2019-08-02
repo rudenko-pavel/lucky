@@ -21,3 +21,10 @@ https://jqueryui.com/datepicker/
 
 Data Tables
 https://datatables.net
+    - https://datatables.net/blog/2017-03-31
+    - https://datatables.net/reference/api/row().child()
+    - https://datatables.net/forums/discussion/48428
+    - https://legacy.datatables.net/
+    - https://datatables.net/blog/
+
+    
