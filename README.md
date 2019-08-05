@@ -19,7 +19,7 @@ https://www.jqueryscript.net/animation/Text-Wave-Effect-jQuery.html
 DATEPICKER:
 https://jqueryui.com/datepicker/
 
-Data Tables
+DATA TABLES:
 https://datatables.net
     - https://datatables.net/blog/2017-03-31
     - https://datatables.net/reference/api/row().child()
@@ -27,4 +27,6 @@ https://datatables.net
     - https://legacy.datatables.net/
     - https://datatables.net/blog/
 
-    
+PRELOADER:
+https://dwstroy.ru/video/js-jquery/preloader-progress-bar-js/
+    - add to any page.js - ... $.getScript("dist/includes/js/mypreloader.js"...

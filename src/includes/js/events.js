@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $.getScript("dist/includes/js/vendor/jquery.dataTables.min.js",function(){
         $.getScript("dist/includes/js/vendor/dataTables.bootstrap4.min.js",function(){
-
+ 
             $.storageImg = "dist/img/timeline/";
             var table = $('#listEvents').DataTable( {
                 "ajax": "dist/includes/json/events.json",
@@ -123,8 +123,9 @@ $(document).ready(function(){
                             {
                                 result =  data;
                             }
-                            return result;
+                            return result;            
                         }
+
                     }
                 ]
             })
@@ -164,12 +165,10 @@ $(document).ready(function(){
                 return div;
             }
 
-
-
-
         })
         .done(function(){
             $.getScript("./dist/includes/js/vendor/tooltipster.bundle.min.js",function(){
+                console.log("`tooltipster.js` is loaded");
             }).done(function(){
                     $('.mytooltip').tooltipster({
                         contentCloning: true,
@@ -180,8 +179,15 @@ $(document).ready(function(){
                         },
                         interactive: true
                     });
+                    console.log("`tooltipster.js` is DONE");
+                    $.getScript("dist/includes/js/mypreloader.js",function(){
+                        console.log("`mypreloader.js` is DONE");
             });
+
+                
+              }); 
         });
+
     })
 
 });

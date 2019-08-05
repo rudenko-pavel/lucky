@@ -83,6 +83,12 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
         });
     }
 })
+.done(function(){
+    $.getScript("dist/includes/js/mypreloader.js",function(){
+        console.log("`mypreloader.js` is DONE");
+        
+      }); 
+})
 .always(function(){
 
 });
