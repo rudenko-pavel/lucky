@@ -30,3 +30,6 @@ https://datatables.net
 PRELOADER:
 https://dwstroy.ru/video/js-jquery/preloader-progress-bar-js/
     - add to any page.js - ... $.getScript("dist/includes/js/mypreloader.js"...
+
+EFFECT ON PAGE:
+    - https://trionndesign.com/
