@@ -19,8 +19,11 @@ $.itemsTopMenu = "";
 
 $.getJSON( "dist/includes/json/common.json", function( data ) {
     $.itemsTopMenu = data.topNavigation;
-
+    var locationPort;
+    window.location.port=="" ? locationPort = "/": locationPort= ":"+window.location.port+"/";
+    $.locationPage = window.location.protocol + "//" +window.location.hostname + locationPort;
 }).done(function(){
+
     if ($.topMenu.length==0){
         var newItem = "";
         var endSubmenu = "";
@@ -35,16 +38,16 @@ $.getJSON( "dist/includes/json/common.json", function( data ) {
                 if($.itemsTopMenu[key]["subMenu"]!=0){
                     if ( $.itemsTopMenu[key]["isLast"]==true) endSubmenu = "</div></li>";
                     if (str == $.itemsTopMenu[key]["href"]){
-                        newItem = "<a class='itemMenu butt current-b' href='"+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key]["name"]+"</a>" + endSubmenu;
+                        newItem = "<a class='itemMenu butt current-b' href='"+$.locationPage+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key]["name"]+"</a>" + endSubmenu;
                         $.parentId = "#parent_"+$.itemsTopMenu[key]["subMenu"];
                     }else {
-                        newItem = "<a class='itemMenu butt' href='"+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key]["name"]+"</a>" + endSubmenu;
+                        newItem = "<a class='itemMenu butt' href='"+$.locationPage+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key]["name"]+"</a>" + endSubmenu;
                     }
                 }else{
                     if (str == $.itemsTopMenu[key]["href"] || (str=="" && $.itemsTopMenu[key]["href"]=="?home")){
-                        newItem = "<li><a class='itemMenu butt current-b' href='/"+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
+                        newItem = "<li><a class='itemMenu butt current-b' href='"+$.locationPage+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
                     }
-                    else newItem = "<li><a  class='itemMenu butt' href='/"+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
+                    else newItem = "<li><a  class='itemMenu butt' href='"+$.locationPage+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
                 }
             }
             $.topMenu = $.topMenu +  newItem;

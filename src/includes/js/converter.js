@@ -18,7 +18,10 @@ $.getScript("./dist/includes/js/vendor/datepicker-ru.js",function(){
       dateFormat: "yy-mm-dd",
       changeMonth: true,
       changeYear: true,
-      showAnim: "clip"
+      showAnim: "clip",
+      showButtonPanel: true,
+      showOtherMonths: true,
+      selectOtherMonths: true
     });
 
     $("#datepicker").change(function() {

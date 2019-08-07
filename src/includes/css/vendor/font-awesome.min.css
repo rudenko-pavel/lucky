@@ -14,7 +14,16 @@
    font-variant: normal;
    text-rendering: auto;
    line-height: 1; }
- 
+
+   .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
  .fa-lg {
    font-size: 1.33333em;
    line-height: 0.75em;
@@ -335,6 +344,9 @@
  .fa-archway:before {
    content: "\f557"; }
  
+.fa-long-arrow-up:before{
+    content:"\f176"}
+
  .fa-arrow-alt-circle-down:before {
    content: "\f358"; }
  
