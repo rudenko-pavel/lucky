@@ -1,0 +1,56 @@
+/******* timeline *****************/
+
+.timeline-container             {width:800px;margin:0 auto}
+.timeline-list, .timeline-item  {width:800px;}
+
+.timeline-visual{
+    width: 60%;
+	height: 400px;
+	float: left;
+    border-right: 1px dotted @team-border-color;
+    text-align: center;
+    padding: 2%;
+    
+    img{
+        max-height: 100%;
+        max-width: 100%;
+        cursor: zoom-in;
+    }
+}
+
+.timeline-detail{
+    width: 40%;
+	padding: 2%;
+	float: left;
+    h5,h6{
+	    text-align: center;
+    }
+
+    .niceDate{
+        text-align: center;
+        color: @red-color;
+        padding: 10px 0;
+    }
+    p{font-size: @basic-font-size}
+}
+.timeline.card{
+    border: 0px solid @team-border-color;
+}
+
+.modal-content, body, .timeline-item, .modal-header {
+    background-image: url(/dist/img/nav-bg.png);
+}
+
+
+.timeline{
+    .timeline-dots-wrap.bottom {
+        bottom: 0px;
+        position: relative;
+        padding: 0;
+        margin: 10px;
+    }
+    .timeline-dots-wrap {
+        width: 100%;
+        height: 55px;
+    }
+}

@@ -6,9 +6,6 @@ window.$ = jQuery;
 import 'bootstrap';
 import './styles/styles.less';
 
-
-
-
 /*---- add body-Content to page -------*/
 $(document).ready(function(){
   console.log("1. start");
@@ -27,22 +24,18 @@ $(document).ready(function(){
 
   var jqxhr = $.get( $.newURL, function() {
     console.log("3. get str `"+str+"`");
-  })
-    .done(function() {
-
-
-      $("#bodyContent").load($.newURL,function(){
-        console.log("4. str `"+str+"` loaded");
-        $.getScript("dist/includes/js/"+str+".js",function(){
-          console.log("5. `"+str+".js` is loaded");
-        });
-      })
-
+    $("#bodyContent").load($.newURL,function(){
+      console.log("4. str `"+str+"` loaded");
+      $.getScript("dist/includes/js/"+str+".js",function(){
+        console.log("5. `"+str+".js` is loaded");
+      });
     })
+  })   
     .fail(function() {
       $.newURL = "dist/includes/404.html";
       $("#bodyContent").load($.newURL); 
-      console.log("4. str `", str, "` loaded");
+      $("#preloader").hide();
+      console.log("4. str `404` loaded");
     })
 
 

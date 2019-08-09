@@ -33,3 +33,7 @@ https://dwstroy.ru/video/js-jquery/preloader-progress-bar-js/
 
 EFFECT ON PAGE:
     - https://trionndesign.com/
+
+MDB:
+    - https://mdbootstrap.com
+    - https://jsfiddle.net/danypd69/3upzca6t/

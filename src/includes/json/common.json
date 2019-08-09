@@ -4,6 +4,6 @@
         {"idButton": 2 , "name": "events",      "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?events"},
         {"idButton": 3 , "name": "athletes",    "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?athletes"},
         {"idButton": 4 , "name": "helper",      "isDropdown": 1, "subMenu": 0, "isLast": false,  "href": "#"},
-        {"idButton": 5 , "name": "converter",   "isDropdown": 0, "subMenu": 4, "isLast": true,  "href": "?converter"}
+        {"idButton": 5 , "name": "converting",   "isDropdown": 0, "subMenu": 4, "isLast": true,  "href": "?converting"}
     ]
 }

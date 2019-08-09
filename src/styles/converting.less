@@ -1,0 +1,113 @@
+.converterPage{
+
+    input[type=text]:disabled{
+        color: @team-light-color;
+    }
+
+    .caret{
+        display: block !important;
+        right: 2em !important;
+        bottom: 0.2em !important;
+    }
+
+    input.select-dropdown{height: 2em !important;}
+
+    .dropdown-content{
+        position: fixed !important;
+        top: auto !important;
+        left: auto !important;
+        span{
+            font-size: @basic-font-size;
+            color:  @gray-color;
+            padding: 0.2em 1em;
+
+        }
+    }
+
+    .timestampToDate .row{
+        padding: 10px 0;
+    }
+    .converter-digit{
+        padding: 0.5em 1em 0 !important;
+        width: ~"calc(100% - 2em)";
+    }
+
+    .md-form label{top:0.5em !important}
+    .form-control {
+        font-weight: 400;
+        font-size: @font-size-16 !important;
+    }
+    .md-form input[type=date], .md-form input[type=datetime-local], .md-form input[type=email], .md-form input[type=number], .md-form input[type=password], .md-form input[type=search-md], .md-form input[type=search], .md-form input[type=tel], .md-form input[type=text], .md-form input[type=time], .md-form input[type=url], .md-form textarea.md-textarea {
+        -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        -o-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid #ced4da;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        background-color: transparent;
+    }
+    .md-form .form-control {
+        margin: 0 0 .5rem;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        padding: .6rem 0 .4rem;
+        background-color: transparent;
+        height: auto;
+    }
+    
+    
+    .md-form.form-sm label {
+        font-size: .875rem;
+    }
+    
+    .card .md-form label {
+        font-weight: 300;
+    }
+    
+    .md-form label {
+        position: absolute;
+        top:-0.5em;
+        left: 0;
+        font-size: 1rem;
+        -webkit-transition: color .2s ease-out,-webkit-transform .2s ease-out;
+        -o-transition: transform .2s ease-out,color .2s ease-out;
+        transition: transform .2s ease-out,color .2s ease-out;
+        transition: transform .2s ease-out,color .2s ease-out,-webkit-transform .2s ease-out;
+        -webkit-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        -webkit-transform: translateY(12px);
+        -ms-transform: translateY(12px);
+        transform: translateY(12px);
+        cursor: text;
+        color: #757575;
+    }
+    .md-form label, .md-form label.active {
+        font-size: 1em;
+    }
+
+    .md-form label.active {
+        color: blue;
+        -webkit-transform: translateY(-14px) scale(.8);
+        -ms-transform: translateY(-14px) scale(.8);
+        transform: translateY(-14px) scale(.8);
+    }
+
+    .md-form input[type=date]+label:after, .md-form input[type=datetime-local]+label:after, .md-form input[type=email]+label:after, .md-form input[type=number]+label:after, .md-form input[type=password]+label:after, .md-form input[type=search-md]+label:after, .md-form input[type=search]+label:after, .md-form input[type=tel]+label:after, .md-form input[type=text]+label:after, .md-form input[type=time]+label:after, .md-form input[type=url]+label:after, .md-form textarea.md-textarea+label:after {
+        content: "";
+        position: absolute;
+        top: 65px;
+        display: block;
+        opacity: 0;
+        -webkit-transition: .2s opacity ease-out,.2s color ease-out;
+        -o-transition: .2s opacity ease-out,.2s color ease-out;
+        transition: .2s opacity ease-out,.2s color ease-out;
+    }
+}

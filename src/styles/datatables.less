@@ -1,0 +1,124 @@
+/*********** Data Tables ************/
+.dataTable{
+    .w-20-percent{width:20%;}
+    .w-30-percent{width:30%;}
+    .w-40-percent{width:40%;}
+    .w-50-percent{width:50%;}
+    .w-60-percent{width:60%;}
+
+    .eventLogo{
+        border: 1px solid @box-shadow-color ;
+        width: 100%;
+    }
+
+    .memberPhoto{
+        border: 1px solid @box-shadow-color ;
+        height: 50px;
+    }
+
+    .one-event{
+        cursor: zoom-in;
+        text-align: center
+    }
+
+    .one-descr{
+        padding: 10px 0;
+        font-weight: 700;
+        cursor: pointer;
+        text-align: center;
+
+        .btn{
+            padding: 4px;
+            font-size: @basic-font-size;
+        }
+    }
+
+    .sorting_asc:before, .sorting_desc:after {
+        color: @red-color  !important;
+    }
+
+    .dtr-title{
+        display: inline-block;
+        min-width: 75px;
+        font-weight: 400;
+    }
+
+    td.details-control.control{
+        position: relative;
+        cursor: pointer;
+    }
+
+    
+    td.details-control.control:before {
+        top: 50%;
+        left: 50%;
+        height: @font-size-16;
+        width: @font-size-16;
+        margin-top: -10px;
+        margin-left: -10px;
+        display: block;
+        position: absolute;
+        color: @white-color;
+        border: 2px solid @white-color  ;
+        border-radius: @basic-font-size ;
+        box-shadow: 0 0 3px @button-shadow-color;
+        box-sizing: content-box;
+        text-align: center;
+        text-indent: 0 !important;
+        font-family: 'Courier New', Courier, monospace;
+        line-height: @font-size-16;
+        content: '+';
+        background-color: @green-color;
+    }
+
+    .shown{
+        td.details-control.control:before {
+            content: '-';
+            background-color: @red-color;
+        }
+    }
+
+    .more515{display: none;}
+    .more576{display: none;}
+}
+
+.description-member{
+    padding: 10px;
+    text-align: center;
+    img{
+        width: 70%;
+    }    
+}
+
+.description-event{
+    padding: 10px;
+    text-align: center;
+    img{
+        width: 30%;
+    }
+
+    .modal-body{
+        padding: 0 !important;
+    }
+}
+
+.custom-select-sm{
+    font-size: @font-size-16 !important;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: @team-color  !important;
+    background-color: @team-background-color  !important;
+    border-color: @team-background-color  !important;
+}
+
+
+/************ different resolutions ************/
+@media only screen and (max-width: 991px){
+    .description-member{
+        img{
+            width: 100%;
+        }    
+    }
+}

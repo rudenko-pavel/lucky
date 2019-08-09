@@ -15,7 +15,7 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
                 '<img src="'+$.storageImg+$.runnings[key]["runId"]+'.jpg" alt="" data-target="#carousel'+$.runnings[key]["runId"]+'" data-slide-to="0">'+
             '</div>'+
             '<div class="timeline-detail col-12 col-sm-12 col-md-6">'+
-                '<h6>'+$.runnings[key]["name"]+'</h6>'+
+                '<h5>'+$.runnings[key]["name"]+'</h5>'+
                 '<div class="niceDate">'+$.runnings[key]["runDate"]+'</div>'+
                 '<div>'+$.runnings[key]["descriptions"]+'</div>'+
             '</div>'+
