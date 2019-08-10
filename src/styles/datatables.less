@@ -104,6 +104,8 @@
 
 .custom-select-sm{
     font-size: @font-size-16 !important;
+    width: 70px !important;
+    padding-left: 20px !important;
 }
 
 .page-item.active .page-link {
@@ -112,6 +114,31 @@
     background-color: @team-background-color  !important;
     border-color: @team-background-color  !important;
 }
+
+.dataTables_paginate{
+    .pagination{
+        li{font-size: @basic-font-size;}
+    }
+}
+
+.dataTables_filter{
+    label{
+        input[type=search]{
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            outline: 0;
+            box-shadow: none;
+            border: none;
+            border-bottom: 1px solid #ced4da;
+            border-radius: 0;
+            box-sizing: content-box;
+            background-color: transparent;
+        }
+        input[type=search]:focus {
+            border-bottom: 1px solid @blue-splash-color;
+        }
+    }
+}
+
 
 
 /************ different resolutions ************/
