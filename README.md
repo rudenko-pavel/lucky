@@ -17,7 +17,7 @@ TEXT WAVE:
 https://www.jqueryscript.net/animation/Text-Wave-Effect-jQuery.html
 
 DATEPICKER:
-https://jqueryui.com/datepicker/
+https://mdbootstrap.com/docs/jquery/forms/date-picker/
 
 DATA TABLES:
 https://datatables.net

@@ -1,5 +1,14 @@
 .converterPage{
 
+    .select-wrapper{
+        .select-dropdown:focus{
+            border-bottom: 1px solid @element-focus;
+            box-shadow: 0 1px 0 0 @element-focus;
+            color: @element-focus;
+
+        }
+    }
+
     input[type=text]:disabled{
         color: @team-light-color;
     }
@@ -70,6 +79,12 @@
     .card .md-form label {
         font-weight: 300;
     }
+
+    .card-header{
+        .btn{
+            margin: 0 auto;
+        }
+    }
     
     .md-form label {
         position: absolute;
@@ -91,6 +106,7 @@
     }
     .md-form label, .md-form label.active {
         font-size: 1em;
+        left: 30px;
     }
 
     .md-form label.active {

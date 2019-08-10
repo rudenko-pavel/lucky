@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-header parse alert alert-info" id="headingOne">
                     <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-info btn-block my-4" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             parseInt(2,8,10,16)
                         </button>
                     </h5>
@@ -12,7 +12,7 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         
-                        <form  role="form">
+                        <form role="form">
                             <div class="form-row align-items-center">
                                 <div class="col-sm-5 col-md-5 col-lg-3 col-xl-3 my-1">
                                     <select class="mdb-select converter-digit"  id="first-line" name="first-line">
@@ -25,8 +25,8 @@
 
                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
                                     <div class="md-form form-sm converter-digit">
-                                        <input type="text"class="form-control form-control-sm converter-digit" id="first-digit" />
-                                        <label for="first-digit">Input digit...</label>
+                                        <input type="text"  pattern="\d*" class="form-control form-control-sm" id="first-digit" autocomplete="off"  />
+                                        <label for="first-digit">Input `a-f A-F 0-9`</label>
                                     </div>
                                 </div>
                             </div>
@@ -43,11 +43,10 @@
                                     </div>
         
                                     <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
-
                                         <div class="md-form form-sm converter-digit">
-                                                <input type="text" id="second-digit" class="form-control form-control-sm converter-digit" disabled>
-                                                <label for="second-digit" class="active">After conversion</label>
-                                              </div>
+                                            <input type="text" id="second-digit" class="form-control form-control-sm" disabled>
+                                            <label for="second-digit" class="active">After conversion</label>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -59,7 +58,7 @@
             <div class="card">
                 <div class="card-header parse alert alert-info" id="headingTwo">
                     <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="btn btn-info btn-block my-4" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             timestamp <--> Date()
                         </button>
                     </h5>
@@ -68,32 +67,35 @@
                     <div class="card-body">
                         <div class="container timestampToDate">
                             <div class="row">
-                                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 label-form">
-                                    <label for="datepicker">Дата: </label>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="md-form form-sm converter-digit">
+                                        <input type="text" id="prefill" class="datepicker">
+                                        <label for="prefill" class="full-label">Selected date</label>
+                                    </div>
+                                    <!--label for="datepicker">Дата: </label>
                                 </div>
                                 <div class="col-xs-8 col-sm-4 col-md-4 col-lg-3">
-                                    <input type="text" id="datepicker" class="form-control" />
+                                    <input type="text" id="datepicker" class="form-control" /-->
                                 </div>
-                                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2  label-form">
-                                    <label for="timestamp" class="">timestamp: </label>
-                                </div>
-                                <div class="col-xs-8 col-sm-4 col-md-4 col-lg-3">
-                                    <input type="text" class="form-control" id="timestamp" readonly />
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="md-form form-sm converter-digit">
+                                        <input type="text" id="timestamp" class="form-control form-control-sm" disabled>
+                                        <label for="timestamp" class="active">timestamp:</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2  label-form">
-                                    <label for="timestamp2" class="">timestamp: </label>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="md-form form-sm converter-digit">
+                                        <input type="text"  pattern="\d*" class="form-control form-control-sm" id="timestamp2" autocomplete="off"  />
+                                        <label for="timestamp2">timestamp:</label>
+                                    </div>
                                 </div>
-                                <div class="col-xs-8 col-sm-4 col-md-4 col-lg-3">
-                                    <input type="text" class="form-control" id="timestamp2" />
-                                </div>
-                                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 label-form">
-                                    <label for="humanDate">Дата: </label>
-                                </div>
-                                <div class="col-xs-8 col-sm-4 col-md-4 col-lg-3">
-                                    <input type="text" id="humanDate" class="form-control"  readonly />
-                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="md-form form-sm converter-digit">
+                                        <input type="text" id="humanDate" class="form-control form-control-sm" disabled>
+                                        <label for="humanDate" class="active">Дата:</label>
+                                    </div>
                             </div>
                         </div>
                     </div>
