@@ -1,7 +1,51 @@
 /******* timeline *****************/
 
-.timeline-container             {width:800px;margin:0 auto}
-.timeline-list, .timeline-item  {width:800px;}
+.timeline-container             {
+    width:800px;margin:0 auto;
+    overflow: hidden;
+    height: 550px;
+    .controls-top{
+        text-align: center;
+    }
+    .carousel-inner {
+        height: ~"calc(100% - 6.7em)";
+    }
+    .carousel-indicators {
+        width: 2000px;
+        justify-content: left;
+        margin: 0 !important;
+        bottom: 0;
+        background: url(/dist/img/events/timeline-bg.png) bottom repeat-x;
+        li{
+            position: relative;
+            width: 100px !important;
+            height: 15px !important;
+            border: none;
+            background-color: transparent;
+            padding: 0px !important;
+            background: url(/dist/img/events/date-icon.png) bottom no-repeat;
+            box-shadow: none;
+            margin: 0px;
+
+            &::after, &::before{
+                    display: none;
+            }
+            &.active{
+                color: @blue-splash-color;
+                background-color: transparent;
+                background: url(/dist/img/events/date-icon.png) bottom no-repeat;
+            }
+
+            .inTimeline{
+                position: absolute;
+                left: 550px;
+                bottom: 5px;
+            }
+        }
+    }
+    .timeline-item  {width:800px; height:  100%;}
+}
+
 
 .timeline-visual{
     width: 60%;
@@ -14,7 +58,8 @@
     img{
         max-height: 100%;
         max-width: 100%;
-        cursor: zoom-in;
+        width: auto;
+
     }
 }
 
@@ -32,6 +77,10 @@
         padding: 10px 0;
     }
     p{font-size: @basic-font-size}
+
+    a.btn{
+        color: @white-color !important;
+    }
 }
 .timeline.card{
     border: 0px solid @team-border-color;

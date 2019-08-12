@@ -22,17 +22,19 @@
 </div>
 
 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 main">
-        <div class="custom">
-                <div id="accordion" class="accordion md-accordion accordion-2">
+    <div class="custom">
+        <div id="accordion" class="accordion md-accordion accordion-1" role="tablist">
+
+
                     <div class="card">
-                        <div class="card-header eventtype run alert alert-info" id="headingOne">
+                        <div class="card-header eventtype run alert alert-info" role="tab"  id="headingOne">
                             <h5 class="mb-0">
-                                <button class="btn btn-info btn-block my-4" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <a class="btn btn-info btn-block my-4"  data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     Running
-                                </button>
+                                </a>
                             </h5>
                         </div>
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div id="collapseOne" class="collapse"  role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
                                 <p>Зачем люди бегают? Чтобы скрыться от шума обычной жизни и проветрить голову? Или стать ближе к природе? А, может, чтобы бросить себе вызов и добиться таких вершин, о которых и подумать страшно?</p>
                                 <p>Наступит день, когда, проснувшись в 6.30, вы скажете себе: пора — и будете бежать, не пытаясь себя остановить. Двадцать минут. Хорошо. Двадцать пять? Отлично! Тридцать? Замечательно. Сорок! Потрясающе!</p>
@@ -41,14 +43,14 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-header eventtype legion alert alert-info" id="headingTwo">
+                        <div class="card-header eventtype legion alert alert-info" role="tab"  id="headingTwo">
                             <h5 class="mb-0">
                                 <button class="btn btn-info btn-block my-4" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     I'm LEGION
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"  data-parent="#accordion">
                             <div class="card-body">
                                 <p>Legion Run – это примерно пятикилометровый, ориентированный на команду забег с препятствиями из грязи, огня, льда и колючей проволоки, который проводиться в разных странах по всему миру.</p>
                                 <p>Наши мероприятия – это отличная возможность испытать ваши физические и психологические пределы, и поделиться эпическими моментами с вашими друзьями, сотрудниками или семьей. Это не гонка и это не соревнование против других. Это просто замечательное веселье для взрослых!</p>
@@ -56,7 +58,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-header eventtype racenation alert alert-info" id="headingThree">
+                        <div class="card-header eventtype racenation alert alert-info" role="tab"  id="headingThree">
                             <h5 class="mb-0">
                                 <button class="btn btn-info btn-block my-4" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     Race Nation
@@ -70,14 +72,21 @@
                         </div>
                     </div>
                 </div>                      
-            </div>
+    </div>
 </div>
-
 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main hr">
-    <div class="timeline-container">
-        <div class="timeline timeline-1 js-timeline card" id="actionsContent">
+    <div id="carouselEvents" class="carousel slide carousel-fade timeline-container">
+        <!--Controls-->
+        <div class="controls-top">
+            <a class="btn-floating btn-primary" href="#carouselEvents" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+            <a class="btn-floating btn-primary" href="#carouselEvents" data-slide="next"><i class="fas fa-chevron-right"></i></a>
         </div>
-    </div><!-- /.section-list-box -->
+      <!--/.Controls-->
+        <!-- Indicators -->
+        <ol class="carousel-indicators" id="carousel-indicators"></ol>
+        <!--/.Indicators-->
+        <div class="carousel-inner v-2" role="listbox" id="listbox-events"></div>
+    </div>
     <div id="modalSegment"></div>
 
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 empty-row"></div>
