@@ -7,7 +7,6 @@ $(document).ready(function () {
         imgSum       = 5, // количество картинок
         loadedImg    = 0; // счетчик загрузки картинок
 
-
     console.log("count of images: ",imagesCount);
 
     if (imagesCount >= imgSum && imagesCount > 0) {
@@ -44,6 +43,4 @@ $(document).ready(function () {
     } else {
         preloader.remove();
     }
-
-
 });

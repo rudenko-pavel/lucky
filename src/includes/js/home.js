@@ -26,7 +26,7 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
                         "<a class='btn btn-info btn-block my-4'>Подробнее</a>"+
                     "</div>"+
                 "</div>";
-            newIndicator ="<li data-target='#carouselEvents' data-slide-to='"+key+"' class='btn "+addClass+"'><div class='inTimeline'>"+$.runnings[key]["runDate"]+"</div></li>";
+            newIndicator ="<li data-target='#carouselEvents' data-slide-to='"+key+"' class='btn ind"+addClass+"'><div class='inTimeline'>"+$.runnings[key]["runDate"]+"</div></li>";
                 $.runItems = $.runItems + newItem;
                 $.newIndicator = $.newIndicator + newIndicator;
         });
@@ -86,18 +86,23 @@ $.repeatCount = 0;
     $('.carousel').carousel({
         interval: 0,
         touch: true,
-        ride: false
+        ride: true
     })
     
     $.maxWidth = $( "#carouselEvents" ).width();
     $.positionLeft = $.maxWidth/2;   
-    console.log("0 maxWidth",$.maxWidth);     
-    console.log("$.positionLeft",$.positionLeft+"px");
     $( "#carousel-indicators" ).css("left",$.positionLeft+"px");
 
+    /***** action after change current slide *****/
     $("#carouselEvents").bind("slid.bs.carousel",function(){
-    
-        console.log("maxWidth",$.maxWidth);
+        var flagCurrIndicator = $( ".carousel-item.active" ).data("currid");
+        console.log("flagCurrIndicator",flagCurrIndicator);
+        $( ".btn.ind" ).removeClass(function() {
+            $( this ).data("slide-to") == flagCurrIndicator ? $( this ).addClass( "active" ) : $( this ).removeClass( "active" );
+
+          });
+
+
         $.positionLeft = $.maxWidth/2 + 50 - ($( ".carousel-item.active" ).data("currid")+1)*106;   
         var newValue = $.positionLeft+"px";
         

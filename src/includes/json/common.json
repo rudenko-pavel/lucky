@@ -5,5 +5,12 @@
         {"idButton": 3 , "name": "athletes",    "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?athletes"},
         {"idButton": 4 , "name": "helper",      "isDropdown": 1, "subMenu": 0, "isLast": false,  "href": "#"},
         {"idButton": 5 , "name": "converting",   "isDropdown": 0, "subMenu": 4, "isLast": true,  "href": "?converting"}
+    ],
+    "athletNamesOptions":[
+        {"idParam": 1,  "idName": "memberId",       "isView": true,     "en":"#",           "ua":"#"                },
+        {"idParam": 2,  "idName": "memberName",     "isView": true,     "en":"name",        "ua":"ім'я"             },
+        {"idParam": 3,  "idName": "surname",        "isView": false,    "en":"surname",     "ua":"прізвище"         },
+        {"idParam": 4,  "idName": "nick",           "isView": true,     "en":"nick",        "ua":"прізвисько"       },
+        {"idParam": 5,  "idName": "dateJoin",       "isView": true,     "en":"date of join","ua":"дата приєднання"  }
     ]
 }

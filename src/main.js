@@ -18,16 +18,16 @@ $(document).ready(function(){
     console.log("2. add top menu");
   });
 
-  var str = window.location.search.substring(1);
-  if (str =="") str="home";
-  $.newURL = "dist/includes/"+ str + ".html";
+  var str = window.location.search.substring(1).split(":");
+  if (str[0] =="") str[0]="home";
+  $.newURL = "dist/includes/"+ str[0] + ".html";
 
   var jqxhr = $.get( $.newURL, function() {
-    console.log("3. get str `"+str+"`");
+    console.log("3. get str `"+str[0]+"`");
     $("#bodyContent").load($.newURL,function(){
       console.log("4. str `"+str+"` loaded");
-      $.getScript("dist/includes/js/"+str+".js",function(){
-        console.log("5. `"+str+".js` is loaded");
+      $.getScript("dist/includes/js/"+str[0]+".js",function(){
+        console.log("5. `"+str[0]+".js` is loaded");
       });
     })
   })   
@@ -39,12 +39,8 @@ $(document).ready(function(){
     })
 
 
-        /*---------------------------
-        SMOOTH SCROLL
-    -----------------------------*/
-/******************************
-      BOTTOM SCROLL TOP BUTTON
-   ******************************/
+/*--------------  SMOOTH SCROLL ----------------*/
+/*********  BOTTOM SCROLL TOP BUTTON *************/
 
   // declare variable
   var scrollTop = $(".scrollTop");
@@ -54,12 +50,8 @@ $(document).ready(function(){
     var topPos = $(this).scrollTop();
 
     // if user scrolls down - show scroll to top button
-    if (topPos > 100) {
-      $(scrollTop).css("opacity", "1");
-
-    } else {
-      $(scrollTop).css("opacity", "0");
-    }
+    if (topPos > 100) { $(scrollTop).css("opacity", "1");} else {
+                        $(scrollTop).css("opacity", "0");  }
 
   }); // scroll END
 
@@ -70,5 +62,5 @@ $(document).ready(function(){
     }, 800);
     return false;
 
-  }); // click() scroll top EMD
+  }); // click() scroll top END
 });

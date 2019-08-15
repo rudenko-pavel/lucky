@@ -1,15 +1,99 @@
 /******* timeline *****************/
 
-.timeline-container             {
-    width:800px;margin:0 auto;
-    overflow: hidden;
-    height: 550px;
+.timeline-container {
+    width:800px;
+    margin:0 auto;
+    height: auto;
+    min-height: @min-height-card;
+
     .controls-top{
         text-align: center;
     }
+
     .carousel-inner {
-        height: ~"calc(100% - 6.7em)";
+            height: auto;
     }
+    .timeline-item  {
+        width: 800px; 
+        height:  100%; 
+        min-height: @min-height-card;
+
+        .timeline-visual{
+            width: 60%;
+            min-height: @min-height-card !important;
+            float: left;
+            border-right: 1px dotted @box-shadow-color;
+            text-align: center;
+            padding: 2%;
+            
+            img{
+                max-height: 100%;
+                max-width: 100%;
+                width: auto;
+        
+            }
+        }
+        
+        .timeline-detail{
+            width: 50%;
+            padding: 2%;
+            float: left;
+            h5,h6{
+                text-align: center;
+            }
+        
+            .niceDate{
+                text-align: center;
+                color: @red-color;
+                padding: 10px 0;
+            }
+            p{font-size: @basic-font-size}
+        
+            a.btn{
+                color: @white-color !important;
+            }
+        }
+    
+    }
+
+}
+
+/********* athlet start ********/
+.info-athlet{
+    tr td:first-child{ text-align: right}
+}
+/********* athlet end ********/
+
+.member-info {
+    .timeline-item {
+        float: none;
+        margin: 0 auto;
+        min-height: @min-height-card;
+    }
+}
+
+.timeline-container.member-info{
+    min-height: auto;
+    max-height: @min-height-card;
+
+    .timeline-visual{
+        min-height: auto !important;
+        max-height: @min-height-card;
+
+        .memberPhoto{
+            height: fit-content;
+        }
+    }
+}
+
+/*********** HOME-page CAROUSEL - start**********/
+.wrapper-ol{
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    width: 90%;
+    margin: 0 auto;
+
     .carousel-indicators {
         width: 2000px;
         justify-content: left;
@@ -43,45 +127,10 @@
             }
         }
     }
-    .timeline-item  {width:800px; height:  100%;}
 }
+/*********** HOME-page CAROUSEL - end **********/
 
 
-.timeline-visual{
-    width: 60%;
-	height: 400px;
-	float: left;
-    border-right: 1px dotted @team-border-color;
-    text-align: center;
-    padding: 2%;
-    
-    img{
-        max-height: 100%;
-        max-width: 100%;
-        width: auto;
-
-    }
-}
-
-.timeline-detail{
-    width: 40%;
-	padding: 2%;
-	float: left;
-    h5,h6{
-	    text-align: center;
-    }
-
-    .niceDate{
-        text-align: center;
-        color: @red-color;
-        padding: 10px 0;
-    }
-    p{font-size: @basic-font-size}
-
-    a.btn{
-        color: @white-color !important;
-    }
-}
 .timeline.card{
     border: 0px solid @team-border-color;
 }

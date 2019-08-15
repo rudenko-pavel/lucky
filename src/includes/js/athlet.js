@@ -1,0 +1,81 @@
+$(document).ready(function(){
+    $.getScript("dist/includes/js/common.js",function(){
+        $.getScript("dist/includes/js/vendor/jquery.dataTables.min.js",function(){
+            $.getScript("dist/includes/js/vendor/dataTables.bootstrap4.min.js",function(){
+                // initialisation vars
+                $.memberId = "";
+                $.memberPhoto = "";
+                $.memberInfo={};
+                $.fullInfo={};
+                $.pathToImg = "dist/img/members/";
+                $.flagIsMember = false;
+
+                // get all athletes data from *.JSON
+                $.getJSON( "dist/includes/json/members.json", function( data ) {
+                    $.fullInfo = data.data;
+
+                    var str = window.location.search.substring(1).split(":"); // get number athlet's from url e.g. athlet:3
+                    $.memberId = parseInt (str[1]);
+                    $.each( $.fullInfo, function(key) {
+                        if ($.fullInfo[key]["memberId"] == $.memberId){
+                            $.memberInfo = Object.assign({}, $.fullInfo[key]); // clone object with current athlet info
+                            $.flagIsMember = true;
+                            return false; 
+                        };
+                    });
+                    
+                }).done(function(){
+                    $.getJSON( "dist/includes/json/common.json", function( data ) { //get fields names for vew on page
+                        $.commonData = data.athletNamesOptions;
+                        console.log("$.commonData",$.commonData,$.memberInfo);
+                    }).done(function(){
+                        if ($.flagIsMember){    // id-athlet is in JSON
+                            $.memberPhoto = "<img class='card-img-top' src='"+$.pathToImg+$.memberId+".jpg' />";
+                            $("#memberPhoto").prepend($.memberPhoto);
+                            var fl=0;
+
+                            $.each( $.memberInfo, function(key, value) {
+
+                                var nameField="";
+                                var flagView = false;
+                                $.each( $.commonData, function(key2) {
+                                    if (key == $.commonData[key2]["idName"]){
+                                        if ($.commonData[key2]["isView"] == true){
+                                            flagView = true;
+                                            nameField = $.commonData[key2][$.elephantLanguage];
+                                            fl++;
+                                        }
+                                        return false;
+                                    }
+                                })
+
+                                if (flagView == true){
+                                    var addClass;
+                                    fl%2!=0 ? addClass="bg-success" : addClass="bg-warning"; 
+                                    var dataInfo = '<tr class="'+addClass+'"><td>'+nameField + '</td><td>'+ value + '</td></tr>';
+                                    $("#memberInfo").append(dataInfo);
+                                }
+                            });
+
+
+
+                            
+                        }else{
+                            $.newURL = "dist/includes/404.html";
+                            $("#bodyContent").load($.newURL); 
+                            $("#preloader").hide();
+                            console.log("4. str `404` loaded");
+                        }
+                    })
+                });
+            })
+            .done(function(){
+                /************** necessary scripts **************/
+                $.getScript("dist/includes/js/mypreloader.js",function(){
+                    console.log("`mypreloader.js` is DONE");
+                });
+            });
+        });
+    });    
+})
+        

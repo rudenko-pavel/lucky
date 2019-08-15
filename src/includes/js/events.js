@@ -2,7 +2,7 @@ $(document).ready(function(){
     $.getScript("dist/includes/js/vendor/jquery.dataTables.min.js",function(){
         $.getScript("dist/includes/js/vendor/dataTables.bootstrap4.min.js",function(){
  
-            $.storageImg = "dist/img/timeline/";
+            $.storageImg = "dist/img/events/";
             var table = $('#listEvents').DataTable( {
                 "ajax": "dist/includes/json/events.json",
                 "oLanguage": {
