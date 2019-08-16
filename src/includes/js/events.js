@@ -2,47 +2,56 @@ $(document).ready(function(){
     $.getScript("dist/includes/js/vendor/jquery.dataTables.min.js",function(){
         $.getScript("dist/includes/js/vendor/dataTables.bootstrap4.min.js",function(){
  
-            $.storageImg = "dist/img/events/";
+            $.storageImg = "dist/img/logoevents/";
             var table = $('#listEvents').DataTable( {
                 "ajax": "dist/includes/json/events.json",
                 "oLanguage": {
                     "sUrl": "dist/includes/json/dataTables.russian.txt"
                 },
-                "order": [[ 1, 'asc' ]],
+                "order": [[ 0, 'asc' ]],
                 "columns": [
-                    { "data": null},
                     { "data": "runDate"},
                     { "data": "runId"},
                     { "data": "name" },
-                    { "data": "descriptions" }
+                    { "data": "runId" }
                 ],
                 "columnDefs": [
                     {
-                        "targets": 0,
-                        "orderable": false,
-                        "className": "details-control control more576",
-                        "render": function ( data, type, row, meta ) {
-                          return type === 'display' ?
-                          '&nbsp;' :
-                            data;
-                        }
+                        "targets": 0, 
+                        "className": "text-middle",
                     },
                     {
                         "targets": 1,
-                        "className": "w-20-percent"
-                    },
-                    {
-                        "targets": 2,
                         "orderable": false,
-                        "className": "w-20-percent less576",
+                        "className": "text-middle",
                         "render": function ( data, type, row, meta ) {
-                          return type === 'display' ?
-                            '<div class="one-event" data-toggle="modal" data-target="#carousel'+data+'"><img id="showEvent'+data+'" data-run-id="'+data+'" src="dist/img/logoevents/'+data+'.png" class="eventLogo" alt="" data-target="#carousel'+data+'" data-slide-to="0" /></div>' :
-                            data;
+                            var result;
+                            if (type === 'display'){
+                                result = '<div class="one-event" data-toggle="modal" data-target="#photo'+data+'"><img id="showEvent'+data+'" data-run-id="'+data+'" src="'+$.storageImg+data+'.png" class="eventLogo" alt="" data-target="#photo'+data+'" data-slide-to="0" /></div>';
+
+                                var newModalCollection ='<div class="modal fade" id="photo'+data+'" tabindex="-1" role="dialog" aria-hidden="true">'+
+                                    '<div class="modal-dialog" role="document">'+
+                                        '<div class="modal-content description-member">'+
+                                            '<div class="modal-header">'+
+                                                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+                                                    '<span aria-hidden="true">&times;</span>'+
+                                                '</button>'+
+                                            '</div>'+
+                                            '<div class="modal-body"><img src="'+$.storageImg+data+'.png" alt="" >'+
+                                            '</div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>';
+                                $('#modalSegment').append(newModalCollection);
+                            }else{
+                                result = data;   
+                            }
+                                return result;
                         }
                     },
                     {
-                        "targets": 3,
+                        "targets": 2,
+                        "className": "text-middle",
                         "render": function ( data, type, row, meta ) {
                           return type === 'display' ?
                             '<div class="one-descr">'+data+'</div>' :
@@ -50,80 +59,17 @@ $(document).ready(function(){
                         }
                     },
                     {
-                        "targets": 4,
+                        "targets": 3, 
                         "orderable": false,
-                        "className": "less576",
+                        "className": "text-middle",
                         "render": function ( data, type, row, meta ) {
                             var result;
-                            if ( type === 'display'){
-                                result = '<div class="one-descr" data-toggle="modal" data-target="#description'+row.runId+'"><span class="btn btn-outline-info" data-target="#description'+row.runId+'">Описание</span></div>' 
-                            
-
-                                var newModalDescriptions ='<div class="modal fade" id="description'+row.runId+'" tabindex="-1" role="dialog" aria-hidden="true">'+
-                                '<div class="modal-dialog" role="document">'+
-                                    '<div class="modal-content description-event">'+
-                                        '<div class="modal-header">'+
-                                            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
-                                                '<span aria-hidden="true">&times;</span>'+
-                                            '</button>'+
-                                        '</div>'+
-                                        '<div class="modal-body"><img src="dist/img/team.png" alt="" >'+data +
-                                        '</div>'+
-                                    '</div>'+
-                                '</div>'+
-                            '</div>';
-                                $('#modalDescriptions').append(newModalDescriptions);
-                            
-
-
-
-    
-                                var newModalCollectionStart ='<div class="modal fade" id="carousel'+row.runId+'" tabindex="-1" role="dialog" aria-hidden="true">'+
-                                '<div class="modal-dialog" role="document">'+
-                                    '<div class="modal-content">'+
-                                        '<div class="modal-header">'+
-                                            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
-                                                '<span aria-hidden="true">&times;</span>'+
-                                            '</button>'+
-                                        '</div>'+
-                                        '<div class="modal-body">'+        
-                                            '<div id="images_'+row.runId+'" class="carousel slide" data-ride="carousel">'+
-                                                '<div class="carousel-inner">';
-                
-                                var newModalCollectionMiddle = "";
-                                for (i=1;i<=row.countImages; i++){
-                                    var addClass = "";
-                                    if (i==1) addClass=" active"; else addClass = ""
-                                    newModalCollectionMiddle += '<div class="carousel-item'+addClass+'">'+
-                                                            '<img class="d-block w-100" src="'+$.storageImg+row.runId+'/'+i+'.jpg">'+
-                                                        '</div>';
-                                }
-                
-                                var newModalCollectionEnd ='</div>'+ 
-                                                    '<a class="carousel-control-prev" href="#images_'+row.runId+'" role="button" data-slide="prev">'+
-                                                        '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'+
-                                                        '<span class="sr-only">Previous</span>'+
-                                                    '</a>'+
-                                                    '<a class="carousel-control-next" href="#images_'+row.runId+'" role="button" data-slide="next">'+
-                                                        '<span class="carousel-control-next-icon" aria-hidden="true"></span>'+
-                                                        '<span class="sr-only">Next</span>'+
-                                                    '</a>'+       
-                                                '</div>'+
-                                            '</div>'+
-                                        '</div>'+
-                                    '</div>'+
-                                '</div>';
-            
-                
-                                var newModalCollection = newModalCollectionStart + newModalCollectionMiddle + newModalCollectionEnd;
-
-                                $('#modalSegment').append(newModalCollection);    
-
-                            }else
-                            {
-                                result =  data;
+                            if (type === 'display'){
+                                result = '<a href="'+$.locationPage+'?event:'+data+'" class="btn btn-sm btn-outline-info">Подробнее</a>';
+                            }else{
+                                result = data;   
                             }
-                            return result;            
+                            return result;
                         }
 
                     }

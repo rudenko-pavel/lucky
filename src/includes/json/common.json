@@ -1,10 +1,10 @@
 {
     "topNavigation":[
-        {"idButton": 1 , "name": "home",        "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?home"},
-        {"idButton": 2 , "name": "events",      "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?events"},
-        {"idButton": 3 , "name": "athletes",    "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?athletes"},
-        {"idButton": 4 , "name": "helper",      "isDropdown": 1, "subMenu": 0, "isLast": false,  "href": "#"},
-        {"idButton": 5 , "name": "converting",   "isDropdown": 0, "subMenu": 4, "isLast": true,  "href": "?converting"}
+        {"idButton": 1 , "en": "home",      "ua": "начало",       "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?home"},
+        {"idButton": 2 , "en": "events",    "ua": "події",        "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?events"},
+        {"idButton": 3 , "en": "athletes",  "ua": "спорсмени",    "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?athletes"},
+        {"idButton": 4 , "en": "helper",    "ua": "помічник",     "isDropdown": 1, "subMenu": 0, "isLast": false,  "href": "#"},
+        {"idButton": 5 , "en": "converting","ua": "перетворення", "isDropdown": 0, "subMenu": 4, "isLast": true,  "href": "?converting"}
     ],
     "athletNamesOptions":[
         {"idParam": 1,  "idName": "memberId",       "isView": true,     "en":"#",           "ua":"#"                },

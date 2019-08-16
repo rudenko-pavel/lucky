@@ -1,22 +1,36 @@
-.modal-dialog {
-    max-width: 700px !important;
+.modal {
+    background-color: rgba(0,0,0,0.85);
+    .modal-dialog {
+        max-width: 600px !important;
 
-    .modal-content{
-        background-repeat: repeat;
-        background-size: contain;
-        background-image: url(/dist/img/nav-bg.png);
+        .modal-content{
+            background-color: transparent;
 
-        .modal-body {
-            padding: 2rem !important;
-        }
+            .modal-header {
+                border-bottom: 0px solid #e9ecef;
 
-        .timeline-item, .modal-header{
-            background-image: url(/dist/img/nav-bg.png);
+                .close {
+                    font-size: 3em;
+                    color: @white-color;
+                    text-shadow: 0 1px 0 @white-color;
+                }
+            }
 
-            .niceDate{
-                text-align: center;
-                color: @red-color;
-                padding: 10px 0;
+            .modal-body {
+                padding: 0 !important;
+            }
+
+            button:focus {
+                background-color: transparent;
+            }
+
+            .timeline-item, .modal-header{
+                background-color: transparent;
+                .niceDate{
+                    text-align: center;
+                    color: @red-color;
+                    padding: 10px 0;
+                }
             }
         }
     }

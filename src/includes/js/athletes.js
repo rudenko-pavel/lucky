@@ -46,7 +46,6 @@ $(document).ready(function(){
                                 var result;
                             if (type === 'display'){
                                 result = '<div class="one-event" data-toggle="modal" data-target="#photo'+data+'"><img id="showMemberPhoto'+data+'" data-run-id="'+data+'" src="'+$.storageImgMembers+data+'.jpg" class="memberPhoto" alt="" data-target="#photo'+data+'" data-slide-to="0" /></div>'
-                            
 
                                 var newModalCollection ='<div class="modal fade" id="photo'+data+'" tabindex="-1" role="dialog" aria-hidden="true">'+
                                     '<div class="modal-dialog" role="document">'+

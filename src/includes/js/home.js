@@ -16,7 +16,7 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
             if (key==0) addClass=" active";
             newItem=
                 "<div data-currid='"+key+"' class='timeline-item item"+addClass+"'>"+
-                    "<div class='timeline-visual col-12 col-sm-12 col-md-6'>"+
+                    "<div class='timeline-visual col-12 col-sm-12 col-md-6' data-toggle='modal' data-target='#photo"+key+"'>"+
                         "<img class='card-img-top' src='"+$.storageImg+$.runnings[key]["runId"]+".jpg' alt='"+$.runnings[key]["name"]+"'>"+
                     "</div>"+
                     "<div class='card-body timeline-detail col-12 col-sm-12 col-md-6'>"+
@@ -29,6 +29,21 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
             newIndicator ="<li data-target='#carouselEvents' data-slide-to='"+key+"' class='btn ind"+addClass+"'><div class='inTimeline'>"+$.runnings[key]["runDate"]+"</div></li>";
                 $.runItems = $.runItems + newItem;
                 $.newIndicator = $.newIndicator + newIndicator;
+
+                var newModalCollection ='<div class="modal fade" id="photo'+key+'" tabindex="-1" role="dialog" aria-hidden="true">'+
+                    '<div class="modal-dialog" role="document">'+
+                        '<div class="modal-content description-member">'+
+                            '<div class="modal-header">'+
+                                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+                                    '<span aria-hidden="true">&times;</span>'+
+                                '</button>'+
+                            '</div>'+
+                            '<div class="modal-body"><img src="'+$.storageImg+$.runnings[key]["runId"]+'.jpg" alt="" >'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>';
+                $('#modalSegment').append(newModalCollection);
         });
         $("#listbox-events").prepend($.runItems);
         $("#carousel-indicators").prepend($.newIndicator);

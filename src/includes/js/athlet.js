@@ -30,7 +30,23 @@ $(document).ready(function(){
                         console.log("$.commonData",$.commonData,$.memberInfo);
                     }).done(function(){
                         if ($.flagIsMember){    // id-athlet is in JSON
-                            $.memberPhoto = "<img class='card-img-top' src='"+$.pathToImg+$.memberId+".jpg' />";
+                            $.memberPhoto = "<img class='card-img-top' src='"+$.pathToImg+$.memberId+".jpg' data-toggle='modal' data-target='#photo"+$.memberId+"' />";
+                            
+                            var newModalCollection ='<div class="modal fade" id="photo'+$.memberId+'" tabindex="-1" role="dialog" aria-hidden="true">'+
+                            '<div class="modal-dialog" role="document">'+
+                                '<div class="modal-content description-member">'+
+                                    '<div class="modal-header">'+
+                                        '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+                                            '<span aria-hidden="true">&times;</span>'+
+                                        '</button>'+
+                                    '</div>'+
+                                    '<div class="modal-body"><img src="'+$.pathToImg+$.memberId+'.jpg" alt="" >'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                        $('#modalSegment').append(newModalCollection);
+
                             $("#memberPhoto").prepend($.memberPhoto);
                             var fl=0;
 

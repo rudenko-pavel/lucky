@@ -48,22 +48,22 @@ $.getJSON( "dist/includes/json/common.json", function( data ) {
             var str = window.location.search.substring(0);
             if ($.itemsTopMenu[key]["isDropdown"]==1){
                 newItem = "<li class='dropdown'>"+
-                            "<a class='btn btn-outline-success' id='parent_"+$.itemsTopMenu[key]["idButton"]+"'  href='#' data-toggle='dropdown'>"+ $.itemsTopMenu[key]["name"] +"&nbsp;&nbsp;<i class='fas fa-angle-down'></i></a>"+
+                            "<a class='btn btn-outline-success' id='parent_"+$.itemsTopMenu[key]["idButton"]+"'  href='#' data-toggle='dropdown'>"+ $.itemsTopMenu[key][$.elephantLanguage] +"&nbsp;&nbsp;<i class='fas fa-angle-down'></i></a>"+
                             "<div class='dropdown-menu'>";
             } else {
                 if($.itemsTopMenu[key]["subMenu"]!=0){
                     if ( $.itemsTopMenu[key]["isLast"]==true) endSubmenu = "</div></li>";
                     if (str == $.itemsTopMenu[key]["href"]){
-                        newItem = "<a class='btn btn-success' href='"+$.locationPage+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key]["name"]+"</a>" + endSubmenu;
+                        newItem = "<a class='btn btn-success' href='"+$.locationPage+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key][$.elephantLanguage]+"</a>" + endSubmenu;
                         $.parentId = "#parent_"+$.itemsTopMenu[key]["subMenu"];
                     }else {
-                        newItem = "<a class='btn btn-outline-success' href='"+$.locationPage+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key]["name"]+"</a>" + endSubmenu;
+                        newItem = "<a class='btn btn-outline-success' href='"+$.locationPage+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key][$.elephantLanguage]+"</a>" + endSubmenu;
                     }
                 }else{
                     if (str == $.itemsTopMenu[key]["href"] || (str=="" && $.itemsTopMenu[key]["href"]=="?home")){
-                        newItem = "<li><a class='btn btn-success' href='"+$.locationPage+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
+                        newItem = "<li><a class='btn btn-success' href='"+$.locationPage+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key][$.elephantLanguage]+"</a></li>";
                     }
-                    else newItem = "<li><a  class='btn btn-outline-success' href='"+$.locationPage+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key]["name"]+"</a></li>";
+                    else newItem = "<li><a  class='btn btn-outline-success' href='"+$.locationPage+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key][$.elephantLanguage]+"</a></li>";
                 }
             }
             $.topMenu = $.topMenu +  newItem;
