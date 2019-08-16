@@ -11,6 +11,22 @@ $.getScript("./dist/includes/js/vendor/jquery.textwave.js",function(){
 
    $(document).ready(function(){
        setInterval(runEffectHead,15000);
+       $.elephantLanguage = localStorage.getItem('elLang');
+       $.getScript("dist/includes/js/common.js",function(){
+            /******* change language *********/
+            $("#current-lang").on("click", function(){
+                localStorage.getItem('elLang') =="en" ? (
+                    $(this).toggleClass('en'),
+                    localStorage.setItem('elLang','ua')
+                    
+                    ) : 
+                    (
+                        $(this).toggleClass('en'),
+                        localStorage.setItem('elLang','en')
+                    )
+                location.reload();
+            })
+        });
    });
 
 /********top Menu ******/

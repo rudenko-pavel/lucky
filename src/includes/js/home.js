@@ -15,7 +15,7 @@ $.getJSON( "dist/includes/json/events.json", function( data ) {
             var addClass="";
             if (key==0) addClass=" active";
             newItem=
-                "<div data-currid='"+key+"' class='timeline-item carousel-item"+addClass+"'>"+
+                "<div data-currid='"+key+"' class='timeline-item item"+addClass+"'>"+
                     "<div class='timeline-visual col-12 col-sm-12 col-md-6'>"+
                         "<img class='card-img-top' src='"+$.storageImg+$.runnings[key]["runId"]+".jpg' alt='"+$.runnings[key]["name"]+"'>"+
                     "</div>"+
@@ -94,8 +94,8 @@ $.repeatCount = 0;
     $( "#carousel-indicators" ).css("left",$.positionLeft+"px");
 
     /***** action after change current slide *****/
-    $("#carouselEvents").bind("slid.bs.carousel",function(){
-        var flagCurrIndicator = $( ".carousel-item.active" ).data("currid");
+    $("#carouselEvents").on('slid.bs.carousel', function (){
+        var flagCurrIndicator = $( ".item.active" ).data("currid");
         console.log("flagCurrIndicator",flagCurrIndicator);
         $( ".btn.ind" ).removeClass(function() {
             $( this ).data("slide-to") == flagCurrIndicator ? $( this ).addClass( "active" ) : $( this ).removeClass( "active" );
@@ -103,7 +103,7 @@ $.repeatCount = 0;
           });
 
 
-        $.positionLeft = $.maxWidth/2 + 50 - ($( ".carousel-item.active" ).data("currid")+1)*106;   
+        $.positionLeft = $.maxWidth/2 + 50 - ($( ".item.active" ).data("currid")+1)*106;   
         var newValue = $.positionLeft+"px";
         
         var left = $('#carousel-indicators').left;

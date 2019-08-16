@@ -1,0 +1,79 @@
+.language {
+    display: table;
+    cursor: pointer;
+    input {
+        display: none;
+        & + div {
+            position: absolute;
+            right: 70px;
+            top: 10px;
+            overflow: hidden;
+            background-image: url(/dist/img/flags/ua.png);
+            background-size: cover;
+            border-radius: 50%;
+            padding: 28px;
+            transition: transform .4s ease;
+            &:before {
+                content: '';
+                width: 4px;
+                height: 14px;
+                border-radius: 2px;
+                background: transparent;
+                position: absolute;
+                left: 50%;
+                z-index: 2;
+                margin: 0 0 0 -2px;
+                top: 18px;
+                opacity: 1;
+                transform: scaleY(1) translate(0, 2px);
+                transition: opacity .4s ease .1s, transform .9s ease .4s;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background-image: url(/dist/img/flags/en.png);
+                background-size: cover;
+                transform: translate(100%, 100%);
+                transform-origin: right bottom;
+                transition: transform .8s ease;
+            }
+            &:active {
+                transform: scale(.96);
+            }
+        }
+        & + div.en {
+
+            &:before {
+                transform: scaleY(0) translate(0, 7px);
+                transition: opacity .4s ease .0s, transform .6s ease .3s;
+            }
+            &:after {
+                transform: translate(0%, 0%);
+            }
+        }
+    }
+}
+
+// Center & dribbble
+body {
+    .dribbble {
+        position: fixed;
+        display: block;
+        right: 20px;
+        bottom: 20px;
+        opacity: .5;
+        transition: all .4s ease;
+        &:hover {
+            opacity: 1;
+        }
+        img {
+            display: block;
+            height: 36px;
+        }
+    }
+}

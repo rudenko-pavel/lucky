@@ -5818,7 +5818,7 @@
     overflow: hidden;
   }
   
-  .carousel-item {
+  .item {
     position: relative;
     display: none;
     -ms-flex-align: center;
@@ -5830,9 +5830,9 @@
     perspective: 1000px;
   }
   
-  .carousel-item.active,
-  .carousel-item-next,
-  .carousel-item-prev {
+  .item.active,
+  .item-next,
+  .item-prev {
     display: block;
     transition: -webkit-transform 0.6s ease;
     transition: transform 0.6s ease;
@@ -5840,93 +5840,93 @@
   }
   
   @media screen and (prefers-reduced-motion: reduce) {
-    .carousel-item.active,
-    .carousel-item-next,
-    .carousel-item-prev {
+    .item.active,
+    .item-next,
+    .item-prev {
       transition: none;
     }
   }
   
-  .carousel-item-next,
-  .carousel-item-prev {
+  .item-next,
+  .item-prev {
     position: absolute;
     top: 0;
   }
   
-  .carousel-item-next.carousel-item-left,
-  .carousel-item-prev.carousel-item-right {
+  .item-next.item-left,
+  .item-prev.item-right {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
   
   @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
-    .carousel-item-next.carousel-item-left,
-    .carousel-item-prev.carousel-item-right {
+    .item-next.item-left,
+    .item-prev.item-right {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
     }
   }
   
-  .carousel-item-next,
-  .active.carousel-item-right {
+  .item-next,
+  .active.item-right {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
   }
   
   @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
-    .carousel-item-next,
-    .active.carousel-item-right {
+    .item-next,
+    .active.item-right {
       -webkit-transform: translate3d(100%, 0, 0);
       transform: translate3d(100%, 0, 0);
     }
   }
   
-  .carousel-item-prev,
-  .active.carousel-item-left {
+  .item-prev,
+  .active.item-left {
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
   }
   
   @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
-    .carousel-item-prev,
-    .active.carousel-item-left {
+    .item-prev,
+    .active.item-left {
       -webkit-transform: translate3d(-100%, 0, 0);
       transform: translate3d(-100%, 0, 0);
     }
   }
   
-  .carousel-fade .carousel-item {
+  .carousel-fade .item {
     opacity: 0;
     transition-duration: .6s;
     transition-property: opacity;
   }
   
-  .carousel-fade .carousel-item.active,
-  .carousel-fade .carousel-item-next.carousel-item-left,
-  .carousel-fade .carousel-item-prev.carousel-item-right {
+  .carousel-fade .item.active,
+  .carousel-fade .item-next.item-left,
+  .carousel-fade .item-prev.item-right {
     opacity: 1;
   }
   
-  .carousel-fade .active.carousel-item-left,
-  .carousel-fade .active.carousel-item-right {
+  .carousel-fade .active.item-left,
+  .carousel-fade .active.item-right {
     opacity: 0;
   }
   
-  .carousel-fade .carousel-item-next,
-  .carousel-fade .carousel-item-prev,
-  .carousel-fade .carousel-item.active,
-  .carousel-fade .active.carousel-item-left,
-  .carousel-fade .active.carousel-item-prev {
+  .carousel-fade .item-next,
+  .carousel-fade .item-prev,
+  .carousel-fade .item.active,
+  .carousel-fade .active.item-left,
+  .carousel-fade .active.item-prev {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
   
   @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
-    .carousel-fade .carousel-item-next,
-    .carousel-fade .carousel-item-prev,
-    .carousel-fade .carousel-item.active,
-    .carousel-fade .active.carousel-item-left,
-    .carousel-fade .active.carousel-item-prev {
+    .carousel-fade .item-next,
+    .carousel-fade .item-prev,
+    .carousel-fade .item.active,
+    .carousel-fade .active.item-left,
+    .carousel-fade .active.item-prev {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
     }

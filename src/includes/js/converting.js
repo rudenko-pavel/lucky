@@ -18,8 +18,12 @@
   });
 
   // Material Select Initialization
-  $('.mdb-select').material_select();
+  //$('.mdb-select').material_select();
+  $('.mdb-select').on('change',function(){
+    var data = $(".mdb-select").find(":selected").val();
 
+   console.log(data);
+  });
 
 /************** datepicker  ******************/
 // Data Picker Initialization
