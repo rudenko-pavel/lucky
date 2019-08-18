@@ -37,3 +37,11 @@ EFFECT ON PAGE:
 MDB:
     - https://mdbootstrap.com
     - https://jsfiddle.net/danypd69/3upzca6t/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IMAGES FOLDES:
+    - `EVENTS`:
+      - Title image to home-CAROUSEL: one image width name as [events.json-data-runId (e.g. 20180930.jpg)]
+        Desirable Ratio=1.3333333 (for example size: 1280*960, 1040*780)
+      - images folder (same name (e.g. 20180930) with files XXX.jpg (numbering from one) for CAROUSEL
+        Desirable Ratio=1.3333333 (for example size: 1280*960, 1040*780)
