@@ -18,12 +18,12 @@ $(document).ready(function(){
                 "columnDefs": [
                     {
                         "targets": 0, 
-                        "className": "text-middle",
+                        "className": "text-middle w-20-percent",
                     },
                     {
                         "targets": 1,
                         "orderable": false,
-                        "className": "text-middle",
+                        "className": "text-middle w-20-percent",
                         "render": function ( data, type, row, meta ) {
                             var result;
                             if (type === 'display'){

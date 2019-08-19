@@ -35,6 +35,12 @@
 
 @media only screen and (max-width: 617px){
     .timeline-container, .timeline-list, .timeline-item { width: 500px !important; }
+        
+    .timeline-container {
+        .timeline-item > div {
+            width: 100% !important;
+        }
+    }
 }
 
 @media only screen and (max-width: 576px){
@@ -54,6 +60,7 @@
 
 @media only screen and (min-width: 577px){
     .addInfoShow577{display:none !important;}
+
 }
 
 @media only screen and (max-width: 515px){
@@ -61,6 +68,14 @@
     .less515{display:none !important;}
     .more515{display: table-cell !important;}
     .w-20-percent{width:30% !important;}
+
+    .timeline-container {
+        .timeline-item {
+            .timeline-visual{
+                min-height: @min-height-card-less-617 !important;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 516px){
@@ -69,6 +84,8 @@
 
 @media only screen and (max-width: 465px){
     .timeline-container, .timeline-list, .timeline-item { width: 360px !important; }
+
+    .less-465{display: none;}
 }
 
 @media only screen and (max-width: 415px){

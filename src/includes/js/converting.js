@@ -1,3 +1,4 @@
+  $(document).ready(function () {
   /*-------------converter digit ------------*/
   $(function () {
     $("#first-digit").keyup(function () { 
@@ -17,18 +18,12 @@
     
   });
 
-  // Material Select Initialization
-  //$('.mdb-select').material_select();
-  $('.mdb-select').on('change',function(){
-    var data = $(".mdb-select").find(":selected").val();
-
-   console.log(data);
-  });
 
 /************** datepicker  ******************/
 // Data Picker Initialization
 
   $.getJSON( "dist/includes/json/datepicker.ru.json", function( data ) {
+
     $('#prefill').pickadate({
       monthsFull: data.monthsFull, monthsShort:  data.monthsShort, weekdaysFull:  data.weekdaysFull, weekdaysShort:  data.weekdaysShort, weekdaysLetter: data.weekdaysLetter,
       today:  data.today, clear:  data.clear, close:  data.close,
@@ -36,6 +31,7 @@
       selectYears: true, selectMonths: true, firstDay: 1, format: 'yyyy-mm-dd'
   
     });
+
   });
 
   $("#timestamp2").keyup(function () { 
@@ -86,3 +82,4 @@
       console.log("`mypreloader.js` is DONE");
     });
   }); 
+});

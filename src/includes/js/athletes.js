@@ -24,7 +24,7 @@ $(document).ready(function(){
                     "columnDefs": [
                         {
                             "targets": 0, 
-                            "className": "text-middle",
+                            "className": "text-middle w-10-percent",
                         },
                         {
                             "targets": 1, 

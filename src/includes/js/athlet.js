@@ -83,6 +83,37 @@ $(document).ready(function(){
                             console.log("4. str `404` loaded");
                         }
                     })
+
+
+                    /************** data table ************/
+                    $.getJSON( "dist/includes/json/events.json", function( data ) {
+                        $.itemsEvents = data.data;
+                    }).done(function(){
+                        var table = $('#listRaces').DataTable( {
+                            "ajax": "dist/includes/json/participations.json",
+                            "order": [[ 0, 'asc' ]],
+                            "columns": [
+                                { "data": "id"},
+                                { "data": "eventId"}
+                            ],
+                            "columnDefs": [
+                                {
+                                    "targets": 1, 
+                                    "className": "text-middle",
+                                    "render": function ( data, type, row, meta ) {
+                                        var result;
+                                        if (type === 'display' && $.memberId==row.memberId){
+                                            result = $.memberId+' '+data;
+                                        }else{
+                                            result = data;   
+                                        }
+                                        return result;
+                                    }
+                                }
+                            ]
+                        })
+                    })
+
                 });
             })
             .done(function(){
