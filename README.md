@@ -39,7 +39,7 @@ MDB:
     - https://jsfiddle.net/danypd69/3upzca6t/
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-IMAGES FOLDES:
+FOLDES with IMAGES:
     - [EVENTS]:
       - Title image to home-CAROUSEL: one image width name as [events.json-data-runId (e.g. 20180930.jpg)]
         Desirable Ratio=1.3333333 (for example size: 1280*960, 1040*780)
@@ -48,3 +48,25 @@ IMAGES FOLDES:
 
     - [FLAGS]:
       - images - countries flags for languages
+
+    - [HELP]:
+      - images for tooltips
+
+    - [LOGO]:
+      - logo-images for ACCORDION on `HOME`-page
+        Desirable size is 171px * 171px
+
+    - [LOGOEVENTS]:
+      - logo-images for `EVENTS`-page
+        Desirable size is 610px * 239px
+
+    - [LOGOEVENTS]:
+      - logo-images for `EVENTS`-page
+        name format - e.g. 20180930.png
+        Desirable size is 610px * 239px
+
+    - [MEMBERS]:
+      - logo-images for `EVENTS`-page
+        name format - e.g. XXX.jpg (numbering from one)
+        Desirable ratio = 0.75 (Desirable size is 960px * 1280px)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
