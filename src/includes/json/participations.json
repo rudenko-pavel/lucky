@@ -19,6 +19,8 @@
         { "id" : 17 , "eventId" : "20190511", "memberId" : 3,  "distance": 5,  "isTeam": true },
         { "id" : 18 , "eventId" : "20190511", "memberId" : 4,  "distance": 5,  "isTeam": true },
         { "id" : 19 , "eventId" : "20190511", "memberId" : 5,  "distance": 5,  "isTeam": true },
-        { "id" : 20 , "eventId" : "20190511", "memberId" : 6,  "distance": 5,  "isTeam": true }
+        { "id" : 20 , "eventId" : "20190511", "memberId" : 6,  "distance": 5,  "isTeam": true },
+        { "id" : 21 , "eventId" : "20190825", "memberId" : 3,  "distance": 5,  "isTeam": false },
+        { "id" : 22 , "eventId" : "20190825", "memberId" : 4,  "distance": 5,  "isTeam": false }
     ]
 }

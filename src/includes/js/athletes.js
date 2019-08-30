@@ -8,6 +8,8 @@ $(document).ready(function(){
                 $.locationPage = window.location.protocol + "//" +window.location.hostname + locationPort;
             }).done(function(){            
                 $.storageImgMembers = "dist/img/members/";
+                $.elephantLanguage = localStorage.getItem('elLang');
+                $.memberName = "memberName-"+ $.elephantLanguage;
                 var table = $('#listMembers').DataTable( {
                     "ajax": "dist/includes/json/members.json",
                     "oLanguage": {
@@ -16,7 +18,7 @@ $(document).ready(function(){
                     "order": [[ 0, 'asc' ]],
                     "columns": [
                         { "data": "memberId"},
-                        { "data": "memberName"},
+                        { "data": $.memberName},
                         { "data": "memberId"},
                         { "data": "dateJoin" },
                         { "data": "memberId"}
@@ -24,7 +26,7 @@ $(document).ready(function(){
                     "columnDefs": [
                         {
                             "targets": 0, 
-                            "className": "text-middle w-10-percent",
+                            "className": "text-middle w-10-percent"
                         },
                         {
                             "targets": 1, 

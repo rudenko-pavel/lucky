@@ -1,7 +1,8 @@
 {
     "typeEvent": [
         {"typeId":1, "name": "run"},
-        {"typeId":2, "name": "athletic"}
+        {"typeId":2, "name": "athletic"},
+        {"typeId":3, "name": "triathlon"}
     ],
     "data":[
         {
@@ -72,6 +73,15 @@
             "runId"    : "20190511",
             "name"  : "RACE NATION (5+км 20+препятствий)",
             "descriptions": "<p>Грязи много не бывает</p><p>Боль временна. Слава вечна</p><p>Так и бегаем)))))</p>",
+            "countImages": 8,
+            "typeEvent": 2,
+            "isTeam" : true
+        },
+        {
+            "runDate":"2019-08-25",
+            "runId"    : "20190825",
+            "name"  : "Spartan Sprint (5+км 20+препятствий)",
+            "descriptions": "<p>With over 200 events in 42 countries, there’s a race for every age or ability. From the world’s most elite athletes to the novice adventure seeker, if you commit, we’ll change your life. No excuses!</p>",
             "countImages": 8,
             "typeEvent": 2,
             "isTeam" : true
