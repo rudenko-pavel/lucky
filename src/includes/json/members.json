@@ -7,7 +7,9 @@
             "surname-ua"    :   "Романенко",
             "surname-en"    :   "Romanenko",
             "nick"          :   "Voffchik",
-            "dateJoin"      :   "2018-09-30"
+            "dateJoin"      :   "2018-09-30",
+            "credo-ua"      :   "~",
+            "credo-en"      :   "~"
         },
         {
             "memberId"      :   2,
@@ -16,7 +18,9 @@
             "surname-ua"    :   "Руденко",
             "surname-en"    :   "Rudenko",
             "nick"          :   "Lenusea",
-            "dateJoin"      :   "2018-09-30"
+            "dateJoin"      :   "2018-09-30",
+            "credo-ua"      :   "~",
+            "credo-en"      :   "~"
         },
         {
             "memberId"      :   3,
@@ -25,7 +29,9 @@
             "surname-ua"    :   "Руденко",
             "surname-en"    :   "Rudenko",
             "nick"          :   "H0lland",
-            "dateJoin"      :   "2018-09-30"
+            "dateJoin"      :   "2018-09-30",
+            "credo-ua"      :   "Dum spiro spero",
+            "credo-en"      :   "Dum spiro spero"
         },
         {
             "memberId"      :   4,
@@ -34,7 +40,9 @@
             "surname-ua"    :   "Новицкий",
             "surname-en"    :   "Novitskyi",
             "nick"          :   "~",
-            "dateJoin"      :   "2018-12-23"
+            "dateJoin"      :   "2018-12-23",
+            "credo-ua"      :   "~",
+            "credo-en"      :   "~"
         },
         {
             "memberId"      :   5,
@@ -43,7 +51,9 @@
             "surname-ua"    :   "Новицкий",
             "surname-en"    :   "Novitskyi",
             "nick"          :   "~",
-            "dateJoin"      :   "2019-05-11"
+            "dateJoin"      :   "2019-05-11",
+            "credo-ua"      :   "~",
+            "credo-en"      :   "~"
         },
         {
             "memberId"      :   6,
@@ -52,7 +62,9 @@
             "surname-ua"    :   "Тыминский",
             "surname-en"    :   "Tyminskyi",
             "nick"          :   "~",
-            "dateJoin"      :   "2019-05-11"
+            "dateJoin"      :   "2019-05-11",
+            "credo-ua"      :   "~",
+            "credo-en"      :   "~"
         }
     ]
 }

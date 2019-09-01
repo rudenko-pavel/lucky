@@ -1,16 +1,17 @@
 {
     "topNavigation":[
-        {"idButton": 1 , "en": "home",      "ua": "начало",       "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?home"},
-        {"idButton": 2 , "en": "events",    "ua": "події",        "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?events"},
-        {"idButton": 3 , "en": "athletes",  "ua": "спорсмени",    "isDropdown": 0, "subMenu": 0, "isLast": false,  "href": "?athletes"},
-        {"idButton": 4 , "en": "helper",    "ua": "помічник",     "isDropdown": 1, "subMenu": 0, "isLast": false,  "href": "#"},
-        {"idButton": 5 , "en": "converting","ua": "перетворення", "isDropdown": 0, "subMenu": 4, "isLast": true,  "href": "?converting"}
+        {"idButton": 1 , "en": "home",      "ua": "начало",       "isDropdown": 0, "subMenu": 0, "isLast": false,  "dependents":[],         "href": "?home"},
+        {"idButton": 2 , "en": "events",    "ua": "події",        "isDropdown": 0, "subMenu": 0, "isLast": false,  "dependents":[],         "href": "?events"},
+        {"idButton": 3 , "en": "athletes",  "ua": "спорсмени",    "isDropdown": 0, "subMenu": 0, "isLast": false,  "dependents":["?athlet"],"href": "?athletes"},
+        {"idButton": 4 , "en": "helper",    "ua": "помічник",     "isDropdown": 1, "subMenu": 0, "isLast": false,  "dependents":[],         "href": "#"},
+        {"idButton": 5 , "en": "converting","ua": "перетворення", "isDropdown": 0, "subMenu": 4, "isLast": true,   "dependents":[],         "href": "?converting"}
     ],
     "athletNamesOptions":[
-        {"idParam": 1,  "idName": "memberId",       "isView": true,     "en":"#",           "ua":"#"                },
+        {"idParam": 1,  "idName": "memberId",       "isView": false,    "en":"#",           "ua":"#"                },
         {"idParam": 2,  "idName": "memberName",     "isView": true,     "en":"name",        "ua":"ім'я"             },
         {"idParam": 3,  "idName": "surname",        "isView": false,    "en":"surname",     "ua":"прізвище"         },
         {"idParam": 4,  "idName": "nick",           "isView": true,     "en":"nick",        "ua":"прізвисько"       },
-        {"idParam": 5,  "idName": "dateJoin",       "isView": true,     "en":"date of join","ua":"дата приєднання"  }
+        {"idParam": 5,  "idName": "dateJoin",       "isView": true,     "en":"date of join","ua":"дата приєднання"  },
+        {"idParam": 5,  "idName": "credo",          "isView": true,     "en":"credo",       "ua":"кредо"            }
     ]
 }

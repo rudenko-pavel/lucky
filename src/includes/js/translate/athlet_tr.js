@@ -37,6 +37,9 @@
     }
     /************** translate info end    *************/
     /************** dataTable start    *************/
+    var locationPort;
+    window.location.port=="" ? locationPort = "/": locationPort= ":"+window.location.port+"/";
+    $.locationPage = window.location.protocol + "//" +window.location.hostname + locationPort;
     $.dataTablesDictionary = {
         "en": {
             "_race": "Race",
@@ -68,22 +71,27 @@
                         '</table>';
         $("#wrapperListRaces").html(listRaces);
 
+        $.arrayMemberEvents = [];
+        $.eventsData=[];
         $.getJSON( "dist/includes/json/participations.json", function( data ) { //get fields names for view on page
             $.participationsData = data.data;
-            $.arrayMemberEvents = [];
-            $.eventsData=[];
-            $.each( $.participationsData, function(key) {
-                if ($.participationsData[key]["memberId"] == $.memberInfo["memberId"]){
-                    $.arrayMemberEvents.push($.participationsData[key]);
-                };
-            });
-        }).done(function(){
-            $.getJSON( "dist/includes/json/events.json", function( data ) { //get fields names for view on page
+        })
+        .done(function(){
+            $.getJSON( "dist/includes/json/events.json", function( data ) {
                 $.eventsData = data.data;
-            }).done(function(){
+                $.each( $.participationsData, function(key) {
+                    if ($.participationsData[key]["memberId"] == $.memberInfo["memberId"]){
+                        $.each( $.eventsData, function(key2) {
+                            if ($.eventsData[key2]["runId"] == $.participationsData[key]["eventId"]){
+                                $.arrayMemberEvents.push($.eventsData[key2]);
+                            };
+                        });
+                    };
+                });
+            })
+            .done(function(){
                 $.storageImg = "dist/img/logoevents/";
-                console.log("$.arrayMemberEvents",$.arrayMemberEvents);
-                console.log("EVENTS2: ", $.eventsData);
+                $.nameField = "name-"+$.elephantLanguage;
                 var table = $('#listRaces').DataTable( {
                     "data": $.arrayMemberEvents,
                     "oLanguage": {
@@ -91,29 +99,14 @@
                     },
                     "order": [[ 0, 'asc' ]],
                     "columns": [
-                        { "data": "eventId"},
-                        { "data": "eventId"},
-                        { "data": "eventId"}
+                        { "data": "runDate"},
+                        { "data": "runId"},
+                        { "data": $.nameField}
                     ],
                     "columnDefs": [
                         {
                             "targets": 0, 
-                            "className": "text-middle",
-                            "render": function ( data, type, row, meta ) {
-                                var result;
-                                if (type === 'display' && $.memberId==row.memberId){
-                                    $.each( $.eventsData, function(key) {
-                                        if ($.eventsData[key]["runId"] == data){
-                                            result = $.eventsData[key]["runDate"];
-                                            return true;
-                                        };
-                                    });
-                                    
-                                }else{
-                                    result = data;   
-                                }
-                                return result;
-                            }
+                            "className": "text-middle"
                         },
                         {
                             "targets": 1, 
@@ -121,7 +114,7 @@
                             "className": "text-middle",
                             "render": function ( data, type, row, meta ) {
                                 var result;
-                                if (type === 'display' && $.memberId==row.memberId){
+                                if (type === 'display'){
                                     result = '<div class="one-event" data-toggle="modal" data-target="#photo'+data+'"><img id="showEvent'+data+'" data-run-id="'+data+'" src="'+$.storageImg+data+'.png" class="eventLogo" alt="" data-target="#photo'+data+'" data-slide-to="0" /></div>';
 
                                     var newModalCollection ='<div class="modal fade" id="photo'+data+'" tabindex="-1" role="dialog" aria-hidden="true">'+
@@ -150,16 +143,11 @@
                             "className": "text-middle",
                             "render": function ( data, type, row, meta ) {
                                 var result;
-                                if (type === 'display' && $.memberId==row.memberId){
-                                    $.each( $.eventsData, function(key) {
-                                        if ($.eventsData[key]["runId"] == data){
-                                            result = $.eventsData[key]["name"];
-                                            return true;
-                                        };
-                                    });
-                                    
+
+                                if (type === 'display'){
+                                    result = "<a href='"+$.locationPage+"?event:"+row.runId+"'>"+data+"</a>"; 
                                 }else{
-                                    result = data;   
+                                    result = data;
                                 }
                                 return result;
                             }

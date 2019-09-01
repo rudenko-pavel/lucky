@@ -5,9 +5,7 @@ $(document).ready(function(){
             $.storageImg = "dist/img/logoevents/";
             var table = $('#listEvents').DataTable( {
                 "ajax": "dist/includes/json/events.json",
-                "oLanguage": {
-                    "sUrl": "dist/includes/json/dataTables.russian.txt"
-                },
+
                 "order": [[ 0, 'asc' ]],
                 "columns": [
                     { "data": "runDate"},

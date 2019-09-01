@@ -12,9 +12,7 @@ $(document).ready(function(){
                 $.memberName = "memberName-"+ $.elephantLanguage;
                 var table = $('#listMembers').DataTable( {
                     "ajax": "dist/includes/json/members.json",
-                    "oLanguage": {
-                        "sUrl": "dist/includes/json/dataTables.russian.txt"
-                    },
+
                     "order": [[ 0, 'asc' ]],
                     "columns": [
                         { "data": "memberId"},
