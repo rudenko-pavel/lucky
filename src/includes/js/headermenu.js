@@ -21,7 +21,7 @@ $(document).ready(function(){
                                                      ( $(this).toggleClass('en'), localStorage.setItem('elLang','en') );
             reloadItemsMenu();  // draw a menu
             var str = window.location.search.substring(1).split(":");
-            if ( str[0]=="athletes" )   {console.log("athletes");}
+            if ( str[0]=="athletes" )   {athletesDataTable();}
             if ( str[0]=="athlet" )     {infoAthlet();athletDataTable();}
         });
     });

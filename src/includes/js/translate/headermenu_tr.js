@@ -34,8 +34,9 @@ var reloadItemsMenu = function(){
                     }else{
                         var flagDependent = false;     // check page without item in topMenu. If true - make green button for parent page (e.g. athlet for athlets)
                         //get status current page: dependent or no
-                        if ($.itemsTopMenu[key]["dependents"].length!=0){
-                            for (var i=0; i<$.itemsTopMenu[key]["dependents"].length; i++){
+                        var depends = $.itemsTopMenu[key]["dependents"].length;
+                        if (depends>0){
+                            for (var i=0; i<depends; i++){
                                 if ($.itemsTopMenu[key]["dependents"][i] ==str.slice(0,str.indexOf(":"))) {
                                     flagDependent = true;
                                     break;
