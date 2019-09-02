@@ -12,11 +12,12 @@
 
     .carousel-inner {
             height: auto;
+            max-height: 500px;
     }
     .timeline-item  {
         width: 800px; 
         height:  100%; 
-        min-height: @min-height-card;
+       // min-height: @min-height-card;
 
         .timeline-visual{
             width: 60%;
@@ -34,6 +35,30 @@
             }
         }
         
+        .event-detail{
+            width: 50%;
+            padding: 2%;
+            float: left;
+            h5,h6{
+                text-align: center;
+                border-bottom: 1px solid @border-datapicker;
+                padding-bottom: 10px;
+            }
+            p{
+                font-size: @basic-font-size;
+            }
+        }
+
+        .hr-style{
+            float: left;
+        }
+                
+        .niceDate{
+            text-align: center;
+            color: @red-color;
+            padding: 10px 0;
+        }
+
         .timeline-detail{
             width: 40%;
             padding: 2%;
@@ -41,12 +66,7 @@
             h5,h6{
                 text-align: center;
             }
-        
-            .niceDate{
-                text-align: center;
-                color: @red-color;
-                padding: 10px 0;
-            }
+
             p{font-size: @basic-font-size}
         
             a.btn{
@@ -68,13 +88,14 @@
     .timeline-item {
         float: none;
         margin: 0 auto;
-        min-height: @min-height-card;
+        //min-height: @min-height-card;
+        display: flex;
     }
 }
 
 .timeline-container.member-info{
     min-height: auto;
-    max-height: @min-height-card;
+    //max-height: @min-height-card;
 
     .timeline-visual{
         min-height: auto !important;

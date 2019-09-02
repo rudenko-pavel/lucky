@@ -1,8 +1,8 @@
 {
     "topNavigation":[
         {"idButton": 1 , "en": "home",      "ua": "начало",       "isDropdown": 0, "subMenu": 0, "isLast": false,  "dependents":[""],         "href": "?home"},
-        {"idButton": 2 , "en": "events",    "ua": "події",        "isDropdown": 0, "subMenu": 0, "isLast": false,  "dependents":[""],         "href": "?events"},
-        {"idButton": 3 , "en": "athletes",  "ua": "спортсмени",   "isDropdown": 0, "subMenu": 0, "isLast": false,  "dependents":["?athlet"],"href": "?athletes"},
+        {"idButton": 2 , "en": "events",    "ua": "події",        "isDropdown": 0, "subMenu": 0, "isLast": false,  "dependents":["?event"],   "href": "?events"},
+        {"idButton": 3 , "en": "athletes",  "ua": "спортсмени",   "isDropdown": 0, "subMenu": 0, "isLast": false,  "dependents":["?athlet"],  "href": "?athletes"},
         {"idButton": 4 , "en": "helper",    "ua": "помічник",     "isDropdown": 1, "subMenu": 0, "isLast": false,  "dependents":[""],         "href": "#"},
         {"idButton": 5 , "en": "converting","ua": "перетворення", "isDropdown": 0, "subMenu": 4, "isLast": true,   "dependents":[""],         "href": "?converting"}
     ],

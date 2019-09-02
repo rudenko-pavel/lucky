@@ -1,4 +1,5 @@
 @import "buttons.less";
+@import "carousel.less";
 @import "converting.less";
 @import "datatables.less";
 @import "datepicker.less";
@@ -27,6 +28,28 @@ body{
     font-size: @basic-font-size !important;
     font-weight: 300;
     line-height: 1.625em;
+}
+
+/* Flaired edges, by Tomas Theunissen */
+
+hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: @team-background-color;
+    border-width: 1px 0 0 0;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -32px;
+    border-style: solid;
+    border-color: @team-background-color;
+    border-width: 0 0 1px 0;
+    border-radius: 10px;
 }
 
 .big-img, .card-img-top    {   cursor: zoom-in;    }
