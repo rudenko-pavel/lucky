@@ -1,4 +1,9 @@
   $(document).ready(function () {
+    $.getScript("./dist/includes/js/translate/converting_tr.js",function(){
+      convertingText();  // translate
+      initDatePicker();
+    })
+    .done(function(){ 
   /*-------------converter digit ------------*/
   $(function () {
     $("#first-digit").keyup(function () { 
@@ -21,18 +26,7 @@
 
 /************** datepicker  ******************/
 // Data Picker Initialization
-
-  $.getJSON( "dist/includes/json/datepicker.ru.json", function( data ) {
-
-    $('#prefill').pickadate({
-      monthsFull: data.monthsFull, monthsShort:  data.monthsShort, weekdaysFull:  data.weekdaysFull, weekdaysShort:  data.weekdaysShort, weekdaysLetter: data.weekdaysLetter,
-      today:  data.today, clear:  data.clear, close:  data.close,
-      labelMonthNext: data.labelMonthNext, labelMonthPrev: data.labelMonthPrev, labelMonthSelect: data.labelMonthSelect, labelYearSelect: data.labelYearSelect,
-      selectYears: true, selectMonths: true, firstDay: 1, format: 'yyyy-mm-dd'
-  
-    });
-
-  });
+ 
 
   $("#timestamp2").keyup(function () { 
     if (/[^0-9]/.test(this.value)) this.value = this.value.replace(/[^0-9]/,'');
@@ -82,4 +76,5 @@
       console.log("`mypreloader.js` is DONE");
     });
   }); 
+  })
 });

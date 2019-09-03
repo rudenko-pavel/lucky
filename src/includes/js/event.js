@@ -25,7 +25,6 @@ $(document).ready(function(){
                             return false; 
                         };
                     });
-                    console.log($.eventInfo)    
                 }).done(function(){
                     if ($.flagIsMember){    // id-event is in JSON
                         $.pathToGallery = $.pathToGallery + $.eventInfo["runId"];
@@ -85,6 +84,8 @@ $(document).ready(function(){
                         $('#carouselEvent').append($.galleryItems);
                         $('#carouselEvent').append($.galleryControls);
                         $('#carouselIndicators').append($.galleryIndicators);
+                        $('#tooltipSegment').load('./dist/includes/tooltip.html')
+                        
                         $.getScript("./dist/includes/js/translate/event_tr.js",function(){
                             infoEvent();  // draw info about event
                         });   
@@ -98,23 +99,30 @@ $(document).ready(function(){
             })
             /************** necessary scripts start**************/
             .done(function(){
-                $.getScript("./dist/includes/js/vendor/tooltipster.bundle.min.js",function(){
-                    console.log("`tooltipster.js` is loaded");
-                })
+                $.getScript("./dist/includes/js/vendor/tooltipster.bundle.min.js")
                 .done(function(){
-                    $('.mytooltip').tooltipster({
-                        contentCloning: true,
-                        functionPosition: function(instance, helper, position){
-                            position.coord.top += 10;
-                            position.coord.left += 10;
-                            return position;
-                        },
-                        interactive: true
+                    $('body').on('mouseenter', '.mytooltip:not(.tooltipstered)', function(){
+                        $(this)
+                            .tooltipster({                       
+                                contentCloning: true,
+                                animation: 'fade',
+                                delay: 200,
+                                theme: 'tooltipster-punk',
+                                trigger: 'click',
+                                functionPosition: function(instance, helper, position){
+                                    position.coord.top += 10;
+                                    position.coord.left += 10;
+                                    return position;
+                                },
+                                interactive: true 
+                            })
+                            .tooltipster('show');
                     });
                     console.log("`tooltipster.js` is DONE");
                     $.getScript("dist/includes/js/mypreloader.js",function(){
                         console.log("`mypreloader.js` is DONE");
                     });
+
                 })
             });
             /************** necessary scripts end**************/

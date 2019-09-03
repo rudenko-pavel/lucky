@@ -10,8 +10,8 @@
             "runId"     : "20180930",
             "name-ua"   : "CHISINAU INTERNATIONAL MARATHON",
             "name-en"   : "CHISINAU INTERNATIONAL MARATHON",
-            "descriptions-ua": "<p> Створення спортивного клубу <span class = 'mytooltip' data-tooltip-content = '#termsOfEntry'> «LUCKY ELEPHANT» </span> для любителів фізичної культури </p> <p> Ідея озвучена під час поїздки з Києва в Кишинів. Реалізовано під час змагання CHISINAU INTERNATIONAL MARATHON 2018 </p>",
-            "descriptions-en": "<p>Creation <span class='mytooltip' data-tooltip-content='#termsOfEntry'>sports club «LUCKY ELEPHANT»</span> for physical education lovers</p><p>The idea was voiced during a trip from Kyiv to Chisinau. Implemented during the CHISINAU INTERNATIONAL MARATHON 2018 race</p>",
+            "descriptions-ua": "<p>Створення спортивного клубу <span class='mytooltip' data-tooltip-content='#termsOfEntry-ua'> «LUCKY ELEPHANT»</span> для любителів фізичної культури</p><p>Ідея озвучена під час поїздки з Києва в Кишинів. Реалізовано під час змагання CHISINAU INTERNATIONAL MARATHON 2018</p>",
+            "descriptions-en": "<p>Creation sports club<span class='mytooltip' data-tooltip-content='#termsOfEntry-en'> «LUCKY ELEPHANT»</span> for physical education lovers</p><p>The idea was voiced during a trip from Kyiv to Chisinau. Implemented during the CHISINAU INTERNATIONAL MARATHON 2018 race</p>",
             "countImages": 6,
             "typeEvent": 1,
             "isTeam" : false

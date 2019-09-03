@@ -21,10 +21,11 @@ $(document).ready(function(){
                                                      ( $(this).toggleClass('en'), localStorage.setItem('elLang','en') );
             reloadItemsMenu();  // draw a menu
             var str = window.location.search.substring(1).split(":");
-            if ( str[0]=="events" )     {eventsDataTable();}
-            if ( str[0]=="event" )     {infoEvent();}
-            if ( str[0]=="athletes" )   {athletesDataTable();}
-            if ( str[0]=="athlet" )     {infoAthlet();athletDataTable();}
+            if ( str[0]=="events" )         {eventsDataTable();}
+            if ( str[0]=="event" )          {infoEvent();}
+            if ( str[0]=="athletes" )       {athletesDataTable();}
+            if ( str[0]=="athlet" )         {infoAthlet();athletDataTable();}
+            if ( str[0]=="converting" )     {convertingText();initDatePicker();}
         });
     });
 });

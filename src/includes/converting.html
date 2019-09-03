@@ -21,36 +21,33 @@
                                         <option  value="16">hex</option>
                                     </select>
                                 </div>
-
                                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
                                     <div class="md-form form-sm converter-digit">
                                         <input type="text"  pattern="\d*" class="form-control form-control-sm" id="first-digit" autocomplete="off"  />
-                                        <label for="first-digit">Input `a-f A-F 0-9`</label>
+                                        <label for="first-digit" id="forFirstDigit"></label>
                                     </div>
                                 </div>
                             </div>
                         </form>
                         <form  role="form">
-                                <div class="form-row align-items-center">
-                                    <div class="col-sm-5 col-md-5 col-lg-3 col-xl-3 my-1">
-                                        <select class="custom-select custom-select-sm converter-digit" id="second-line"  name="second-line">
-                                            <option  value="2" selected="selected">binary</option>
-                                            <option  value="8">octal</option>
-                                            <option  value="10">decimal</option>
-                                            <option  value="16">hex</option>
-                                        </select>
-                                    </div>
-        
-                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
-                                        <div class="md-form form-sm converter-digit">
-                                            <input type="text" id="second-digit" class="form-control form-control-sm" disabled>
-                                            <label for="second-digit" class="active">After conversion</label>
-                                        </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-sm-5 col-md-5 col-lg-3 col-xl-3 my-1">
+                                    <select class="custom-select custom-select-sm converter-digit" id="second-line"  name="second-line">
+                                        <option  value="2" selected="selected">binary</option>
+                                        <option  value="8">octal</option>
+                                        <option  value="10">decimal</option>
+                                        <option  value="16">hex</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
+                                    <div class="md-form form-sm converter-digit">
+                                        <input type="text" id="second-digit" class="form-control form-control-sm" disabled>
+                                        <label for="second-digit" class="active" id="forSecondDigit"></label>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+                        </form>
                     </div>
-
                 </div>
             </div>
 
@@ -67,14 +64,8 @@
                         <div class="container timestampToDate">
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                    <div class="md-form form-sm converter-digit">
-                                        <input type="text" id="prefill" class="datepicker">
-                                        <label for="prefill" class="full-label">Selected date</label>
+                                    <div class="md-form form-sm converter-digit" id="wrapPrefill">
                                     </div>
-                                    <!--label for="datepicker">Дата: </label>
-                                </div>
-                                <div class="col-xs-8 col-sm-4 col-md-4 col-lg-3">
-                                    <input type="text" id="datepicker" class="form-control" /-->
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                     <div class="md-form form-sm converter-digit">
@@ -93,13 +84,14 @@
                                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                     <div class="md-form form-sm converter-digit">
                                         <input type="text" id="humanDate" class="form-control form-control-sm" disabled>
-                                        <label for="humanDate" class="active">Дата:</label>
+                                        <label for="humanDate" class="active" id="resultDate"></label>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>                      
+            </div>                      
+        </div>
     </div>
 </div>
