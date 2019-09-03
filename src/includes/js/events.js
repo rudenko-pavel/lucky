@@ -5,31 +5,19 @@ $(document).ready(function(){
                 $.getScript("./dist/includes/js/translate/events_tr.js",function(){
                     eventsDataTable();  // draw info about events
                 })
-    
-
-
-
             })
                 /************** necessary scripts start**************/
             .done(function(){
                 $.getScript("./dist/includes/js/vendor/tooltipster.bundle.min.js",function(){
                     console.log("`tooltipster.js` is loaded");
-                }).done(function(){
-                        $('.mytooltip').tooltipster({
-                            contentCloning: true,
-                            functionPosition: function(instance, helper, position){
-                                position.coord.top += 10;
-                                position.coord.left += 10;
-                                return position;
-                            },
-                            interactive: true
-                        });
-                        console.log("`tooltipster.js` is DONE");
-                        $.getScript("dist/includes/js/mypreloader.js",function(){
-                            console.log("`mypreloader.js` is DONE");
-                });
-
-                    
+                })
+                .done(function(){
+                    $.getScript("dist/includes/js/mytooltip.js",function(){
+                        console.log("`mytooltip.js` is DONE");
+                    });
+                    $.getScript("dist/includes/js/mypreloader.js",function(){
+                        console.log("`mypreloader.js` is DONE");
+                    });
                 }); 
             });
                 /************** necessary scripts end**************/

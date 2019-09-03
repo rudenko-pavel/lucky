@@ -53,7 +53,7 @@
         
     $.elephantLanguage = localStorage.getItem('elLang');
     var athletDataTable = function(){
-        var listRaces = '<table id="listRaces" class="table table-hover container table-bordered dataTable" style="width:80%">'+
+        var listRaces = '<table id="listRaces" class="table table-hover container table-bordered dataTable d3-effect" style="width:80%">'+
                             '<thead>'+
                                 '<tr>'+
                                     '<th>'+$.dataTablesDictionary[$.elephantLanguage]["_date"]+'</th>'+

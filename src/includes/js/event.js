@@ -53,7 +53,7 @@ $(document).ready(function(){
                             '</div>';
                             $('#modalSegment').append(newModalCollectionGallery);
                         }
-                        $.eventPhoto = "<img class='card-img-top' src='"+$.pathToImg+$.eventId+".png' data-toggle='modal' data-target='#photo"+$.eventId+"' />";
+                        $.eventPhoto = "<img class='card-img-top d3-effect' src='"+$.pathToImg+$.eventId+".png' data-toggle='modal' data-target='#photo"+$.eventId+"' />";
                         
                         var newModalCollection ='<div class="modal fade" id="photo'+$.eventId+'" tabindex="-1" role="dialog" aria-hidden="true">'+
                             '<div class="modal-dialog" role="document">'+
@@ -101,24 +101,9 @@ $(document).ready(function(){
             .done(function(){
                 $.getScript("./dist/includes/js/vendor/tooltipster.bundle.min.js")
                 .done(function(){
-                    $('body').on('mouseenter', '.mytooltip:not(.tooltipstered)', function(){
-                        $(this)
-                            .tooltipster({                       
-                                contentCloning: true,
-                                animation: 'fade',
-                                delay: 200,
-                                theme: 'tooltipster-punk',
-                                trigger: 'click',
-                                functionPosition: function(instance, helper, position){
-                                    position.coord.top += 10;
-                                    position.coord.left += 10;
-                                    return position;
-                                },
-                                interactive: true 
-                            })
-                            .tooltipster('show');
+                    $.getScript("dist/includes/js/mytooltip.js",function(){
+                        console.log("`mytooltip.js` is DONE");
                     });
-                    console.log("`tooltipster.js` is DONE");
                     $.getScript("dist/includes/js/mypreloader.js",function(){
                         console.log("`mypreloader.js` is DONE");
                     });

@@ -11,16 +11,9 @@ $(document).ready(function(){
                         console.log("`tooltipster.js` is loaded");
                     })
                     .done(function(){
-                        $('.mytooltip').tooltipster({
-                            contentCloning: true,
-                            functionPosition: function(instance, helper, position){
-                                position.coord.top += 10;
-                                position.coord.left += 10;
-                                return position;
-                            },
-                            interactive: true
+                        $.getScript("dist/includes/js/mytooltip.js",function(){
+                            console.log("`mytooltip.js` is DONE");
                         });
-                        console.log("`tooltipster.js` is DONE");
                         $.getScript("dist/includes/js/mypreloader.js",function(){
                             console.log("`mypreloader.js` is DONE");
                         });

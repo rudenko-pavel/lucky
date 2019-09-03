@@ -54,7 +54,7 @@ hr.style-seven:before { /* Not really supposed to work, but does */
 
 .big-img, .card-img-top    {   cursor: zoom-in;    }
 .parse      {   text-align: center; }
-#content2   {    height: 60px;}
+#content2   {    height: 60px; padding: 15px 0 0 0 ;}
 
 .alert.card {display: block !important;}
 .card{
@@ -121,7 +121,7 @@ body{
         text-align: center;
 
         img             {   width: 60%;     }
-        .modal-body img {   width: 100%;    }
+        .modal-body img {       }
     }
 
     .alert-team {
@@ -160,3 +160,86 @@ body{
         padding: 20px;
     }
 }
+
+.accordion{
+    .alert{
+        padding: 0 1.25rem;
+        margin-bottom: 1px;
+    }
+}
+
+label {
+    font-size: @basic-font-size !important;
+
+}
+
+.d3-effect,.tooltipster-box {
+    box-shadow: 
+        inset @d3-box-shadow-1, 
+        inset @d3-box-shadow-2, 
+        @d3-box-shadow-3, 
+        @d3-box-shadow-4;
+    transition: background 0.2s ease-in-out;
+}
+
+img.d3-effect{
+    border-radius: 50%;
+}
+
+/*********** BUTTONS  start*************/
+.button {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    font-size: @font-size-16;
+    text-shadow: @button-text-shadow;
+    text-decoration: none;
+    user-select: none;
+    margin: 2px 0.5em;
+    padding: .5em .6em .4em .6em;
+    border-radius: 8px;
+    border-top: 1px solid @button-border-top;
+    border-bottom: 1px solid @button-border-bottom;
+    outline: none;
+    background: @button-background;
+    box-shadow:
+        inset @button-box-shadow-1,
+        inset @button-box-shadow-2,
+        @button-box-shadow-3,
+        @button-box-shadow-4;
+    transition: background .2s ease-in-out;
+  }
+.button.button-success,
+.button:hover {
+    background-color: @button-hover !important;
+}
+.button:active {
+    top: .2em;
+    color: @button-active-color ;
+    text-shadow: @button-active-text-shadow;
+    box-shadow:
+        inset @button-active-box-shadow-1,
+        inset @button-active-box-shadow-1,
+        @button-active-box-shadow-1,
+        @button-active-box-shadow-1;
+}
+.button:after {
+    content:  "";
+    position:  absolute; 
+    width:   90%;
+    height:  60%;
+    top:   0;
+    left:   5%;    
+    border-radius:    .5em .5em 1em 1em / .5em .5em 2em 2em;
+    background-image: @button-after-background-image; 
+}
+.button:active:after {
+    opacity: .6;
+}
+
+.dropdown-menu{
+    box-shadow: none !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+  /*********** BUTTONS  end*************/

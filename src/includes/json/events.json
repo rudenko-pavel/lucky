@@ -32,7 +32,7 @@
             "runId"     : "20181117",
             "name-ua"   : "Sumy Airport Autumn Run 2018",
             "name-en"   : "Sumy Airport Autumn Run 2018",
-            "descriptions-ua": "<p> Біг на злітно-посадкову смугу аеропорту міста SUMY </p> <h6> Полетіли !!!!!!! </h6>",
+            "descriptions-ua": "<p> Біг на злітно-посадкову смугу аеропорту міста СУМИ </p> <h6> Полетіли !!!!!!! </h6>",
             "descriptions-en": "<p>Running on the runway of the airport of the city SUMY </p> <h6> Flew !!!!!!! </h6>",
             "countImages": 9,
             "typeEvent": 1,
@@ -96,7 +96,7 @@
         {
             "runDate"   :"2019-08-25",
             "runId"     : "20190825",
-            "name-ua"   : "Spartan POLAND",
+            "name-ua"   : "Spartan ПОЛЬЩА",
             "name-en"   : "Spartan POLAND",
             "descriptions-ua": "<p>Світова арена! Вперед і вгору !! Не вмирати!!!</p>",
             "descriptions-en": "<p> World stage! Forward and up !! Not to die!!!</p>",

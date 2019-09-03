@@ -18,7 +18,7 @@
         
     var athletesDataTable = function(){
         $.elephantLanguage = localStorage.getItem('elLang');
-        var listAthletes = '<table id="listAthletes" class="table table-hover container table-bordered dataTable" style="width:100%">'+
+        var listAthletes = '<table id="listAthletes" class="table table-hover container table-bordered dataTable d3-effect" style="width:100%">'+
                             '<thead>'+
                                 '<tr>'+
                                     '<th>#&nbsp;&nbsp;</th>'+

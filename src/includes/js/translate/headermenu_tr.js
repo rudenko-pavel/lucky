@@ -20,16 +20,16 @@ var reloadItemsMenu = function(){
             $.each( $.itemsTopMenu, function(key) {
                 if ($.itemsTopMenu[key]["isDropdown"]==1){
                     newItem = "<li class='dropdown'>"+
-                                "<a class='btn btn-outline-success' id='parent_"+$.itemsTopMenu[key]["idButton"]+"'  href='#' data-toggle='dropdown'>"+ $.itemsTopMenu[key][$.elephantLanguage] +"&nbsp;&nbsp;<i class='fas fa-angle-down'></i></a>"+
+                                "<a class='button' id='parent_"+$.itemsTopMenu[key]["idButton"]+"'  href='#' data-toggle='dropdown'>"+ $.itemsTopMenu[key][$.elephantLanguage] +"&nbsp;&nbsp;<i class='fas fa-angle-down'></i></a>"+
                                 "<div class='dropdown-menu'>";
                 } else {
                     if($.itemsTopMenu[key]["subMenu"]!=0){ // submenu
                         if ( $.itemsTopMenu[key]["isLast"]==true) endSubmenu = "</div></li>";
                         if (str == $.itemsTopMenu[key]["href"]){
-                            newItem = "<a class='btn btn-success' href='"+$.locationPage+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key][$.elephantLanguage]+"</a>" + endSubmenu;
+                            newItem = "<a class='button button-success' href='"+$.locationPage+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key][$.elephantLanguage]+"</a>" + endSubmenu;
                             $.parentId = "#parent_"+$.itemsTopMenu[key]["subMenu"];
                         }else {
-                            newItem = "<a class='btn btn-outline-success' href='"+$.locationPage+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key][$.elephantLanguage]+"</a>" + endSubmenu;
+                            newItem = "<a class='button' href='"+$.locationPage+ $.itemsTopMenu[key]["href"]+"'>"+ $.itemsTopMenu[key][$.elephantLanguage]+"</a>" + endSubmenu;
                         }
                     }else{
                         var flagDependent = false;     // check page without item in topMenu. If true - make green button for parent page (e.g. athlet for athlets)
@@ -44,16 +44,16 @@ var reloadItemsMenu = function(){
                             }
                         }
                         if (str == $.itemsTopMenu[key]["href"] || (str=="" && $.itemsTopMenu[key]["href"]=="?home" || flagDependent==true)){ // current page
-                            newItem = "<li><a class='btn btn-success' href='"+$.locationPage+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key][$.elephantLanguage]+"</a></li>";
+                            newItem = "<li><a class='button button-success' href='"+$.locationPage+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key][$.elephantLanguage]+"</a></li>";
                         }
-                        else newItem = "<li><a  class='btn btn-outline-success' href='"+$.locationPage+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key][$.elephantLanguage]+"</a></li>";
+                        else newItem = "<li><a  class='button' href='"+$.locationPage+$.itemsTopMenu[key]["href"]+"'>"+$.itemsTopMenu[key][$.elephantLanguage]+"</a></li>";
                     }
                 }
                 $.topMenu = $.topMenu +  newItem;
             })
         }
         $("#itemsMenu").html($.topMenu);
-        $($.parentId).addClass("btn btn-success"); 
+        $($.parentId).addClass("button button-success"); 
     }); //end done()
 }
 /******** top Menu end ******/

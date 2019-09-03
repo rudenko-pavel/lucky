@@ -18,7 +18,7 @@
         
     var eventsDataTable = function(){
         $.elephantLanguage = localStorage.getItem('elLang');
-        var listEvents = '<table id="listEvents" class="table table-hover container table-bordered dataTable" style="width:100%">'+
+        var listEvents = '<table id="listEvents" class="table table-hover container table-bordered dataTable d3-effect" style="width:100%">'+
                             '<thead>'+
                                 '<tr>'+
                                     '<th>'+$.dataTablesDictionary[$.elephantLanguage]["_date"]+'</th>'+

@@ -31,7 +31,7 @@ $(document).ready(function(){
                         console.log("$.memberInfo: ",$.memberInfo);
                     }).done(function(){
                         if ($.flagIsMember){    // id-athlet is in JSON
-                            $.memberPhoto = "<img class='card-img-top' src='"+$.pathToImg+$.memberId+".jpg' data-toggle='modal' data-target='#photo"+$.memberId+"' />";
+                            $.memberPhoto = "<img class='card-img-top d3-effect' src='"+$.pathToImg+$.memberId+".jpg' data-toggle='modal' data-target='#photo"+$.memberId+"' />";
                             
                             var newModalCollection ='<div class="modal fade" id="photo'+$.memberId+'" tabindex="-1" role="dialog" aria-hidden="true">'+
                                 '<div class="modal-dialog" role="document">'+
