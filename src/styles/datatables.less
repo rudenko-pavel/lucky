@@ -5,16 +5,40 @@
     .custom-select-sm{
         margin: 5px;
     }
+
+    .col-sm-12{
+        padding: 1px;
+    }
 }
 
-.dataTable{
+.table.dataTable{
     .w-10-percent{width:10%;}
-    .w-15-percent{width:10%;}
+    .w-15-percent{width:15%;}
     .w-20-percent{width:20%;}
     .w-30-percent{width:30%;}
     .w-40-percent{width:40%;}
     .w-50-percent{width:50%;}
     .w-60-percent{width:60%;}
+
+    width:  97% !important;
+    padding: 0 !important;
+    border: 1px solid @caption-table-border !important;
+    border-collapse: collapse !important;
+
+    thead, tfoot{
+        th{
+            border-bottom: 0px solid @caption-table-border !important;
+        }
+        tr{
+            background-color: @caption-table;
+        }
+    }
+
+    tbody{
+        td{
+            border: 1px solid @caption-table-border !important;
+        }
+    }
 
     .eventLogo{
         border: 1px solid @box-shadow-color ;
@@ -92,6 +116,14 @@
     .more576{display: none;}
 }
 
+.dataTables_wrapper{
+    .row{
+        margin-right: 3px;
+        margin-left: 3px;
+        padding: 7px 0;
+    }
+}
+
 .description-member{
     padding: 10px;
     text-align: center;
@@ -153,6 +185,11 @@
 
 
 /************ different resolutions ************/
-@media only screen and (max-width: 991px){
-
+@media only screen and (max-width: 576px){
+    .table.dataTable{
+        th, td{
+            padding: 10px,3px !important;
+        }
+    
+    }
 }

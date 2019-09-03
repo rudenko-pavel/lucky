@@ -35,7 +35,7 @@
         };
         $.elephantLanguage = localStorage.getItem('elLang');
         $.getJSON( "dist/includes/json/datepicker."+$.elephantLanguage+".json", function( data ) {
-
+            $( "#timestamp" ).val("");
         $("#wrapPrefill").html('<input type="text" id="prefill" class="datepicker"><label for="prefill" class="full-label" id="selectDate"></label>');
         var selectDate = $.convertingDictionary[$.elephantLanguage]["_selectDate"];
         var resultDate = $.convertingDictionary[$.elephantLanguage]["_resultDate"];
@@ -48,7 +48,13 @@
               selectYears: true, selectMonths: true, firstDay: 1, format: 'yyyy-mm-dd'
           
             });
-        
+            $("#prefill").change(function() {
+                var date = $( "#prefill" ).val();
+                var newDate = parseInt((new Date(date).getTime()).toFixed(0));
+                date == "" ?$( "#timestamp" ).val("") : $( "#timestamp" ).val(newDate);
+            
+                
+              });
         });
     }
     /************** translate info end    *************/

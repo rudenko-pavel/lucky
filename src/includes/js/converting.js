@@ -50,13 +50,7 @@
     $( "#timestamp2" ).val() == "" ?$( "#humanDate" ).val("") : $( "#humanDate" ).val(humanDate);
   }
 
-  $("#prefill").change(function() {
-    var date = $( "#prefill" ).val();
-    var newDate = parseInt((new Date(date).getTime()).toFixed(0));
-    date == "" ?$( "#timestamp" ).val("") : $( "#timestamp" ).val(newDate);
 
-    
-  });
 
   $.getScript("./dist/includes/js/vendor/tooltipster.bundle.min.js",function(){
       console.log("`tooltipster.js` is loaded");

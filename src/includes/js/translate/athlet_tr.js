@@ -63,7 +63,7 @@
                             '</thead>'+
                             '<tfoot>'+
                                 '<tr>'+
-                                    '<th>'+$.dataTablesDictionary[$.elephantLanguage]["_date"]+'</th>'+
+                                    '<th class="w-20-percent">'+$.dataTablesDictionary[$.elephantLanguage]["_date"]+'</th>'+
                                     '<th class="w-20-percent">&nbsp;&nbsp;</th>'+
                                     '<th>'+$.dataTablesDictionary[$.elephantLanguage]["_race"]+'</th>'+
                                 '</tr>'+

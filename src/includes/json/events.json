@@ -85,8 +85,8 @@
         {
             "runDate"   :"2019-05-11",
             "runId"     : "20190511",
-            "name-ua"   : "RACE NATION",
-            "name-en"   : "RACE NATION",
+            "name-ua"   : "Race Nation KИЇВ",
+            "name-en"   : "Race Nation KYIV",
             "descriptions-ua": "<p>Багнюки багато не буває </p><p>Біль тимчасова. Слава вічна! </p><p> Так і бігаємо)))))</p>",
             "descriptions-en": "<p>Is never much dirt.</p><p>The pain is temporary. Glory is forever!</p><p>Such races))))) </p>",
             "countImages": 8,
@@ -96,8 +96,8 @@
         {
             "runDate"   :"2019-08-25",
             "runId"     : "20190825",
-            "name-ua"   : "Spartan Poland",
-            "name-en"   : "Spartan Poland",
+            "name-ua"   : "Spartan POLAND",
+            "name-en"   : "Spartan POLAND",
             "descriptions-ua": "<p>Світова арена! Вперед і вгору !! Не вмирати!!!</p>",
             "descriptions-en": "<p> World stage! Forward and up !! Not to die!!!</p>",
             "countImages": 8,

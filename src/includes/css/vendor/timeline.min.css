@@ -10,6 +10,6 @@
 
 @media only screen and (max-width: 992px) {
 	.timeline-list, .timeline-item {
-		width: 650px;
+	/*	width: 650px;*/
 	}
   }
