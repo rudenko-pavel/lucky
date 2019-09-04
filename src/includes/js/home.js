@@ -1,16 +1,9 @@
 $(document).ready(function(){
-$.accordionItems="";    // list tabs from accordion 
 
-
-    $.getJSON( "dist/includes/json/accordion.json", function( data ) {
-        $.home01 = data.home01;
-    })
-    .done(function(){
-        $.getScript("./dist/includes/js/translate/home_tr.js",function(){
-            translateHome();        // translate Home
-            createMyCarousel();     // create Carousel
-            createAccordion();      // create Accordion
-        }); 
+    $.getScript("./dist/includes/js/translate/home_tr.js",function(){
+        translateHome();        // translate Home
+        createMyCarousel();     // create Carousel
+        createAccordion();      // create Accordion 
     })
     .done(function(){
         $.getScript("dist/includes/js/mypreloader.js",function(){

@@ -85,7 +85,9 @@ $(document).ready(function(){
                         $('#carouselEvent').append($.galleryControls);
                         $('#carouselIndicators').append($.galleryIndicators);
                         $('#tooltipSegment').load('./dist/includes/tooltip.html')
-                        
+                        $.getScript("./dist/includes/js/carousel.swipe.js",function(){
+                            initSwipe();        // init Swipe
+                        })
                         $.getScript("./dist/includes/js/translate/event_tr.js",function(){
                             infoEvent();  // draw info about event
                         });   

@@ -182,8 +182,12 @@ label {
     transition: background 0.2s ease-in-out;
 }
 
-img.d3-effect{
+.big-img.d3-effect{
     border-radius: 50%;
+}
+
+.card-img-top.d3-effect{
+    border-radius: 15px;
 }
 
 /*********** BUTTONS  start*************/
@@ -213,6 +217,11 @@ img.d3-effect{
 .button:hover {
     background-color: @button-hover !important;
 }
+
+.scrollTop.button:active  {
+    top: unset;
+}
+
 .button:active {
     top: .2em;
     color: @button-active-color ;
@@ -222,6 +231,9 @@ img.d3-effect{
         inset @button-active-box-shadow-1,
         @button-active-box-shadow-1,
         @button-active-box-shadow-1;
+}
+.scrollTop.button:after {
+    background-image: none; 
 }
 .button:after {
     content:  "";

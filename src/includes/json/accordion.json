@@ -1,25 +1,40 @@
 {
     "home01": [
         {
-            "tabId":1, 
-            "id": "collapseOne",
-            "name": "running",
-            "bgImg": "run",
-            "description": "<p>Зачем люди бегают? Чтобы скрыться от шума обычной жизни и проветрить голову? Или стать ближе к природе? А, может, чтобы бросить себе вызов и добиться таких вершин, о которых и подумать страшно?</p><p>Наступит день, когда, проснувшись в 6.30, вы скажете себе: пора — и будете бежать, не пытаясь себя остановить. Двадцать минут. Хорошо. Двадцать пять? Отлично! Тридцать? Замечательно. Сорок! Потрясающе!</p><p>Когда-то он наступит...</p>"
+            "tabId"     :1, 
+            "id"        : "collapseOne",
+            "name-ua"   : "біг",
+            "name-en"   : "running",
+            "bgImg"     : "run",
+            "description-ua": "<p>Навіщо люди бігають? Аби сховатися від шуму звичайному житті і провітрити голову? Або стати ближче до природи? Або, може, щоб кинути собі виклик і досягти таких вершин, про які й подумати страшно?</p><p>Колись прийде час, і ти, прокинувшись о 6.30, скажешь собі: пора - і будешь бігти, не намагаючись себе зупинити. Двадцять хвилин. Добре. Двадцять п'ять? Відмінно! Тридцять? Чудово!! Сорок? Приголомшливо!!!</p><p>Колись цей час настане ... </p><p>... Неодмінно... ))</p>",
+            "description-en": "<p>Why are people running around? In order to hide from the hustle and bustle of ordinary life? Or getting closer to nature? Or, maybe, to challenge yourself and reach the heights that you can't think of?</p><p>The time will come and you will wake up at 6.30 and tell yourself it is time and you will run without trying to stop yourself. Twenty minutes. Okay. Twenty five? Very good! Thirty? Perfectly!! Forty? Great!!!</p><p>Once this time will come...</p><p>... Certainly... ))</p>"
         },
         {
-            "tabId":2,
-            "id": "collapseTwo",
-            "name": "I'm LEGION",
-            "bgImg": "legion",
-            "description": "<p>Legion Run – это примерно пятикилометровый, ориентированный на команду забег с препятствиями из грязи, огня, льда и колючей проволоки, который проводиться в разных странах по всему миру.</p><p>Наши мероприятия – это отличная возможность испытать ваши физические и психологические пределы, и поделиться эпическими моментами с вашими друзьями, сотрудниками или семьей. Это не гонка и это не соревнование против других. Это просто замечательное веселье для взрослых!</p>"
+            "tabId"     :2,
+            "id"        : "collapseTwo",
+            "name-ua"   : "I'm LEGION",
+            "name-en"   : "I'm LEGION",
+            "bgImg"     : "legion",
+            "description-ua": "<p>Legion Run - це приблизно п'ятикілометровий, орієнтований на команду, забіг з перешкодами з бруду, вогню, льоду і колючого дроту, який проводиться в різних країнах по всьому світу.</p><p>Це відмінна можливість випробувати ваші фізичні і психологічні межі, і поділитися епічними моментами з вашими друзями, колегами та родиною.</p><p>Це не гонка і це не змагання проти інших. Це просто чудове веселощі для дорослих!</p>",
+            "description-en": "<p>The Legion Run is an approximately five-kilometer, team-oriented, obstacle course run of dirt, fire, ice and barbed wire, which is produced in various countries around the world.</p><p>This is a great opportunity to test your physical and psychological boundaries and share epic moments with your friends, colleagues and family.</p><p>This is not a race and it is not a competition against others. It's just great fun for adults!</p>"
         },
         {
-            "tabId":3, 
-            "id": "collapseThree", 
-            "name": "Race Nation",
-            "bgImg": "racenation",
-            "description": "<p>Подходит каждому, кто хочет испытать свои силы и выносливость. Получи незабываемые эмоции! Преодолей себя! Цель - преодолеть дистанцию и финишировать. Хватит тебе сил преодолеть все препятствия? Присоединяйся!</p>"
+            "tabId"     :3, 
+            "id"        : "collapseThree", 
+            "name-ua"   : "Race Nation",
+            "name-en"   : "Race Nation",
+            "bgImg"     : "racenation",
+            "description-ua": "<p>Підходить кожному, хто хоче випробувати свої сили і витривалість. Отримай незабутні емоції! Подолай себе!</p><p>Мета - подолати дистанцію і фінішувати. Досить тобі сил подолати всі перешкоди?</p><p>Приєднуйся!</p>",
+            "description-en": "<p>Suitable for anyone who wants to test their strength and endurance. Get unforgettable emotions! Overcome yourself!</p><p>The goal is to overcome the distance and finish. Do you have enough strength to overcome all obstacles?</p><p>Join now!</p>"
+        },
+        {
+            "tabId"     :4, 
+            "id"        : "collapseFour", 
+            "name-ua"   : "Spartan",
+            "name-en"   : "Spartan",
+            "bgImg"     : "spartan",
+            "description-ua": "<p>Досягти більше, ніж ти вважав можливим.</p><p>Для тих, хто бажає душевно і фізично підштовхнути до досягнення своїх особистих можливостей, Спартан є каталізатором трансформації - виштовхуючи вас за межі того, що ви вважали можливим.</p>",
+            "description-en": "<p>Achieve more than you thought possible.</p><p>For those willing to mentally and physically push to achieve their personal best, Spartan is a catalyst for transformation - pushing you beyond what you thought was possible.</p>"
         }
     ]
 }

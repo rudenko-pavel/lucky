@@ -40,6 +40,7 @@
             if ($.runItems.length==0){
                 var newItem = "";
                 var newIndicator ="";
+
                 $.each( $.runnings, function(key) {
                     var addClass="";
                     if (key==0) addClass=" active";
@@ -60,7 +61,6 @@
                     newIndicator ="<li data-target='#carouselEvents' data-slide-to='"+key+"' class='btn ind"+addClass+"'><div class='inTimeline'>"+$.runnings[key]["runDate"]+"</div></li>";
                     $.runItems = $.runItems + newItem;
                     $.newIndicator = $.newIndicator + newIndicator;
-                    
                     /*********** newModalCollection - div in MODAL (big img) *************/
                     var newModalCollection =
                         '<div class="modal fade" id="photo'+key+'" tabindex="-1" role="dialog" aria-hidden="true">'+
@@ -96,10 +96,8 @@
             }
         })
 
-        $('.carousel').carousel({
-            interval: 0,
-            touch: true,
-            ride: true
+        $.getScript("./dist/includes/js/carousel.swipe.js",function(){
+            initSwipe();        // init Swipe
         })
         
         $.maxWidth = $( "#carouselEvents" ).width();
@@ -125,26 +123,35 @@
     /************** create carousel end  *************/
     /************** create accordion start  *************/
     var createAccordion = function(){
-        // add data to `#accordion`
-        if ($.accordionItems.length==0){
-            var newItemAccordion = "";
-            $.each( $.home01, function(key) {
-                newItemAccordion=
-                '<div class="card">'+
-                    '<div class="card-header eventtype alert alert-info" style="background-image:url(/dist/img/logo/'+$.home01[key]["bgImg"]+'.png)" role="tab"  id="heading'+$.home01[key]["id"]+'">'+
-                        '<h5 class="mb-0">'+
-                            '<a class="btn btn-info d3-effect" data-toggle="collapse" href="#'+$.home01[key]["id"]+'" aria-expanded="true" aria-controls="collapseOne">'+$.home01[key]["name"]+'</a>'+
-                        '</h5>'+
-                    '</div>'+
-                    '<div id="'+$.home01[key]["id"]+'" class="collapse"  role="tabpanel" aria-labelledby="heading'+$.home01[key]["id"]+'" data-parent="#accordion">'+
-                        '<div class="card-body">'+$.home01[key]["description"]+'</div>'+
-                    '</div>'+
-                '</div>'
-                $.accordionItems = $.accordionItems + newItemAccordion;
-            })
-        };
+        $.elephantLanguage = localStorage.getItem('elLang');
+        $.accordionItems="";    // list tabs from accordion 
+        $.getJSON( "dist/includes/json/accordion.json", function( data ) {
+            $.home01 = data.home01;
+        })
+        .done(function(){
+            // add data to `#accordion`
+            if ($.accordionItems.length==0){
+                var newItemAccordion = "";
+                var nameEvent = "name-"+$.elephantLanguage;
+                var descriptionEvent = "description-"+$.elephantLanguage;
+                $.each( $.home01, function(key) {
+                    newItemAccordion=
+                    '<div class="card">'+
+                        '<div class="card-header eventtype alert alert-info" style="background-image:url(/dist/img/logo/'+$.home01[key]["bgImg"]+'.png)" role="tab"  id="heading'+$.home01[key]["id"]+'">'+
+                            '<h5 class="mb-0">'+
+                                '<a class="btn btn-info d3-effect" data-toggle="collapse" href="#'+$.home01[key]["id"]+'" aria-expanded="true" aria-controls="collapseOne">'+$.home01[key][nameEvent]+'</a>'+
+                            '</h5>'+
+                        '</div>'+
+                        '<div id="'+$.home01[key]["id"]+'" class="collapse"  role="tabpanel" aria-labelledby="heading'+$.home01[key]["id"]+'" data-parent="#accordion">'+
+                            '<div class="card-body">'+$.home01[key][descriptionEvent]+'</div>'+
+                        '</div>'+
+                    '</div>'
+                    $.accordionItems = $.accordionItems + newItemAccordion;
+                })
+            };
+            $("#accordion").html($.accordionItems);
+        })
 
-        $("#accordion").html($.accordionItems);
     }
     /************** create accordion end  *************/
 /************** HOME -  end    *************/
