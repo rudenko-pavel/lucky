@@ -1,16 +1,20 @@
 /************** HOME - start  *************/
+    $.homeDictionary = {
+        "en": {
+            "_content2"     : "sometimes we are athletes ;)",
+            "_moreInfo"     : "more info",
+            "_youBornTo"    : "you born to",
+            "_effect1Text"  : ["win", "rejoice", "love", "success", "life"]
+        },
+        "ua": {
+            "_content2"     : "Іноді ми атлети ;)",
+            "_moreInfo"     : "ще цікавіше",
+            "_youBornTo"    : "ти народився для",
+            "_effect1Text"  : ["перемог", "радості", "любові", "успіху", "життя"]
+        }
+    };
     /************** translate info start  *************/
     var translateHome = function(){
-        $.homeDictionary = {
-            "en": {
-                "_content2": "sometimes we are athletes ;)",
-                "_moreInfo": "more info"
-            },
-            "ua": {
-                "_content2": "Іноді ми атлети ;)",
-                "_moreInfo": "ще цікавіше"
-            }
-        };
         $.elephantLanguage = localStorage.getItem('elLang');
 
         var content2 = $.homeDictionary[$.elephantLanguage]["_content2"];
@@ -19,6 +23,62 @@
         $("#content2").html(content2);
     }
     /************** translate info end    *************/
+    /************** text effects start    *************/    
+    $.timerId  = null;
+    var textEffects = function(){
+        $.elephantLanguage = localStorage.getItem('elLang');
+        var youBornTo = $.homeDictionary[$.elephantLanguage]["_youBornTo"];
+        $("#effect1--intro").html(youBornTo);
+        if($.timerId){
+            clearInterval($.timerId);
+            $.timerId = null
+         }
+        
+   
+            var t = $.homeDictionary[$.elephantLanguage]["_effect1Text"],
+                $h2 = $(".effect"),
+                $sp = $h2.find(".effect--highlight"),
+                i = 0,
+                widths = [];
+    
+            $.each(t, function (i, v) {
+                var el = $('<span />', {
+                    text: v
+                }).appendTo($h2);
+                widths.push(el.width());
+                el.remove();
+            });
+    
+           $sp.css({
+                opacity: 0
+            });
+ 
+            $.timerId = setInterval(function () {
+                i = ++i % t.length;
+                $sp.text(t[i]).animate({width: widths[i]}, 500, function () {
+                    TweenLite.to($sp.text(t[i]), 0.5, {width:widths[i], onComplete:function () {
+                        TweenLite.to($sp.text(t[i]), 0.5, {autoAlpha:1});
+                        TweenLite.to($sp.text(t[i]), 0.5, {autoAlpha:0, delay:2});
+                    }});
+                });
+            }, 5000);
+            
+ 
+    }
+    /************** text effects end    *************/
+
+    // run the currently selected effect
+    $.repeatCount = 0;
+    function runEffect() {
+    // Run the effect
+    $.repeatCount<8 ? $( "#logoImg" ).effect( "bounce", 1000 ): "";
+    $('#content2').textWave({
+            ratio: 2,
+            repeat: 2,
+            framerate: 60
+        })
+        $.repeatCount++;
+    };
     /************** create carousel start  *************/
     var createMyCarousel = function(){
         var locationPort;

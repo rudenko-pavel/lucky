@@ -12,6 +12,7 @@ https://github.com/ilkeryilmaz/timelinejs
 
 EFFECTS:
 https://jqueryui.com/effect/
+ (http://www.greensock.com  - TextPlugin.min.js)
 
 TEXT WAVE:
 https://www.jqueryscript.net/animation/Text-Wave-Effect-jQuery.html

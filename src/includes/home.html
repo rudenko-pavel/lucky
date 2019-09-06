@@ -33,7 +33,7 @@
         <span id="line1" class="line bottom-line"></span>
     </p>
 </div>
-<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 timeline-container main hr">
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 timeline-container main">
     <!--Controls-->
     <div class="controls-gallery controls-top">
         <span id="wrapBtnGallery"></span>
@@ -54,7 +54,41 @@
         </p>
     </div>
     <!--/.Indicators-->
+
     <div id="modalSegment"></div>
     <div id="tooltipSegment"></div>
+
+
+    <div id="parallax1" class="parallaxParent d3-effect">
+        <div class="inboxText">
+            <h2 class="effect">
+                <span id="effect1--intro" class="effect--intro"></span><hr/>
+                <span id="effect1--highlight" class="effect--highlight"></span>
+            </h2>
+        </div>
+        <div id="homeMagic1" class="magicBg"></div>
+
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <p class="wrapLine">
+            <span class="line"></span>
+            <span id="line3" class="line bottom-line"></span>
+        </p>
+    </div>
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 empty-row"></div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </div>
+
+
+<script>
+	// init controller
+	var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "150%"}});
+
+	// build scenes
+	new ScrollMagic.Scene({triggerElement: "#parallax1"})
+					.setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
+
+					.addTo(controller);
+
+
+</script>

@@ -22,7 +22,7 @@ $(document).ready(function(){
             reloadItemsMenu();  // draw a menu
             var str = window.location.search.substring(1).split(":");
 
-            if ( str[0]=="home" ||str[0]=="" )  {translateHome();createMyCarousel();createAccordion();}
+            if ( str[0]=="home" ||str[0]=="" )  {translateHome();createMyCarousel();createAccordion();textEffects();}
             if ( str[0]=="events" )             {eventsDataTable();}
             if ( str[0]=="event" )              {infoEvent();}
             if ( str[0]=="athletes" )           {athletesDataTable();}
