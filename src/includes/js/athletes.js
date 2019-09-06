@@ -7,6 +7,11 @@ $(document).ready(function(){
                 })
                 /************** necessary scripts start**************/
                 .done(function(){ 
+                    $.getScript("./dist/includes/js/redline.js",function(){
+                        $( window ).scroll(function() {
+                            getOffset();
+                        });
+                    });
                     $.getScript("./dist/includes/js/vendor/tooltipster.bundle.min.js",function(){
                         console.log("`tooltipster.js` is loaded");
                     })

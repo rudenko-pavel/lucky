@@ -77,3 +77,39 @@ body {
         }
     }
 }
+/************* red line ***************/
+p.wrapLine {
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+}
+.line.bottom-line {
+    bottom: 0;
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: @border-datapicker;
+    left: 0;
+    top: 0;
+}
+.line.bottom-line{
+    width: 0%;
+}
+
+ .line.btb-active{
+    position: absolute;
+    content: "";
+    background: @red-color;
+}
+.line, .line.btb-active{
+    transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+    -moz-transition: all 1.5s ease;
+}
+.line.btb-active{
+    width: 100%;
+}

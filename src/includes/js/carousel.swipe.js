@@ -1,6 +1,6 @@
 var initSwipe = function(){
     $('.carousel').carousel({
-        interval: 5000,
+        interval: 4000,
         touch: true,
         ride: "carousel",
         pause: "hover"
@@ -14,4 +14,23 @@ var initSwipe = function(){
         },
         allowPageScroll:"vertical"
     });
+}
+
+var addControlButtons = function(){
+  $('#wrapBtnGallery').append('<a id="btn-gallery-pause" class="btn-floating btn-success fas fa-pause"></a>');
+  $('#wrapBtnGallery').append('<a id="btn-gallery-play" class="btn-floating btn-success fas fa-play"></a>');
+  $("#btn-gallery-play").click(function(){
+      $(".carousel").carousel('cycle');
+      $(this).css("display","none");                               
+      $("#btn-gallery-pause").css("display","inline-block");
+  });
+  $("#btn-gallery-pause").click(function(){
+      $(".carousel").carousel('pause'); 
+      $(this).css("display","none");                               
+      $("#btn-gallery-play").css("display","inline-block");
+  });
+  $("#btn-zoom").click(function(){
+      var imgZoom = $('.item.active');
+      $(this).attr("data-target",imgZoom[0]["firstChild"]["dataset"]["target"]);
+  })
 }

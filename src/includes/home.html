@@ -27,13 +27,31 @@
         </div>                      
     </div>
 </div>
-<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main hr">
-    <div id="carouselEvents" class="carousel slide carousel-fade timeline-container  d3-effect">
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 main">
+    <p class="wrapLine">
+        <span class="line"></span>
+        <span id="line1" class="line bottom-line"></span>
+    </p>
+</div>
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 timeline-container main hr">
+    <!--Controls-->
+    <div class="controls-gallery controls-top">
+        <span id="wrapBtnGallery"></span>
+        <a id="btn-zoom" class="btn-floating btn-success fas fa-search-plus" data-toggle='modal' data-target=''></a>
+    </div>
+    <!--/.Controls-->
+    <div id="carouselEvents" class="carousel slide carousel-fade   d3-effect">
         <div class="carousel-inner v-2" role="listbox" id="listbox-events"></div>
     </div>
     <!-- Indicators -->
     <div class="wrapper-ol">
         <ol class="carousel-indicators" id="carousel-indicators"></ol>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 hr-style">
+        <p class="wrapLine">
+            <span class="line"></span>
+            <span id="line2" class="line bottom-line"></span>
+        </p>
     </div>
     <!--/.Indicators-->
     <div id="modalSegment"></div>

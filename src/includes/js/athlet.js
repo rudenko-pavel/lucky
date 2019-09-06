@@ -28,7 +28,7 @@ $(document).ready(function(){
                 }).done(function(){
                     $.getJSON( "dist/includes/json/common.json", function( data ) { //get fields names for view on page
                         $.commonData = data.athletNamesOptions;
-                        console.log("$.memberInfo: ",$.memberInfo);
+
                     }).done(function(){
                         if ($.flagIsMember){    // id-athlet is in JSON
                             $.memberPhoto = "<img class='card-img-top d3-effect' src='"+$.pathToImg+$.memberId+".jpg' data-toggle='modal' data-target='#photo"+$.memberId+"' />";
@@ -75,6 +75,11 @@ $(document).ready(function(){
             })
             .done(function(){
                 /************** necessary scripts **************/
+                $.getScript("./dist/includes/js/redline.js",function(){
+                    $( window ).scroll(function() {
+                        getOffset();
+                    });
+                });
                 $.getScript("dist/includes/js/mypreloader.js",function(){
                     console.log("`mypreloader.js` is DONE");
                 });

@@ -38,6 +38,9 @@ MDB:
     - https://mdbootstrap.com
     - https://jsfiddle.net/danypd69/3upzca6t/
 
+SCROLLMAGIC:
+    - http://scrollmagic.io
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 FOLDES with IMAGES:
     - [EVENTS]:
