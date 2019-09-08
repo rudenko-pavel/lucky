@@ -4,23 +4,47 @@
             "_content2"     : "sometimes we are athletes ;)",
             "_moreInfo"     : "more info",
             "_youBornTo"    : "you born to",
-            "_effect1Text"  : ["win", "rejoice", "love", "success", "life"]
+            "_effect1Text"  : ["win", "rejoice", "love", "success", "life","progress"],
+            "_athletes"       : "athletes:",
+            "_races"        : "races:"
         },
         "ua": {
             "_content2"     : "Іноді ми атлети ;)",
             "_moreInfo"     : "ще цікавіше",
             "_youBornTo"    : "ти народився для",
-            "_effect1Text"  : ["перемог", "радості", "любові", "успіху", "життя"]
+            "_effect1Text"  : ["перемог", "радості", "любові", "успіху", "життя","досягнень"],
+            "_athletes"       : "спортсменів:",
+            "_races"        : "перегонів:"
         }
     };
     /************** translate info start  *************/
     var translateHome = function(){
         $.elephantLanguage = localStorage.getItem('elLang');
-
         var content2 = $.homeDictionary[$.elephantLanguage]["_content2"];
-        $.moreInfo = $.homeDictionary[$.elephantLanguage]["_moreInfo"];
-       
         $("#content2").html(content2);
+
+        $.moreInfo = $.homeDictionary[$.elephantLanguage]["_moreInfo"];
+        /************** reveal start ****************/
+        $.getJSON( "dist/includes/json/events.json", function( data ) {
+            $.eventsData = data.data;
+            $.races = $.eventsData.length;
+        })
+        .done(function(){
+            $.getJSON( "dist/includes/json/members.json", function( data ) {
+                $.athletesData = data.data;
+                $.athletes = $.athletesData.length;
+                $.each( $(".reveal.carousel"), function(key, value) {
+                    var header= $("#"+value.id).find(".card-header");
+                    $("#"+ header[0]["id"]).html("<span>"+$.homeDictionary[$.elephantLanguage][$("#"+ header[0]["id"]).data("txt")]+"</span>");
+    
+                    var title= $("#"+value.id).find(".title");
+                    var ff = $("#"+ title[0]["id"]).data("item");
+                    var gg = eval("$."+ff);
+                    $("#"+ title[0]["id"]).html(gg);
+                })            
+            })
+        })
+        /************** reveal end ****************/
     }
     /************** translate info end    *************/
     /************** text effects start    *************/    
@@ -33,8 +57,6 @@
             clearInterval($.timerId);
             $.timerId = null
          }
-        
-   
             var t = $.homeDictionary[$.elephantLanguage]["_effect1Text"],
                 $h2 = $(".effect"),
                 $sp = $h2.find(".effect--highlight"),

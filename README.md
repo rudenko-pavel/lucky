@@ -34,6 +34,9 @@ https://dwstroy.ru/video/js-jquery/preloader-progress-bar-js/
 
 EFFECT ON PAGE:
     - https://trionndesign.com/
+    - https://daneden.github.io/animate.css/
+    - https://www.delac.io/wow/docs.html
+
 
 MDB:
     - https://mdbootstrap.com

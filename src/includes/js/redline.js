@@ -4,7 +4,7 @@ var getOffset = function () {
         //console.log("123 " + this.id  );
         var el =  "#"+this.id;
         var isView = $( window ).height()-$(el).offset().top + $(document).scrollTop();
-        var upBorder = $( window ).height() - $( window ).height()/4;
+        var upBorder = $( window ).height() - $( window ).height()/5;
         var _x = 0;
         var _y = 0;
         var _focus = 0;
