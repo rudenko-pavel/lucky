@@ -78,7 +78,9 @@
     }
     .controls-gallery{
         display: block !important;
-        a{
+        .flexdiv{
+            display: flex !important;
+            width: 100% !important;
         }
     }
 
@@ -88,8 +90,12 @@
     }
 
     .timeline-container{
-        .chosen-value, .value-list, #wrapBtnGallery{
-            top: -42px;
+        .chosen-value, #wrapBtnGallery{
+            position: relative;
+        }
+
+        .value-list{
+            z-index: 888;
         }
 
         #wrapBtnGallery{
@@ -97,10 +103,15 @@
         }
 
         .timeline-visual{
-            min-height: 276px !important;
+            min-height: 236px !important;
         }
     }
 
+    .value-list {
+        li{
+            font-size: 12px !important;
+        }
+    }
 
 }
 
