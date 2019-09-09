@@ -18,10 +18,7 @@ $(document).ready(function(){
                         responsive: true
                       }
                     });*/
-    $.getScript("./dist/includes/js/carousel.swipe.js",function(){
-        initSwipe();        // init Swipe
-        addControlButtons();    // add Control Buttons
-    });
+
     $.getScript("./dist/includes/js/translate/home_tr.js",function(){
         translateHome();        // translate Home
         createMyCarousel();     // create Carousel

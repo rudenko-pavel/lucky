@@ -5,16 +5,16 @@
             "_moreInfo"     : "more info",
             "_youBornTo"    : "you born to",
             "_effect1Text"  : ["win", "rejoice", "love", "success", "life","progress"],
-            "_athletes"       : "athletes:",
-            "_races"        : "races:"
+            "_athletes"     : "athletes:",
+            "_races"        : "events:"
         },
         "ua": {
             "_content2"     : "Іноді ми атлети ;)",
             "_moreInfo"     : "ще цікавіше",
             "_youBornTo"    : "ти народився для",
             "_effect1Text"  : ["перемог", "радості", "любові", "успіху", "життя","досягнень"],
-            "_athletes"       : "спортсменів:",
-            "_races"        : "перегонів:"
+            "_athletes"     : "спортсменів:",
+            "_races"        : "подій:"
         }
     };
     /************** translate info start  *************/
@@ -43,9 +43,11 @@
                     $("#"+ title[0]["id"]).html(gg);
                 })            
             })
+
         })
         /************** reveal end ****************/
     }
+
     /************** translate info end    *************/
     /************** text effects start    *************/    
     $.timerId  = null;
@@ -115,9 +117,15 @@
             $.runnings = data.data;
         })
         .done(function(){
+            $.getScript("./dist/includes/js/carousel.swipe.js",function(){
+                initSwipe();        // init Swipe
+                addControlButtons();    // add Control Buttons
+            });
+
             $.elephantLanguage = localStorage.getItem('elLang');
             var nameEvent = "name-"+$.elephantLanguage;
             var descriptionsEvent = "descriptions-"+$.elephantLanguage;
+
             // add data to `#listbox-events`
             if ($.runItems.length==0){
                 var newItem = "";
@@ -125,7 +133,10 @@
 
                 $.each( $.runnings, function(key) {
                     var addClass="";
-                    if (key==0) addClass=" active";
+                    if (key==0) {
+                        addClass=" active";
+                        $("#chosen-value").val($.runnings[key]["runDate"]+": "+ $.runnings[key][nameEvent]);
+                    };
 
                     /*********** newItem - div in CAROUSEL (img+description+button) *************/
                     newItem=
@@ -142,6 +153,7 @@
                         "</div>";
                     newIndicator ="<li data-target='#carouselEvents' data-slide-to='"+key+"' class='btn ind"+addClass+"'><div class='inTimeline'>"+$.runnings[key]["runDate"]+"</div></li>";
                     $.runItems = $.runItems + newItem;
+
                     $.newIndicator = $.newIndicator + newIndicator;
                     /*********** newModalCollection - div in MODAL (big img) *************/
                     var newModalCollection =
@@ -173,33 +185,117 @@
                 });
                 $("#listbox-events").html($.runItems);
                 $('#listbox-events').prepend($.galleryControls);
-                $("#carousel-indicators").html($.newIndicator);
+               //$("#carousel-indicators").html($.newIndicator);
                 $('#tooltipSegment').load('./dist/includes/tooltip.html')
             }
+
+            
+                /*************** select Fill start ***************/
+                var selectFill = function(){
+
+                    var nameEvent = "name-"+$.elephantLanguage;
+
+                    const inputField = document.querySelector('.chosen-value');
+                    const dropdown = document.querySelector('.value-list');
+                    var tt ="";
+                    var addClass="";
+                    $.each( $.runnings, function(key, value) {
+                        if (tt.length==0) addClass=" active";
+                        else addClass="";
+                        tt = tt +"<li class='select-item"+addClass+"' data-target='#carouselEvents' data-slide-to='"+key+"'>"+$.runnings[key]["runDate"]+": "+ $.runnings[key][nameEvent]+"</li>";
+                    })
+                    $("#value-list-1").html(tt);
+                    const dropdownArray = [... document.querySelectorAll('li.select-item')];
+                    console.log(typeof dropdownArray)
+                    //dropdown.classList.add('open');
+                    //inputField.focus(); // Demo purposes only
+                    let valueArray = [];
+                    dropdownArray.forEach(item => {
+                      valueArray.push(item.textContent);
+                    });
+                    
+                    const closeDropdown = () => {
+                      dropdown.classList.remove('open');
+                    }
+                    
+                    inputField.addEventListener('input', () => {
+                      dropdown.classList.add('open');
+                      let inputValue = inputField.value.toLowerCase();
+                      let valueSubstring;
+                      if (inputValue.length > 0) {
+                        for (let j = 0; j < valueArray.length; j++) {
+                          if (!(inputValue.substring(0, inputValue.length) === valueArray[j].substring(0, inputValue.length).toLowerCase())) {
+                            dropdownArray[j].classList.add('closed');
+                          } else {
+                            dropdownArray[j].classList.remove('closed');
+                          }
+                        }
+                      } else {
+                        for (let i = 0; i < dropdownArray.length; i++) {
+                          dropdownArray[i].classList.remove('closed');
+                        }
+                      }
+                    });
+                    
+                    dropdownArray.forEach(item => {
+                      item.addEventListener('click', (evt) => {
+                        inputField.value = item.textContent;
+                        dropdownArray.forEach(dropdown => {
+                          dropdown.classList.add('closed');
+                        });
+                      });
+                    })
+                    
+                    inputField.addEventListener('focus', () => {
+                       inputField.placeholder = 'Type to filter';
+                       dropdown.classList.add('open');
+                       dropdownArray.forEach(dropdown => {
+                         dropdown.classList.remove('closed');
+                       });
+                    });
+                    
+                    inputField.addEventListener('blur', () => {
+                       inputField.placeholder = 'Select state';
+                      dropdown.classList.remove('open');
+                    });
+                    
+                    document.addEventListener('click', (evt) => {
+                      const isDropdown = dropdown.contains(evt.target);
+                      const isInput = inputField.contains(evt.target);
+                      if (!isDropdown && !isInput) {
+                        dropdown.classList.remove('open');
+                      }
+                    });
+                }
+                selectFill();
+                /*************** select Fill end ***************/
         })
 
-        $.getScript("./dist/includes/js/carousel.swipe.js",function(){
-            initSwipe();        // init Swipe
-        })
-        
         $.maxWidth = $( "#carouselEvents" ).width();
         $.positionLeft = $.maxWidth/2;   
-        $( "#carousel-indicators" ).css("left",$.positionLeft+"px");
+        //$( "#carousel-indicators" ).css("left",$.positionLeft+"px");
     
         /***** action after change current slide *****/
+
         $("#carouselEvents").on('slid.bs.carousel', function (){
             var flagCurrIndicator = $( ".item.active" ).data("currid");
-    
+            var nameEvent = "name-"+$.elephantLanguage;
+            $("#chosen-value").val($.runnings[flagCurrIndicator]["runDate"]+": "+ $.runnings[flagCurrIndicator][nameEvent]);
+
+            $( ".select-item" ).removeClass(function() {
+                $( this ).data("slide-to") == flagCurrIndicator ? $( this ).addClass( "active" ) : $( this ).removeClass( "active" );
+            });    
+ 
             $( ".btn.ind" ).removeClass(function() {
                 $( this ).data("slide-to") == flagCurrIndicator ? $( this ).addClass( "active" ) : $( this ).removeClass( "active" );
             });
     
-            $.positionLeft = $.maxWidth/2 + 50 - ($( ".item.active" ).data("currid")+1)*106;   
-            var newValue = $.positionLeft+"px";
+            //$.positionLeft = $.maxWidth/2 + 50 - ($( ".item.active" ).data("currid")+1)*106;   
+            //var newValue = $.positionLeft+"px";
             
-            var left = $('#carousel-indicators').left;
-            $("#carousel-indicators").css({left:left}).animate({"left":newValue}, "slow");
-            $( "#carousel-indicators" ).css("left",$.positionLeft);
+            //var left = $('#carousel-indicators').left;
+           // $("#carousel-indicators").css({left:left}).animate({"left":newValue}, "slow");
+           // $( "#carousel-indicators" ).css("left",$.positionLeft);
         });
     }
     /************** create carousel end  *************/

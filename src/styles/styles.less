@@ -260,7 +260,14 @@ label {
 }
 
 .controls-gallery{
-    //display: none;
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    
+    span, form{
+        float: left;
+    }
+
     .btn-floating:before {
         position: absolute;
         font-family: 'Font Awesome 5 Free';
@@ -273,6 +280,117 @@ label {
     .fa-play{
         display: none;
     }
+
+    .fa-pause{
+        display: inline-block;
+    }
 }
 
   /*********** BUTTONS  end*************/
+
+  /************** select start***************/
+  form {
+    position: relative;
+    width: 28rem;
+    z-index: 1700;
+  }
+  
+  .chosen-value,
+  .value-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 360px !important;
+    overflow: auto;
+    border: 1px solid @caption-card;
+  }
+
+  .value-list{
+    opacity: 0;
+
+    .select-item.active{
+        background-color:@primary-color;
+        pointer-events: none;
+    }
+  }
+  .value-list.open{
+    opacity: 1;
+  }
+  .chosen-value {
+    text-transform: uppercase;
+    text-align: center !important;
+    font-weight: 500;
+    height: 4rem;
+    font-size: @basic-font-size;
+    padding: 1rem;
+    background-color: @white-color;
+    border: 3px solid transparent;
+    transition: .3s ease-in-out;
+    
+    &::-webkit-input-placeholder {
+      color: @select-datapicker ;
+    }
+    
+    &:hover {
+
+      cursor: pointer;
+      
+      &::-webkit-input-placeholder {
+        color: @select-datapicker ;
+      }
+    }
+    
+    &:focus,
+    &.open {
+      box-shadow: @button-box-shadow-3;
+      outline: 0;
+
+      color: #000;
+      
+      &::-webkit-input-placeholder {
+        color: #000;
+      }
+    }
+  }
+  
+  .value-list {
+    list-style: none;
+    margin-top: 3rem;
+    box-shadow: @button-box-shadow-2;
+    overflow: hidden;
+    max-height: 0;
+    transition: .3s ease-in-out;
+    
+    &.open {
+     max-height: 360px;
+     overflow: auto;
+     border: 1px solid  @caption-card;
+    }
+    
+    li {
+      position: relative;
+      height: 4rem;
+      background-color: @white-color;
+      padding: 1rem;
+      font-size: @basic-font-size;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color .3s;
+      opacity: 1;
+      border-bottom: 1px solid  @caption-card;
+      
+      &:hover {
+        background-color: @caption-card;
+      }
+      
+      &.closed {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        opacity: 0;
+      }
+    }
+  }
+  /************** select end ****************/

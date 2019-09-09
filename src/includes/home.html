@@ -36,18 +36,23 @@
 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 timeline-container main px2">
     <!--Controls-->
     <div class="controls-gallery controls-top">
-        <span id="wrapBtnGallery"></span>
-        <a id="btn-zoom" class="btn-floating btn-success fas fa-search-plus" data-toggle='modal' data-target=''></a>
+        <div id="wrapBtnGallery"></div>
+        <form>
+            <input id="chosen-value" class="chosen-value" type="text" value="" placeholder="Type to filter" readonly>
+            <div id="value-list-1" class="value-list">
+            </div>
+        </form>
+
     </div>
     <!--/.Controls-->
     <div id="carouselEvents" class="carousel slide carousel-fade d3-effect">
         <div class="carousel-inner v-2" role="listbox" id="listbox-events"></div>
     </div>
-    <!-- Indicators -->
+    <!-- Indicators ->
     <div class="wrapper-ol">
         <ol class="carousel-indicators" id="carousel-indicators"></ol>
     </div>
-    <!--/.Indicators-->
+    <--/.Indicators-->
 </div>
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 main">
     <p class="wrapLine">
