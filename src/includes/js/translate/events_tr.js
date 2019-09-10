@@ -5,14 +5,18 @@
     $.locationPage = window.location.protocol + "//" +window.location.hostname + locationPort;
     $.dataTablesDictionary = {
         "en": {
-            "_date" : "Date",
-            "_logo": "Logo",
-            "_title" : "Title"
+            "_date"         : "Date",
+            "_logo"         : "Logo",
+            "_title"        : "Title",
+            "_races"        : "events",
+            "_cities"       : "cities"
         },
         "ua": {
-            "_date" : "Дата",
-            "_logo": "Лого",
-            "_title" : "Назва"
+            "_date"         : "Дата",
+            "_logo"         : "Лого",
+            "_title"        : "Назва",
+            "_races"        : "події",
+            "_cities"       : "міста"
         }
     };
         
@@ -39,9 +43,21 @@
         $.arrayEvents = [];
         $.storageImg = "dist/img/logoevents/";
         $.eventName = "name-"+ $.elephantLanguage;
-        /************* List of Athletes**************/
+        /************* List of Events**************/
         $.getJSON( "dist/includes/json/events.json", function( data ) {
             $.eventsData = data.data;
+            $.citiesData = data.googlePlases;
+            $.races = $.eventsData.length;
+            $.cities = $.citiesData.length;
+            $.each( $(".reveal.carousel"), function(key, value) {
+                var header= $("#"+value.id).find(".card-header");
+                $("#"+ header[0]["id"]).html("<span>"+$.dataTablesDictionary[$.elephantLanguage][$("#"+ header[0]["id"]).data("txt")]+"</span>");
+
+                var title= $("#"+value.id).find(".title");
+                var ff = $("#"+ title[0]["id"]).data("item");
+                var gg = eval("$."+ff);
+                $("#"+ title[0]["id"]).html(gg);
+            })   
         })
         .done(function(){
             var table = $('#listEvents').DataTable( {

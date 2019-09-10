@@ -5,16 +5,16 @@
             "_moreInfo"     : "more info",
             "_youBornTo"    : "you born to",
             "_effect1Text"  : ["win", "rejoice", "love", "success", "life","progress"],
-            "_athletes"     : "athletes:",
-            "_races"        : "events:"
+            "_athletes"     : "athletes",
+            "_races"        : "events"
         },
         "ua": {
             "_content2"     : "Іноді ми атлети ;)",
             "_moreInfo"     : "ще цікавіше",
             "_youBornTo"    : "ти народився для",
             "_effect1Text"  : ["перемог", "радості", "любові", "успіху", "життя","досягнень"],
-            "_athletes"     : "спортсменів:",
-            "_races"        : "подій:"
+            "_athletes"     : "спортсмени",
+            "_races"        : "події"
         }
     };
     /************** translate info start  *************/
@@ -218,7 +218,7 @@
                       dropdown.classList.remove('open');
                     }
                     
-                    inputField.addEventListener('input', () => {
+                /*    inputField.addEventListener('input', () => {
                       dropdown.classList.add('open');
                       let inputValue = inputField.value.toLowerCase();
                       let valueSubstring;
@@ -236,7 +236,7 @@
                         }
                       }
                     });
-                    
+                  */  
                     dropdownArray.forEach(item => {
                       item.addEventListener('click', (evt) => {
                         inputField.value = item.textContent;
