@@ -11,10 +11,13 @@ $(document).ready(function(){
                 $.pathToGallery = "dist/img/events/";                       // path to gallery
                 $.flagIsMember = false;
                 $.elephantLanguage = localStorage.getItem('elLang');    // language (en/ua)
+                $.coords=[];
 
                 // get all events data from *.JSON
                 $.getJSON( "dist/includes/json/events.json", function( data ) {
                     $.fullInfo = data.data;
+                    $.googleData = data.googlePlases;
+                    $.googlePlace="";
 
                     var str = window.location.search.substring(1).split(":"); // get number event's from url e.g. event:20190830
                     $.eventId = parseInt (str[1]);
@@ -22,6 +25,16 @@ $(document).ready(function(){
                         if ($.fullInfo[key]["runId"] == $.eventId){
                             $.eventInfo = Object.assign({}, $.fullInfo[key]); // clone object with current event info
                             $.flagIsMember = true;
+                            $.coords = $.fullInfo[key]["coords"][0];
+
+                            $.each( $.googleData, function(key2) {
+                                if ($.googleData[key2]["number"] == $.coords){
+                                    $.googlePlace = $.googleData[key2]["name"];
+                                    return false; 
+                                };
+                            });
+
+                            $.coords = $.fullInfo[key]["coords"][0];
                             return false; 
                         };
                     });
@@ -100,10 +113,31 @@ $(document).ready(function(){
                         $("#preloader").hide();
                         console.log("4. str `404` loaded");
                     }
+
+                    var googleMap = function(){
+                        $(".googleMap").html('<iframe src="https://maps.google.com/maps?q='+$.googlePlace+'&t=&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>');
+                        
+                    }
+                    googleMap();
                 });
             })
             /************** necessary scripts start**************/
             .done(function(){
+                var initMagicScroll = function(){
+                    // init controller
+                    var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "150%"}});
+
+                    // build scenes - advanced/parallax_sections
+                    new ScrollMagic.Scene({triggerElement: ".parallaxParent"})
+                        .setTween(".parallaxParent > div", {y: "80%", ease: Linear.easeNone})
+                        .addTo(controller);
+
+                        var str = window.location.search.substring(1).split(":"); // get number event's from url e.g. event:20190830
+                        $.eventId = parseInt (str[1]);
+                        $(".magicBg").css("background-image","url("+$.pathToGallery+$.eventId+"/parallax.jpg)");
+                }
+                initMagicScroll();
+
                 $.getScript("./dist/includes/js/redline.js",function(){
                     $( window ).scroll(function() {
                         getOffset();

@@ -4,6 +4,14 @@
         {"typeId":2, "name": "athletic"},
         {"typeId":3, "name": "triathlon"}
     ],
+    "googlePlases": [
+        {"number":1, "name":"Kyiv"},
+        {"number":2, "name":"Krynica-Zdrój"},
+        {"number":3, "name":"London"},
+        {"number":4, "name":"Poltava"},
+        {"number":5, "name":"Sumy"},
+        {"number":6, "name":"Chisinau"}
+    ],
     "data":[
         {
             "runDate"   :"2018-09-30",
@@ -14,7 +22,8 @@
             "descriptions-en": "<p>Creation sports club<span class='mytooltip' data-tooltip-content='#termsOfEntry-en'> «LUCKY ELEPHANT»</span> for physical education lovers</p><p>The idea was voiced during a trip from Kyiv to Chisinau. Implemented during the CHISINAU INTERNATIONAL MARATHON 2018 race</p>",
             "countImages": 6,
             "typeEvent": 1,
-            "isTeam" : false
+            "isTeam" : false,
+            "coords" : [6]
         },
         {
             "runDate"   :"2018-10-07",
@@ -25,7 +34,8 @@
             "descriptions-en": "<p>A new goal - the first «half» (21.095 m) of the picturesque streets of the ancient city of Kiev </p>",
             "countImages": 6,
             "typeEvent": 1,
-            "isTeam" : true
+            "isTeam" : true,
+            "coords" : [1]
         },
         {
             "runDate"   :"2018-11-17",
@@ -36,7 +46,8 @@
             "descriptions-en": "<p>Running on the runway of the airport of the city SUMY </p> <h6> Flew !!!!!!! </h6>",
             "countImages": 9,
             "typeEvent": 1,
-            "isTeam" : false
+            "isTeam" : false,
+            "coords" : [5]
         },
         {
             "runDate"   :"2018-12-23",
@@ -47,7 +58,8 @@
             "descriptions-en": "<p>Run in a small Motherland) </p> <p> A new step for «elephants» - teamwork)))))) </p>",
             "countImages": 8,
             "typeEvent": 1,
-            "isTeam" : true
+            "isTeam" : true,
+            "coords" : [4]
         },
         {
             "runDate"   :"2019-02-10",
@@ -58,7 +70,8 @@
             "descriptions-en": "<p> Run for Valentine's Day! We were running !!!! </p> <p> Love each other !!!! </p",
             "countImages": 8,
             "typeEvent": 1,
-            "isTeam" : true
+            "isTeam" : true,
+            "coords" : [1]
         },
         {
             "runDate"   :"2019-04-07",
@@ -69,7 +82,8 @@
             "descriptions-en": "<p>The only race in the «Road Race BRONZE» series of the International Athletics Federation in Ukraine. Be cool - run with the best ;)</p>",
             "countImages": 6,
             "typeEvent": 1,
-            "isTeam" : true
+            "isTeam" : true,
+            "coords" : [1]
         },
         {
             "runDate"   :"2019-04-22",
@@ -80,7 +94,8 @@
             "descriptions-en": "<p>10 km race in the magnificent surroundings of London's Regents Park. </p> <p> 7 days before VIRGIN MONEY LONDON MARATHON ...</p>",
             "countImages": 5,
             "typeEvent": 1,
-            "isTeam" : false
+            "isTeam" : false,
+            "coords" : [3]
         },
         {
             "runDate"   :"2019-05-11",
@@ -91,7 +106,8 @@
             "descriptions-en": "<p>Is never much dirt.</p><p>The pain is temporary. Glory is forever!</p><p>Such races))))) </p>",
             "countImages": 8,
             "typeEvent": 2,
-            "isTeam" : true
+            "isTeam" : true,
+            "coords" : [1]
         },
         {
             "runDate"   :"2019-08-25",
@@ -102,7 +118,8 @@
             "descriptions-en": "<p> World stage! Forward and up !! Not to die!!!</p>",
             "countImages": 8,
             "typeEvent": 2,
-            "isTeam" : true
+            "isTeam" : true,
+            "coords" : [2]
         }
     ]
 }
