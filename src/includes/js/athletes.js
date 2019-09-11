@@ -1,8 +1,13 @@
 $(document).ready(function(){
+
+    wow = new WOW().init();
+
     $.getScript("dist/includes/js/common.js",function(){
         $.getScript("dist/includes/js/vendor/jquery.dataTables.min.js",function(){
             $.getScript("dist/includes/js/vendor/dataTables.bootstrap4.min.js",function(){
                 $.getScript("./dist/includes/js/translate/athletes_tr.js",function(){
+                    initMagicScroll();
+                    cardView();             // change info in cards
                     athletesDataTable();  // draw info about athlet
                 })
                 /************** necessary scripts start**************/

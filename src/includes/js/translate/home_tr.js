@@ -22,33 +22,60 @@
         $.elephantLanguage = localStorage.getItem('elLang');
         var content2 = $.homeDictionary[$.elephantLanguage]["_content2"];
         $("#content2").html(content2);
-
         $.moreInfo = $.homeDictionary[$.elephantLanguage]["_moreInfo"];
-        /************** reveal start ****************/
+ 
+    }
+    /************** translate info end    *************/    
+    /************** reveal start ****************/
+    var initMagicScroll = function(){
+        // init controller
+        var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "150%"}});
+        
+        // build scenes - advanced/parallax_sections
+        new ScrollMagic.Scene({triggerElement: ".parallaxParent"})
+			.setTween(".parallaxParent > div", {y: "80%", ease: Linear.easeNone})
+            .addTo(controller);
+
+        // build scenes - basic/reveal_on_scroll
+		new ScrollMagic.Scene({
+            triggerElement: "#trigger1",
+            triggerHook: 0.9, // show, when scrolled 10% into view
+            duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+            offset: 50 // move trigger to center of element
+        })
+        .setClassToggle("#reveal1", "visible") // add class to reveal
+        .addTo(controller);
+		new ScrollMagic.Scene({
+            triggerElement: "#trigger2",
+            triggerHook: 0.9, // show, when scrolled 10% into view
+            duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+            offset: 50 // move trigger to center of element
+        })
+        .setClassToggle("#reveal2", "visible") // add class to reveal  
+        .addTo(controller);
+    }
+
+    var cardView = function(){
         $.getJSON( "dist/includes/json/events.json", function( data ) {
             $.eventsData = data.data;
             $.races = $.eventsData.length;
         })
-        .done(function(){
-            $.getJSON( "dist/includes/json/members.json", function( data ) {
-                $.athletesData = data.data;
-                $.athletes = $.athletesData.length;
-                $.each( $(".reveal.carousel"), function(key, value) {
-                    var header= $("#"+value.id).find(".card-header");
-                    $("#"+ header[0]["id"]).html("<span>"+$.homeDictionary[$.elephantLanguage][$("#"+ header[0]["id"]).data("txt")]+"</span>");
-    
-                    var title= $("#"+value.id).find(".title");
-                    var ff = $("#"+ title[0]["id"]).data("item");
-                    var gg = eval("$."+ff);
-                    $("#"+ title[0]["id"]).html(gg);
-                })            
-            })
+        $.getJSON( "dist/includes/json/members.json", function( data ) {
+            $.athletesData = data.data;
+            $.athletes = $.athletesData.length;
+            $.each( $(".reveal.carousel"), function(key, value) {
+                var header= $("#"+value.id).find(".card-header");
+                $("#"+ header[0]["id"]).html("<span>"+$.homeDictionary[$.elephantLanguage][$("#"+ header[0]["id"]).data("txt")]+"</span>");
 
+                var title= $("#"+value.id).find(".title");
+                var ff = $("#"+ title[0]["id"]).data("item");
+                var gg = eval("$."+ff);
+                $("#"+ title[0]["id"]).html(gg);
+            })            
         })
-        /************** reveal end ****************/
     }
+    /************** reveal end ****************/
 
-    /************** translate info end    *************/
     /************** text effects start    *************/    
     $.timerId  = null;
     var textEffects = function(){
@@ -217,26 +244,7 @@
                     const closeDropdown = () => {
                       dropdown.classList.remove('open');
                     }
-                    
-                /*    inputField.addEventListener('input', () => {
-                      dropdown.classList.add('open');
-                      let inputValue = inputField.value.toLowerCase();
-                      let valueSubstring;
-                      if (inputValue.length > 0) {
-                        for (let j = 0; j < valueArray.length; j++) {
-                          if (!(inputValue.substring(0, inputValue.length) === valueArray[j].substring(0, inputValue.length).toLowerCase())) {
-                            dropdownArray[j].classList.add('closed');
-                          } else {
-                            dropdownArray[j].classList.remove('closed');
-                          }
-                        }
-                      } else {
-                        for (let i = 0; i < dropdownArray.length; i++) {
-                          dropdownArray[i].classList.remove('closed');
-                        }
-                      }
-                    });
-                  */  
+                      
                     dropdownArray.forEach(item => {
                       item.addEventListener('click', (evt) => {
                         inputField.value = item.textContent;
@@ -289,13 +297,7 @@
             $( ".btn.ind" ).removeClass(function() {
                 $( this ).data("slide-to") == flagCurrIndicator ? $( this ).addClass( "active" ) : $( this ).removeClass( "active" );
             });
-    
-            //$.positionLeft = $.maxWidth/2 + 50 - ($( ".item.active" ).data("currid")+1)*106;   
-            //var newValue = $.positionLeft+"px";
-            
-            //var left = $('#carousel-indicators').left;
-           // $("#carousel-indicators").css({left:left}).animate({"left":newValue}, "slow");
-           // $( "#carousel-indicators" ).css("left",$.positionLeft);
+
         });
     }
     /************** create carousel end  *************/
