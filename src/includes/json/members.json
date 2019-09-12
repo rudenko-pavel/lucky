@@ -9,7 +9,8 @@
             "nick"          :   "Voffchik",
             "dateJoin"      :   "2018-09-30",
             "credo-ua"      :   "~",
-            "credo-en"      :   "~"
+            "credo-en"      :   "~",
+            "countImages"   : 4
         },
         {
             "memberId"      :   2,
@@ -20,7 +21,8 @@
             "nick"          :   "Lenusea",
             "dateJoin"      :   "2018-09-30",
             "credo-ua"      :   "~",
-            "credo-en"      :   "~"
+            "credo-en"      :   "~",
+            "countImages"   :   6
         },
         {
             "memberId"      :   3,
@@ -31,7 +33,8 @@
             "nick"          :   "H0lland",
             "dateJoin"      :   "2018-09-30",
             "credo-ua"      :   "Dum spiro spero",
-            "credo-en"      :   "Dum spiro spero"
+            "credo-en"      :   "Dum spiro spero",
+            "countImages"   :   5
         },
         {
             "memberId"      :   4,
@@ -42,7 +45,8 @@
             "nick"          :   "~",
             "dateJoin"      :   "2018-12-23",
             "credo-ua"      :   "~",
-            "credo-en"      :   "~"
+            "credo-en"      :   "~",
+            "countImages"   :   3
         },
         {
             "memberId"      :   5,
@@ -53,7 +57,8 @@
             "nick"          :   "~",
             "dateJoin"      :   "2019-05-11",
             "credo-ua"      :   "~",
-            "credo-en"      :   "~"
+            "credo-en"      :   "~",
+            "countImages"   :   4
         },
         {
             "memberId"      :   6,
@@ -64,7 +69,8 @@
             "nick"          :   "~",
             "dateJoin"      :   "2019-05-11",
             "credo-ua"      :   "~",
-            "credo-en"      :   "~"
+            "credo-en"      :   "~",
+            "countImages"   :   3
         }
     ]
 }

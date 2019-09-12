@@ -31,24 +31,57 @@ $(document).ready(function(){
 
                     }).done(function(){
                         if ($.flagIsMember){    // id-athlet is in JSON
-                            $.memberPhoto = "<img class='card-img-top d3-effect' src='"+$.pathToImg+$.memberId+".jpg' data-toggle='modal' data-target='#photo"+$.memberId+"' />";
-                            
-                            var newModalCollection ='<div class="modal fade" id="photo'+$.memberId+'" tabindex="-1" role="dialog" aria-hidden="true">'+
-                                '<div class="modal-dialog" role="document">'+
-                                    '<div class="modal-content description-member">'+
-                                        '<div class="modal-header">'+
-                                            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
-                                                '<span aria-hidden="true">&times;</span>'+
-                                            '</button>'+
-                                        '</div>'+
-                                        '<div class="modal-body"><img src="'+$.pathToImg+$.memberId+'.jpg" alt="" >'+
+                            $.pathToGallery = $.pathToImg + $.memberInfo["memberId"]+"/";
+                            $.galleryItems="";
+                            $.galleryIndicators="";
+                            var addClass="";
+                            for (var i=1; i<=$.memberInfo["countImages"];i++){
+                                i==1 ? addClass ="active": addClass="";
+                                $.galleryItems = $.galleryItems + "<div class='item "+addClass+"'>"+
+                                            "<img class='d-block w-100 card-img-top' src='"+$.pathToGallery+i+".jpg' data-toggle='modal' data-target='#photo"+i+"'></div>";
+                                $.galleryIndicators = $.galleryIndicators + "<li data-target='#wrapperCarouselEvent' data-slide-to='"+(i-1)+"' class='"+addClass+"'></li>"
+    
+                                /*********** newModalCollection - div in MODAL (big img) *************/
+                                var newModalCollectionGallery ='<div class="modal fade" id="photo'+i+'" tabindex="-1" role="dialog" aria-hidden="true">'+
+                                    '<div class="modal-dialog" role="document">'+
+                                        '<div class="modal-content description-member">'+
+                                            '<div class="modal-header">'+
+                                                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+                                                    '<span aria-hidden="true">&times;</span>'+
+                                                '</button>'+
+                                            '</div>'+
+                                            '<div class="modal-body"><img src="'+$.pathToGallery+i+'.jpg" alt="" >'+
+                                            '</div>'+
                                         '</div>'+
                                     '</div>'+
-                                '</div>'+
-                            '</div>';
-                            $('#modalSegment').append(newModalCollection);
+                                '</div>';
+
+                                $('#modalSegment').append(newModalCollectionGallery);
+                            }
+
+                            $.memberPhoto = "<img class='card-img-top d3-effect' src='"+$.pathToGallery+"1.jpg' data-toggle='modal' data-target='#photo1' />";
+
+                            $.galleryControls = '<a class="carousel-control-prev" href="#wrapperCarouselEvent" role="button" data-slide="prev">'+
+                                                    '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'+
+                                                    '<span class="sr-only">Previous</span>'+
+                                                '</a>'+
+                                                '<a class="carousel-control-next" href="#wrapperCarouselEvent" role="button" data-slide="next">'+
+                                                '<span class="carousel-control-next-icon" aria-hidden="true"></span>'+
+                                                '<span class="sr-only">Next</span>'+
+                                                '</a>';
+
 
                             $("#memberPhoto").prepend($.memberPhoto);
+                            
+                            $('#carouselEvent').append($.galleryItems);
+                            $('#carouselEvent').append($.galleryControls);
+                            $('#carouselIndicators').append($.galleryIndicators);
+
+                            $.getScript("./dist/includes/js/carousel.swipe.js",function(){
+                                initSwipe();        // init Swipe
+                                addControlButtons();    // add Control Buttons
+                            });
+
                             $.getScript("./dist/includes/js/translate/athlet_tr.js",function(){
                                 infoAthlet();  // draw info about athlet
                             });
