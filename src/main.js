@@ -1,5 +1,6 @@
 "use strict";
-    
+window.myAuth ="AIzaSyDuAksM3HwbugMLENU7oAnldcDgJIjjulA";
+
 import $ from 'jquery';
 import jQuery from 'jquery';
 window.$ = jQuery;
@@ -8,6 +9,7 @@ import './styles/styles.less';
 
 /*---- add body-Content to page -------*/
 $(document).ready(function(){
+
   console.log("1. start");
   $.getScript("dist/includes/js/vendor/preloader.js",function(){
     console.log("`preloader.js` is loaded");

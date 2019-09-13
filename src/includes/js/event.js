@@ -33,8 +33,9 @@ $(document).ready(function(){
                                     return false; 
                                 };
                             });
-
-                            $.coords = $.fullInfo[key]["coords"][0];
+                            $.coordsTown = $.fullInfo[key]["coords"][0];
+                            $.coordsGps = $.fullInfo[key]["coords"][1];
+                            $.coordsName = $.fullInfo[key]["name-en"]
                             return false; 
                         };
                     });
@@ -114,12 +115,14 @@ $(document).ready(function(){
                         console.log("4. str `404` loaded");
                     }
 
-                    var googleMap = function(){
-                        $(".googleMap").html('<iframe src="https://maps.google.com/maps?q='+$.googlePlace+'&t=&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>');
-                        
+                    var googleMap = function(){ 
+                        $.getScript("./dist/includes/js/mygooglemap.js",function(){
+                            $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDuAksM3HwbugMLENU7oAnldcDgJIjjulA&callback=initMap",function(){
+                            })
+                        })
                     }
                     googleMap();
-                });
+                });     
             })
             /************** necessary scripts start**************/
             .done(function(){

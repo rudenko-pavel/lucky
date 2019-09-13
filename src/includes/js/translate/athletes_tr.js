@@ -134,7 +134,7 @@
                         "render": function ( data, type, row, meta ) {
                             var result;
                         if (type === 'display'){
-                            result = '<div class="one-event" data-toggle="modal" data-target="#photo'+data+'"><img id="showMemberPhoto'+data+'" data-run-id="'+data+'" src="'+$.storageImgMembers+data+'.jpg" class="memberPhoto" alt="" data-target="#photo'+data+'" data-slide-to="0" /></div>'
+                            result = '<div class="one-event" data-toggle="modal" data-target="#photo'+data+'"><img id="showMemberPhoto'+data+'" data-run-id="'+data+'" src="'+$.storageImgMembers+data+'/1.jpg" class="memberPhoto" alt="" data-target="#photo'+data+'" data-slide-to="0" /></div>'
 
                             var newModalCollection ='<div class="modal fade" id="photo'+data+'" tabindex="-1" role="dialog" aria-hidden="true">'+
                                 '<div class="modal-dialog" role="document">'+
@@ -144,7 +144,7 @@
                                                 '<span aria-hidden="true">&times;</span>'+
                                             '</button>'+
                                         '</div>'+
-                                        '<div class="modal-body"><img src="'+$.storageImgMembers+data+'.jpg" alt="" >'+
+                                        '<div class="modal-body"><img src="'+$.storageImgMembers+data+'/1.jpg" alt="" >'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+

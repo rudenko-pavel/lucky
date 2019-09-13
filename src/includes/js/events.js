@@ -27,6 +27,16 @@ $(document).ready(function(){
                     $.getScript("dist/includes/js/mypreloader.js",function(){
                         console.log("`mypreloader.js` is DONE");
                     });
+                    var googleMap = function(){ 
+                        $.getScript("./dist/includes/js/mygooglemap.js",function(){
+                            $.getScript("https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js",function(){
+                                $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDuAksM3HwbugMLENU7oAnldcDgJIjjulA&callback=initMap",function(){
+                                })                            
+                            })
+
+                        })
+                    }
+                    googleMap();
                 }); 
                 /************** necessary scripts end**************/
             })
