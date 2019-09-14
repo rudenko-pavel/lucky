@@ -116,8 +116,10 @@ $(document).ready(function(){
                     }
 
                     var googleMap = function(){ 
-                        $.getScript("./dist/includes/js/mygooglemap.js",function(){
-                            $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDuAksM3HwbugMLENU7oAnldcDgJIjjulA&callback=initMap",function(){
+                        $.getScript("./dist/includes/personal/personal.js",function(){
+                            $.getScript("./dist/includes/js/mygooglemap.js",function(){
+                                $.getScript("https://maps.googleapis.com/maps/api/js?key="+window.myAuth+"&callback=initMap",function(){
+                                })
                             })
                         })
                     }

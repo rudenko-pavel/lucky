@@ -1,5 +1,4 @@
 "use strict";
-window.myAuth ="AIzaSyDuAksM3HwbugMLENU7oAnldcDgJIjjulA";
 
 import $ from 'jquery';
 import jQuery from 'jquery';

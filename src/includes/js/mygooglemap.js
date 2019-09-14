@@ -32,12 +32,13 @@ var initMap = function() {
   /****************** event end *************************/
   /****************** events start *************************/
 var events = function(){
-  console.log("********** -",$.eventsData)
   var locations = [];
+  var titles = [];
+
   $.each( $.eventsData, function(key, value) {
     locations.push({"lat":$.eventsData[key]["coords"][1][0],"lng":$.eventsData[key]["coords"][1][1]})
+    titles.push({"title":$.eventsData[key]["name-en"]})
   }) 
- 
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
@@ -52,10 +53,14 @@ var events = function(){
   // create an array of markers based on a given "locations" array.
   // The map() method here has nothing to do with the Google Maps API.
   var markers = locations.map(function(location, i) {
-    return new google.maps.Marker({
+    
+     var a = new google.maps.Marker({
       position: location,
-      label: labels[i % labels.length]
+      label: labels[i % labels.length],
+      title: titles[i]["title"]
     });
+
+    return (a);
   });
 
     // Add a marker clusterer to manage the markers.
