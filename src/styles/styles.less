@@ -195,6 +195,12 @@ label {
 }
 
 /*********** BUTTONS  start*************/
+.dropdown-menu{
+    .button{
+        width: 100%;
+    }
+}
+
 .button {
     position: relative;
     display: inline-block;
@@ -291,12 +297,29 @@ label {
 }
 
   /*********** BUTTONS  end*************/
+.gamesDiv{
+    height: 500px;
+    select{
+        display: inline-block !important;
+    }
+    .gm-control-active.gm-fullscreen-control{
+        display: block !important;
+    }
 
+    .gmnoprint.gm-style-cc, .gmnoprint{
+        display: none !important;
+    }
+}
   /************** select start***************/
   form {
     position: relative;
-    width: 28rem;
     z-index: 1700;
+  }
+
+  .flexdiv{
+    form{
+        width: 28rem;
+    }
   }
   
   .chosen-value,

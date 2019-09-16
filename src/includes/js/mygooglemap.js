@@ -46,7 +46,7 @@ var events = function(){
   });
 
   // Create an array of alphabetical characters used to label the markers.
-  var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  //var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   // Add some markers to the map.
   // Note: The code uses the JavaScript Array.prototype.map() method to
@@ -56,7 +56,7 @@ var events = function(){
     
      var a = new google.maps.Marker({
       position: location,
-      label: labels[i % labels.length],
+      //label: labels[i % labels.length],
       title: titles[i]["title"]
     });
 
