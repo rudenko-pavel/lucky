@@ -30,7 +30,7 @@
     },
     "dependencies": {
         "bootstrap-lightbox": "^0.4.1",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "less": "^3.9.0",
         "popper.js": "^1.15.0",
         "timelinejs-slider": "^0.1.0",
